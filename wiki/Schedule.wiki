@@ -1,7 +1,7 @@
 1. May 24 - 28
 
- * Set up a development environment for the Android
- * Compile Bonanza using the latest GCC version for ARM
+ * ~~Set up a development environment for the Android ~~
+ * ~~Compile Bonanza using the latest GCC version for ARM ~~
  * Familiarize myself with the Bonanza code base
  * Set up a website and write the introductory entry in the tutorial series detailing this process.   
 
