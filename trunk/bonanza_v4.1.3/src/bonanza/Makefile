@@ -5,6 +5,8 @@ OBJS =data.o main.o io.o proce.o utility.o ini.o attack.o book.o makemove.o \
       learn2.o evaldiff.o problem.o ponder.o thread.o sckt.o debug.o mate3.o \
       genchk.o
 
+LIB =libBonanza.a
+
 # Compile Options
 #
 # -DNDEBUG (DEBUG)  builds release (debug) version of Bonanza.
@@ -16,7 +18,7 @@ OBJS =data.o main.o io.o proce.o utility.o ini.o attack.o book.o makemove.o \
 # -DCSA_LAN         enables bonanza to talk CSA Shogi TCP/IP protcol.
 # -DNO_LOGGING      suppresses dumping log files.
 
-OPT =-DNDEBUG -DTLP -DMINIMUM -DCSA_LAN
+OPT =-DDEBUG -DMINIMUM
 
 help:
 	@echo "try targets as:"
@@ -25,7 +27,8 @@ help:
 	@echo "  icc"
 
 gcc:
-	$(MAKE) CC=gcc CFLAGS='-std=gnu99 -O3 -Wall $(OPT)' LDFLAG1='-lm -lpthread' bonanza
+	$(MAKE) CC=gcc CFLAGS='-std=gnu99 -O2 -Wall $(OPT)' LDFLAG1='-lm -lpthread' bonanza
+	$(AR) r $(LIB) $(OBJS)
 
 icc:
 	$(MAKE) CC=icc CFLAGS='-w2 $(OPT) -std=gnu99 -O2 -ipo' LDFLAG1='-static -ipo -pthread' bonanza
