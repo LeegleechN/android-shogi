@@ -5,8 +5,8 @@
  * Familiarize myself with the Bonanza code base
  * Set up a website and write the introductory entry in the tutorial series detailing this process.   
 
-Deliverable: Bonanza updated to compile on GCC-4.3 for ARM
-Deliverable: First tutorial entry with introduction and entry on configuring the development environment
+ * Deliverable: Bonanza updated to compile on GCC-4.3 for ARM
+ * Deliverable: First tutorial entry with introduction and entry on configuring the development environment
 
 
 2. May 31 - June 11
@@ -14,31 +14,31 @@ Deliverable: First tutorial entry with introduction and entry on configuring the
  * Isolate the Shogi engine into a library, stripping out the user interaction code and any dependencies that are unavailable in Android
  * Write a wrapper that will interact with the GUI portion of the program for saving and loading games, time controls, difficulty settings, etc.
 
-Deliverable: Can embed the engine inside another C program by including a short header and a pre-compiled library
-Deliverable: Second tutorial entry about designing the interaction between the Java UI code and the C/C++ engine code
+ * Deliverable: Can embed the engine inside another C program by including a short header and a pre-compiled library
+ * Deliverable: Second tutorial entry about designing the interaction between the Java UI code and the C/C++ engine code
 
 
 3. June 14 - 18
 
 Write the Java Native Invocation (JNI) layer for the engine library. This is a wrapper that converts the C library into a Java library that is then accessible to the GUI layer. Configure the engine to use minimal memory and run quickly enough on a smartphone processor for testing.
 
-Deliverable: Can start a new game and enter a move using Java code running on a device. This invokes the native engine code and sends back the computer’s move in response.
-Deliverable: Third tutorial entry focusing on practical use of the Android NDK to write wrapper libraries.
+ * Deliverable: Can start a new game and enter a move using Java code running on a device. This invokes the native engine code and sends back the computer’s move in response.
+ * Deliverable: Third tutorial entry focusing on practical use of the Android NDK to write wrapper libraries.
 
 
 4. June 21 - July 9
 
 Write the user interface layer, including a board, rules enforcement and victory detection for a two player game, and the ability to play a game against the computer. The computer play will not yet be robust against interruption (e.g. from an incoming phone call).
 
-Deliverable: A playable game of Shogi, both against the computer and human vs. human
-Deliverable: Fourth tutorial entry explaining the UI code.
+ * Deliverable: A playable game of Shogi, both against the computer and human vs. human
+ * Deliverable: Fourth tutorial entry explaining the UI code.
        
 5. July 12 - 23
 
 Continue polishing the UI layer. In particular, properly implement the Android application lifecycle, which details how the application may potentially be interrupted or shut down if the user navigates away or the system is low on memory. This requires being able to save the full state of the application and cleanly exit the Shogi library at potentially any time. Add a game setup option to set time controls, handicaps, and computer difficulty. Write the help file.
 
-Deliverable: A robust game of Shogi that will be released onto the Android Market to begin receiving feedback.
-Deliverable: Tutorial focused on handling the Android application lifecycle, in particular when interacting with code that was not designed for it.
+ * Deliverable: A robust game of Shogi that will be released onto the Android Market to begin receiving feedback.
+ * Deliverable: Tutorial focused on handling the Android application lifecycle, in particular when interacting with code that was not designed for it.
 
 6. July 26 - August 6
 
@@ -47,11 +47,11 @@ Optimize the Shogi engine for the memory and processor constraints of a smartpho
 To evaluate the speed and quality of the engine using various settings, I will create an automated benchmark with a set of easy and moderately difficult mating problems. For each collection of settings, I will evaluate the time spent against the number of problems that were solved correctly, and select a set of favorable trade-offs along this curve to be the difficulty settings.
 
 
-Deliverable: A new release of the program on the Android market, with the engine substantially better tuned for smartphone devices.
+ * Deliverable: A new release of the program on the Android market, with the engine substantially better tuned for smartphone devices.
 
 7. August 9 - 13
 
 Address any remaining complaints from users commenting on the Android market. Release the optimized and feature-complete version of the application.
 
-Deliverable: Complete version of application available on Android market
-Deliverable: Final entry in tutorial series
+ * Deliverable: Complete version of application available on Android market
+ * Deliverable: Final entry in tutorial series
