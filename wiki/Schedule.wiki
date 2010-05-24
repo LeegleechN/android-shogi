@@ -11,7 +11,7 @@
 
 2. May 31 - June 11
 
- * Isolate the Shogi engine into a library, stripping out the user interaction code and any dependencies that are unavailable in Android
+ * ~~Isolate the Shogi engine into a library, stripping out the user interaction code and any dependencies that are unavailable in Android~~
  * Write a wrapper that will interact with the GUI portion of the program for saving and loading games, time controls, difficulty settings, etc.
 
  * Deliverable: Can embed the engine inside another C program by including a short header and a pre-compiled library
