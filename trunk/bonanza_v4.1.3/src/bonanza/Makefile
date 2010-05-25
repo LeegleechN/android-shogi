@@ -1,4 +1,4 @@
-OBJS =data.o main.o io.o proce.o utility.o ini.o attack.o book.o makemove.o \
+OBJS =data.o io.o proce.o utility.o ini.o attack.o book.o makemove.o \
       unmake.o time.o csa.o valid.o bitop.o iterate.o searchr.o search.o \
       quiesrch.o evaluate.o swap.o  hash.o root.o next.o movgenex.o \
       genevasn.o gencap.o gennocap.o gendrop.o mate1ply.o rand.o learn1.o \
@@ -33,8 +33,8 @@ gcc:
 icc:
 	$(MAKE) CC=icc CFLAGS='-w2 $(OPT) -std=gnu99 -O2 -ipo' LDFLAG1='-static -ipo -pthread' bonanza
 
-bonanza : $(OBJS)
-	$(CC) $(LDFLAG1) -o bonanza $(OBJS) $(LDFLAG2)
+bonanza : $(OBJS) main.o
+	$(CC) $(LDFLAG1) -o bonanza $(OBJS) main.o $(LDFLAG2)
 
 $(OBJS) : shogi.h param.h
 
@@ -44,3 +44,4 @@ $(OBJS) : shogi.h param.h
 clean :
 	rm *.o
 	rm bonanza
+	rm libBonanza.a 
