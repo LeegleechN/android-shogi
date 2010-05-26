@@ -36,7 +36,7 @@ icc:
 bonanza : $(OBJS) main.o
 	$(CC) $(LDFLAG1) -o bonanza $(OBJS) main.o $(LDFLAG2)
 
-$(OBJS) : shogi.h param.h
+$(OBJS) : shogi.h param.h bonanza.h
 
 .c.o :
 	$(CC) -c $(CFLAGS) $*.c
