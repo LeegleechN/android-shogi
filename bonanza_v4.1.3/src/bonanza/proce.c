@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "shogi.h"
+#include "bonanza.h"
 
 /* unacceptable when the program is thinking, or quit pondering */
 #define AbortDifficultCommand                                              \
@@ -52,23 +53,7 @@ static int cmd_mpv( char **lasts );
 static int proce_cui( tree_t * restrict ptree );
 static int cmd_usrmove( tree_t * restrict ptree, const char *str_move,
 			char **last );
-static int cmd_move_now( void );
-static int cmd_ponder( char **lasts );
-static int cmd_limit( char **lasts );
-static int cmd_quit( void );
-static int cmd_beep( char **lasts );
-static int cmd_peek( char **lasts );
-static int cmd_hash( char **lasts );
-static int cmd_ping( void );
-static int cmd_suspend( void );
-static int cmd_problem( tree_t * restrict ptree, char **lasts );
-static int cmd_display( tree_t * restrict ptree, char **lasts );
-static int cmd_move( tree_t * restrict ptree, char **lasts );
-static int cmd_new( tree_t * restrict ptree, char **lasts );
-static int cmd_read( tree_t * restrict ptree, char **lasts );
-static int cmd_resign( tree_t * restrict ptree, char **lasts );
-static int cmd_time( char **lasts );
-static int is_move( const char *str );
+
 
 
 int
