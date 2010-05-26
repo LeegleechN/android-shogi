@@ -32,3 +32,5 @@ static int is_move( const char *str );
 In particular, cmd_move(tree,NULL) will have the computer move, and cmd_move(tree,"7677FU") will have the player move (not sure about the format)
 
 Not sure how to get the move easily back. I can have cmd_move return the int version and parse that. Or I could just look at the tree itself and see what's changed. Ideally I'd like to get the computer's move back in the notational format. Maybe the int version is easy to convert to that.
+
+After done, finish using fin().
