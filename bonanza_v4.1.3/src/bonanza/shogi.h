@@ -3,7 +3,6 @@
 
 #include <stdio.h>
 #include "param.h"
-#include "bonanza.h"
 
 #if defined(_WIN32)
 
