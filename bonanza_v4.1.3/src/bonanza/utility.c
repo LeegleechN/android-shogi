@@ -6,7 +6,7 @@
 
 
 int
-ini_game( tree_t * restrict ptree, const min_posi_t *pmin_posi, int flag,
+ini_game( tree_t * ptree, const min_posi_t *pmin_posi, int flag,
 	  const char *str_name1, const char *str_name2 )
 {
   bitboard_t bb;
@@ -28,8 +28,16 @@ ini_game( tree_t * restrict ptree, const min_posi_t *pmin_posi, int flag,
       fmg_misc_king = FMG_MISC_KING;
       fmg_cap_king  = FMG_CAP_KING;
     }
-
-  memcpy( ptree->posi.asquare, pmin_posi->asquare, nsquare );
+    
+  //NDK: crashes for some unknown reason.
+  //memcpy( ptree->posi.asquare, pmin_posi->asquare, nsquare );
+  for (int i = 0 ; i< nsquare ; i++)
+  {
+    signed char piece = pmin_posi->asquare[i];
+    signed char* array = ptree->posi.asquare;
+    *(array+i) = (char)-2;
+    //ptree->posi.asquare[i] = pmin_posi->asquare[i];
+  }
   ptree->move_last[0]  = ptree->amove;
   ptree->nsuc_check[0] = 0;
   ptree->nsuc_check[1] = 0;
