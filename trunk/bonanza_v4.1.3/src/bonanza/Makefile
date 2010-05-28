@@ -27,7 +27,7 @@ help:
 	@echo "  icc"
 
 gcc:
-	$(MAKE) CC=gcc CFLAGS='-std=gnu99 -O2 -Wall $(OPT)' LDFLAG1='-lm -lpthread' bonanza
+	$(MAKE) CC=gcc CFLAGS='-std=gnu99 -ggdb -Wall $(OPT)' LDFLAG1='-lm -lpthread' bonanza
 	$(AR) r $(LIB) $(OBJS)
 
 icc:

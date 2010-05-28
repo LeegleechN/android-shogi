@@ -2,8 +2,9 @@
 
 int main()
 {
+  char* point = NULL;
   tree_t* tree;
-  ini(tree);
-  cmd_move(tree,NULL);
+  int init = ini(tree);
+  cmd_move(tree,&point);
   fin();
 }

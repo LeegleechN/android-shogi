@@ -31,7 +31,7 @@ typedef int sckt_t;
 #  define PRIx64        "I64x"
 #  define UINT64_C(u)  ( u )
 
-#  define restrict      __restrict
+//#  define restrict      __restrict
 #  define strtok_r      strtok_s
 #  define read          _read
 #  define strncpy( dst, src, len ) strncpy_s( dst, len, src, _TRUNCATE )
@@ -46,7 +46,8 @@ typedef volatile long lock_t;
 #elif defined(__GNUC__) && ( defined(__i386__) || defined(__x86_64__) )
 
 #  include <inttypes.h>
-#  define restrict __restrict
+//#  define restrict __restrict
+#  define restrict
 typedef volatile int lock_t;
 
 /* other targets. */
