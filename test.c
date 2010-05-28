@@ -4,8 +4,8 @@
 int main()
 {
   char* point = NULL;
-  tree_t* tree = (tree_t*)malloc(sizeof(tree_t));
-  int init = ini(tree);
-  cmd_move(tree,&point);
+  tree_t* ptree = &tree;
+  int init = ini(ptree);
+  cmd_move(ptree,&point);
   fin();
 }
