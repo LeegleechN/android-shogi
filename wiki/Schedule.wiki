@@ -3,10 +3,10 @@
  * ~~Set up a development environment for the Android ~~
  * ~~Compile Bonanza using the latest GCC version for ARM ~~
  * ~~Familiarize myself with the Bonanza code base~~
- * Set up a website and write the introductory entry in the tutorial series detailing this process.   
+ * ~~Set up a website and write the introductory entry in the tutorial series detailing this process.~~   
 
  * Deliverable: ~~ Bonanza updated to compile on GCC-4.3 for ARM ~~
- * Deliverable: First tutorial entry with introduction and entry on configuring the development environment
+ * Deliverable: ~~First tutorial entry with introduction and entry on compiling the native library~~
 
 
 2. May 31 - June 11
