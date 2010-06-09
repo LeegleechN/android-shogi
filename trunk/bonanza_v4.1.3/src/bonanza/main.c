@@ -70,40 +70,7 @@ main()
 	    }
 	}
 #endif
-
-      /* ponder a move */
-      ponder_move = 0;
-      iret = ponder( ptree );
-      if ( iret == -1 )
-	{
-	  out_error( "%s", str_error );
-	  ShutdownClient;
-	  break;
-	}
-      else if ( iret == -2 )
-	{
-	  out_warning( "%s", str_error );
-	  ShutdownClient;
-	  continue;
-	}
-      else if ( game_status & flag_quit ) { break; }
-
-      /* move prediction succeeded, pondering finished,
-	 and computer made a move. */
-      else if ( iret == 2 ) { continue; }
-
-      /* move prediction failed, pondering aborted,
-	 and we have opponent's move in input buffer. */
-      else if ( ponder_move == MOVE_PONDER_FAILED )
-	{
-	}
-
-      /* pondering is interrupted or ended.
-	 do nothing until we get next input line. */
-      else {
-	TlpEnd();
-	show_prompt();
-      }
+      show_prompt();
 
       iret = next_cmdline( 1 );
       if ( iret == -1 )
