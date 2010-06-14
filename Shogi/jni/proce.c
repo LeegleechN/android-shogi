@@ -4,7 +4,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "shogi.h"
 #include "bonanza.h"
 
 /* unacceptable when the program is thinking, or quit pondering */
@@ -22,36 +21,36 @@
 
 #if defined(MINIMUM)
 #  define CmdBook(x,y) cmd_book(y);
-static int cmd_book( char **lasts );
+int cmd_book( char **lasts );
 #else
 #  define CmdBook(x,y) cmd_book(x,y);
-static int cmd_learn( tree_t * restrict ptree, char **lasts );
+int cmd_learn( tree_t * restrict ptree, char **lasts );
 int cmd_book( tree_t * restrict ptree, char **lasts );
 #endif
 
 #if ! defined(NO_STDOUT)
-static int cmd_stress( char **lasts );
+int cmd_stress( char **lasts );
 #endif
 
 #if defined(DEKUNOBOU)
-static int cmd_dek( char **lasts );
+int cmd_dek( char **lasts );
 #endif
 
 #if defined(CSA_LAN)
-static int proce_csalan( tree_t * restrict ptree );
-static int cmd_connect( tree_t * restrict ptree, char **lasts );
+int proce_csalan( tree_t * restrict ptree );
+int cmd_connect( tree_t * restrict ptree, char **lasts );
 #endif
 
 #if defined(TLP)
-static int cmd_thread( char **lasts );
+int cmd_thread( char **lasts );
 #endif
 
 #if defined(MPV)
-static int cmd_mpv( char **lasts );
+int cmd_mpv( char **lasts );
 #endif
 
-static int proce_cui( tree_t * restrict ptree );
-static int cmd_usrmove( tree_t * restrict ptree, const char *str_move,
+int proce_cui( tree_t * restrict ptree );
+int cmd_usrmove( tree_t * restrict ptree, const char *str_move,
 			char **last );
 
 
@@ -66,7 +65,7 @@ procedure( tree_t * restrict ptree )
 }
 
 
-static int
+int
 proce_cui( tree_t * restrict ptree )
 {
   const char *token;
@@ -118,7 +117,7 @@ proce_cui( tree_t * restrict ptree )
 
 
 #if defined(CSA_LAN)
-static int
+int
 proce_csalan( tree_t * restrict ptree )
 {
   const char *token;
@@ -201,7 +200,7 @@ cmd_move_now( void )
 }
 
 
-static int
+int
 cmd_usrmove( tree_t * restrict ptree, const char *str_move, char **lasts )
 {
   const char *str;
@@ -455,7 +454,7 @@ cmd_ponder( char **lasts )
 
 
 #if ! defined(NO_STDOUT)
-static int
+int
 cmd_stress( char **lasts )
 {
   const char *str = strtok_r( NULL, str_delimiters, lasts );
@@ -1103,7 +1102,7 @@ cmd_time( char **lasts )
 
 #if !defined(MINIMUM)
 /* learn (ini|no-ini) steps games iterations tlp1 tlp2 */
-static int
+int
 cmd_learn( tree_t * restrict ptree, char **lasts )
 {
   const char *str1 = strtok_r( NULL, str_delimiters, lasts );
@@ -1217,7 +1216,7 @@ cmd_learn( tree_t * restrict ptree, char **lasts )
 
 
 #if defined(MPV)
-static int
+int
 cmd_mpv( char **lasts )
 {
   const char *str = strtok_r( NULL, str_delimiters, lasts );
@@ -1279,7 +1278,7 @@ cmd_mpv( char **lasts )
 
 
 #if defined(TLP)
-static int
+int
 cmd_thread( char **lasts )
 {
   const char *str = strtok_r( NULL, str_delimiters, lasts );
@@ -1325,7 +1324,7 @@ cmd_thread( char **lasts )
 
 
 #if defined(CSA_LAN)
-static int
+int
 cmd_connect( tree_t * restrict ptree, char **lasts )
 {
   const char *str;
@@ -1384,7 +1383,7 @@ cmd_connect( tree_t * restrict ptree, char **lasts )
 
 #if defined(DEKUNOBOU)
 
-static int
+int
 cmd_dek( char **lasts )
 {
   const char *str = strtok_r( NULL, str_delimiters, lasts );

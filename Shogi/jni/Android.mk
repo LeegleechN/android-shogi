@@ -12,16 +12,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-LOCAL_PATH := $(call my-dir)
+LOCAL_PATH := .
 
 include $(CLEAR_VARS)
 
+LOCAL_PRELINK_MODULE := false
 LOCAL_MODULE    := bonanza
-LOCAL_SRC_FILES := data.c io.c proce.c utility.c ini.c attack.c book.c makemove.c \
-      unmake.c time.c csa.c valid.c bitop.c iterate.c searchr.c search.c \
-      quiesrch.c evaluate.c swap.c  hash.c root.c next.c movgenex.c \
-      genevasn.c gencap.c gennocap.c gendrop.c mate1ply.c rand.c learn1.c \
-      learn2.c evaldiff.c problem.c ponder.c thread.c sckt.c debug.c mate3.c \
-      genchk.c
 
+LOCAL_CFLAGS := -DDEBUG -DMINIMUM -DNO_LOGGING -DCSA_LAN
+
+LOCAL_SRC_FILES := data.c io.c proce.c utility.c ini.c attack.c book.c \ makemove.c unmake.c time.c csa.c valid.c bitop.c iterate.c searchr.c \ search.c quiesrch.c evaluate.c swap.c  hash.c root.c next.c movgenex.c \
+genevasn.c gencap.c gennocap.c gendrop.c mate1ply.c rand.c learn1.c \
+learn2.c evaldiff.c problem.c ponder.c thread.c sckt.c debug.c mate3.c \
+      genchk.c
 include $(BUILD_SHARED_LIBRARY)
