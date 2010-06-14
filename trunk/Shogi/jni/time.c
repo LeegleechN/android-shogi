@@ -3,6 +3,7 @@
 #if ! defined(_WIN32)
 #  include <sys/time.h>
 #  include <time.h>
+#include <unistd.h>
 #endif
 #include "shogi.h"
 
@@ -260,9 +261,10 @@ get_cputime( unsigned int *ptime )
       return -1;
     }
   clock_temp = t.tms_utime + t.tms_stime + t.tms_cutime + t.tms_cstime;
-  *ptime  = (unsigned int)( clock_temp / clk_tck ) * 1000;
-  clock_temp %= clk_tck;
-  *ptime += (unsigned int)( (clock_temp * 1000) / clk_tck );
+  long CLK_TCK = sysconf(_SC_CLK_TCK);
+  *ptime  = (unsigned int)( clock_temp / CLK_TCK ) * 1000;
+  clock_temp %= CLK_TCK;
+  *ptime += (unsigned int)( (clock_temp * 1000) / CLK_TCK );
 #endif /* no _WIN32 */
   
   return 1;

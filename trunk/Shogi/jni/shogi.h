@@ -31,7 +31,7 @@ typedef int sckt_t;
 #  define PRIx64        "I64x"
 #  define UINT64_C(u)  ( u )
 
-#  define restrict      __restrict
+//#  define restrict      __restrict
 #  define strtok_r      strtok_s
 #  define read          _read
 #  define strncpy( dst, src, len ) strncpy_s( dst, len, src, _TRUNCATE )
@@ -46,7 +46,8 @@ typedef volatile long lock_t;
 #elif defined(__GNUC__) && ( defined(__i386__) || defined(__x86_64__) )
 
 #  include <inttypes.h>
-#  define restrict __restrict
+//#  define restrict __restrict
+#  define restrict
 typedef volatile int lock_t;
 
 /* other targets. */
@@ -97,7 +98,7 @@ extern unsigned char ailast_one[512];
 #define BNZ_VER                 "4.1.3"
 
 #define REP_MAX_PLY             32
-#define REP_HIST_LEN            256
+#define REP_HIST_LEN            128
 
 #define EHASH_MASK              0x3fffffU  /* occupies 32MB */
 
@@ -122,7 +123,7 @@ extern unsigned char ailast_one[512];
 #define FMG_MISC_KING          ( ( MT_CAP_DRAGON * 2 ) /  8 )
 #define FMG_CAP_KING           ( ( MT_CAP_DRAGON * 2 ) /  8 )
 
-#define HASH_REG_HIST_LEN       256
+#define HASH_REG_HIST_LEN       128
 #define HASH_REG_MINDIFF       ( ( MT_CAP_DRAGON * 1 ) /  8 )
 #define HASH_REG_THRESHOLD     ( ( MT_CAP_DRAGON * 8 ) /  8 )
 
@@ -152,9 +153,9 @@ extern unsigned char ailast_one[512];
 #define MOVE_PONDER_FAILED      0xfe000000U
 #define MOVE_RESIGN             0xff000000U
 
-#define MAX_LEGAL_MOVES         1024
-#define MAX_LEGAL_EVASION       256
-#define MOVE_LIST_LEN           16384
+#define MAX_LEGAL_MOVES         512
+#define MAX_LEGAL_EVASION       128
+#define MOVE_LIST_LEN           8192
 
 #define MAX_SIZE_SECTION        0xffff
 #define NUM_SECTION             0x4000
