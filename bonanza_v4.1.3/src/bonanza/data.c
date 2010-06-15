@@ -141,8 +141,8 @@ int nbishop_box;
 int nrook_box;
 int resign_threshold;
 short p_value[31];
-short pc_on_sq[nsquare][pos_n];
-short kkp[nsquare][nsquare][kkp_end];
+short pc_on_sq[nsquare][pos_n]; //~ 162 megs, pos_n is ~1000000
+short kkp[nsquare][nsquare][kkp_end]; //~10 megs
 unsigned char book_section[ MAX_SIZE_SECTION+1 ];
 unsigned char adirec[ nsquare ][ nsquare ];
 unsigned char is_same[ 16 ][ 16 ];
@@ -246,7 +246,7 @@ const char *str_on           = "on";
 const char *str_off          = "off";
 const char *str_book         = "book.bin";
 const char *str_hash         = "hash.bin";
-const char *str_fv           = "/sdcard/Android/com.stelluxstudios.test/fv.bin";
+const char *str_fv           = "fv.bin";
 const char *str_book_error   = "invalid opening book";
 const char *str_io_error     = "I/O error";
 const char *str_perpet_check = "perpetual check";
