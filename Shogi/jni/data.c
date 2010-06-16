@@ -141,8 +141,9 @@ int nbishop_box;
 int nrook_box;
 int resign_threshold;
 short p_value[31];
-short pc_on_sq[nsquare][pos_n];
-short kkp[nsquare][nsquare][kkp_end];
+short (*pc_on_sq)[nsquare][pos_n]; //~ 162 megs, pos_n is ~1000000
+//pc_on_sq[nsquare][pos_n]
+short kkp[nsquare][nsquare][kkp_end]; //~10 megs
 unsigned char book_section[ MAX_SIZE_SECTION+1 ];
 unsigned char adirec[ nsquare ][ nsquare ];
 unsigned char is_same[ 16 ][ 16 ];
@@ -246,7 +247,11 @@ const char *str_on           = "on";
 const char *str_off          = "off";
 const char *str_book         = "book.bin";
 const char *str_hash         = "hash.bin";
+#ifdef ANDROID
+const char *str_fv           = "/sdcard/Android/com.stelluxstudios.Shogi/fv.bin";
+#else
 const char *str_fv           = "fv.bin";
+#endif
 const char *str_book_error   = "invalid opening book";
 const char *str_io_error     = "I/O error";
 const char *str_perpet_check = "perpetual check";
@@ -256,7 +261,7 @@ const char *str_bad_record   = "invalid record of game";
 const char *str_bad_board    = "invalid board representation";
 const char *str_illegal_move = "illegal move";
 const char *str_double_pawn  = "double pawn";
-const char *str_mate_drppawn = "mated by a droped pawn";
+const char *str_mate_drppawn = "mated by a dropped pawn";
 const char *str_unexpect_eof = "unexpected end of file";
 const char *str_king_hang    = "The king is hang.";
 const char *str_game_ended   = "move after a game was concluded";
