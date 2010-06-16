@@ -87,8 +87,8 @@ extern unsigned char ailast_one[512];
 #define QUIES_PLY_LIMIT         7
 #define SHELL_H_LEN             7
 #define MAX_ANSWER              8
-#define PLY_INC                 2
-#define PLY_MAX                 12
+#define PLY_INC                 8
+#define PLY_MAX                 48
 #define RAND_N                  624
 #define TC_NMOVE                37U
 #define SEC_MARGIN              30U
@@ -98,7 +98,7 @@ extern unsigned char ailast_one[512];
 #define BNZ_VER                 "4.1.3"
 
 #define REP_MAX_PLY             32
-#define REP_HIST_LEN            128
+#define REP_HIST_LEN            256
 
 #define EHASH_MASK              0x3fffffU  /* occupies 32MB */
 
@@ -123,7 +123,7 @@ extern unsigned char ailast_one[512];
 #define FMG_MISC_KING          ( ( MT_CAP_DRAGON * 2 ) /  8 )
 #define FMG_CAP_KING           ( ( MT_CAP_DRAGON * 2 ) /  8 )
 
-#define HASH_REG_HIST_LEN       128
+#define HASH_REG_HIST_LEN       256
 #define HASH_REG_MINDIFF       ( ( MT_CAP_DRAGON * 1 ) /  8 )
 #define HASH_REG_THRESHOLD     ( ( MT_CAP_DRAGON * 8 ) /  8 )
 
@@ -153,9 +153,9 @@ extern unsigned char ailast_one[512];
 #define MOVE_PONDER_FAILED      0xfe000000U
 #define MOVE_RESIGN             0xff000000U
 
-#define MAX_LEGAL_MOVES         512
-#define MAX_LEGAL_EVASION       128
-#define MOVE_LIST_LEN           8192
+#define MAX_LEGAL_MOVES         1024
+#define MAX_LEGAL_EVASION       256
+#define MOVE_LIST_LEN           16384
 
 #define MAX_SIZE_SECTION        0xffff
 #define NUM_SECTION             0x4000
@@ -231,8 +231,8 @@ extern unsigned char ailast_one[512];
 
 #define Flip(turn)          ((turn)^1)
 #define Inv(sq)             (nsquare-1-sq)
-#define PcOnSq(k,i)         pc_on_sq[k][(i)*((i)+3)/2]
-#define PcPcOnSq(k,i,j)     pc_on_sq[k][(i)*((i)+1)/2+(j)]
+#define PcOnSq(k,i)         (*pc_on_sq)[k][(i)*((i)+3)/2]
+#define PcPcOnSq(k,i,j)     (*pc_on_sq)[k][(i)*((i)+1)/2+(j)]
 
 /*
   xxxxxxxx xxxxxxxx xxx11111  pawn
@@ -887,7 +887,9 @@ extern FILE *pf_hash;
 extern int irecord_game;
 
 extern short p_value[31];
-extern short pc_on_sq[nsquare][fe_end*(fe_end+1)/2];
+extern short (*pc_on_sq)[nsquare][fe_end*(fe_end+1)/2];
+//pc_on_sq[nsquare][fe_end*(fe_end+1)/2];
+//extern short*** kkp;
 extern short kkp[nsquare][nsquare][kkp_end];
 
 extern uint64_t ehash_tbl[ EHASH_MASK + 1 ];

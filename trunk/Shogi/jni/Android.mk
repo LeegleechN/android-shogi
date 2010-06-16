@@ -16,13 +16,12 @@ LOCAL_PATH := .
 
 include $(CLEAR_VARS)
 
-LOCAL_PRELINK_MODULE := false
 LOCAL_MODULE    := bonanza
 
-LOCAL_CFLAGS := -DDEBUG -DMINIMUM -DNO_LOGGING -DCSA_LAN
+LOCAL_CFLAGS := -DDEBUG -DMINIMUM -DNO_LOGGING -DCSA_LAN -DANDROID
 
 LOCAL_SRC_FILES := data.c io.c proce.c utility.c ini.c attack.c book.c \ makemove.c unmake.c time.c csa.c valid.c bitop.c iterate.c searchr.c \ search.c quiesrch.c evaluate.c swap.c  hash.c root.c next.c movgenex.c \
 genevasn.c gencap.c gennocap.c gendrop.c mate1ply.c rand.c learn1.c \
 learn2.c evaldiff.c problem.c ponder.c thread.c sckt.c debug.c mate3.c \
-      genchk.c
+      genchk.c JavaInterface.c
 include $(BUILD_SHARED_LIBRARY)
