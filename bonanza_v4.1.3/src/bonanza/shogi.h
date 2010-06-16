@@ -231,8 +231,8 @@ extern unsigned char ailast_one[512];
 
 #define Flip(turn)          ((turn)^1)
 #define Inv(sq)             (nsquare-1-sq)
-#define PcOnSq(k,i)         pc_on_sq[k][(i)*((i)+3)/2]
-#define PcPcOnSq(k,i,j)     pc_on_sq[k][(i)*((i)+1)/2+(j)]
+#define PcOnSq(k,i)         (*pc_on_sq)[k][(i)*((i)+3)/2]
+#define PcPcOnSq(k,i,j)     (*pc_on_sq)[k][(i)*((i)+1)/2+(j)]
 
 /*
   xxxxxxxx xxxxxxxx xxx11111  pawn
@@ -887,7 +887,9 @@ extern FILE *pf_hash;
 extern int irecord_game;
 
 extern short p_value[31];
-extern short pc_on_sq[nsquare][fe_end*(fe_end+1)/2];
+extern short (*pc_on_sq)[nsquare][fe_end*(fe_end+1)/2];
+//pc_on_sq[nsquare][fe_end*(fe_end+1)/2];
+//extern short*** kkp;
 extern short kkp[nsquare][nsquare][kkp_end];
 
 extern uint64_t ehash_tbl[ EHASH_MASK + 1 ];

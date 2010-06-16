@@ -141,7 +141,8 @@ int nbishop_box;
 int nrook_box;
 int resign_threshold;
 short p_value[31];
-short pc_on_sq[nsquare][pos_n]; //~ 162 megs, pos_n is ~1000000
+short (*pc_on_sq)[nsquare][pos_n]; //~ 162 megs, pos_n is ~1000000
+//pc_on_sq[nsquare][pos_n]
 short kkp[nsquare][nsquare][kkp_end]; //~10 megs
 unsigned char book_section[ MAX_SIZE_SECTION+1 ];
 unsigned char adirec[ nsquare ][ nsquare ];
