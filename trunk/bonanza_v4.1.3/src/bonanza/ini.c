@@ -1,6 +1,10 @@
 #include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/mman.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 #if ! defined(_WIN32)
 #  include <unistd.h>
 #endif
@@ -27,28 +31,40 @@ static void ini_random_table( void );
 static int
 load_fv( void )
 {
-  FILE *pf;
-  size_t size;
+  int pf;
+  FILE* kkpf;
+  size_t pc_on_sq_size, kkp_size;
   int iret;
 
-  pf = file_open( str_fv, "rb" );
-  if ( pf == NULL ) { return -2; }
+  
+  kkpf = file_open( str_fv, "rb" );
+  if ( kkpf == NULL ) { return -2; }
 
-  size = nsquare * pos_n;
-  if ( fread( pc_on_sq, sizeof(short), size, pf ) != size )
+  pf = open(str_fv,O_RDONLY);
+
+  pc_on_sq_size = nsquare * pos_n;
+  kkp_size = nsquare * nsquare * kkp_end;
+  /*if ( fread( pc_on_sq, sizeof(short), size, pf ) != size )
+    {
+      str_error = str_io_error;
+      return -2;
+    }
+  */
+  
+  pc_on_sq = (short*) mmap(0, pc_on_sq_size * sizeof(short), PROT_READ, MAP_SHARED, pf, 0);
+  if (pc_on_sq == -1)
+  {
+    perror("failed map fv.bin");
+    return -2;
+  }
+  fseek(kkpf,pc_on_sq_size * sizeof(short),SEEK_SET);
+  if ( fread( kkp, sizeof(short), kkp_size, kkpf ) != kkp_size )
     {
       str_error = str_io_error;
       return -2;
     }
 
-  size = nsquare * nsquare * kkp_end;
-  if ( fread( kkp, sizeof(short), size, pf ) != size )
-    {
-      str_error = str_io_error;
-      return -2;
-    }
-
-  iret = file_close( pf );
+  iret = file_close( kkpf );
   if ( iret < 0 ) { return iret; }
 
 #if 0
