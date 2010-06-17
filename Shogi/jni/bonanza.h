@@ -1,6 +1,7 @@
 #ifndef BONANZA_H
 #define BONANZA_H
 #include "shogi.h"
+int proce_cui( tree_t * restrict ptree );
 int cmd_move_now( void );
 int cmd_ponder( char **lasts );
 int cmd_limit( char **lasts );
