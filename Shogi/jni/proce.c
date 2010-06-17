@@ -788,7 +788,7 @@ cmd_read( tree_t * restrict ptree, char **lasts )
       str_tmp = "game.cs_";
 
 #if defined(NO_LOGGING)
-      strncpy( str_file, "game.csa", SIZE_FILENAME-1 );
+      strncpy( str_file, str_game_csa, SIZE_FILENAME-1 );
 #else
       snprintf( str_file, SIZE_FILENAME, "%s/game%03d.csa",
 		str_dir_logs, irecord_game );
