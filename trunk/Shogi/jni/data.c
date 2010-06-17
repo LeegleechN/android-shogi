@@ -248,8 +248,10 @@ const char *str_off          = "off";
 const char *str_book         = "book.bin";
 const char *str_hash         = "hash.bin";
 #ifdef ANDROID
+const char *str_game_csa      = "/sdcard/Android/com.stelluxstudios.Shogi/game.csa";
 const char *str_fv           = "/sdcard/Android/com.stelluxstudios.Shogi/fv.bin";
 #else
+const char *str_game_csa      = "game.csa";
 const char *str_fv           = "fv.bin";
 #endif
 const char *str_book_error   = "invalid opening book";

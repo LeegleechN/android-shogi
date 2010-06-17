@@ -54,7 +54,7 @@ load_fv( void )
   pc_on_sq = (short*) mmap(0, pc_on_sq_size * sizeof(short), PROT_READ, MAP_SHARED, pf, 0);
   if (pc_on_sq == -1)
   {
-    perror("failed map fv.bin");
+    perror("failed to map fv.bin");
     return -2;
   }
   fseek(kkpf,pc_on_sq_size * sizeof(short),SEEK_SET);
@@ -66,35 +66,6 @@ load_fv( void )
 
   iret = file_close( kkpf );
   if ( iret < 0 ) { return iret; }
-
-#if 0
-#  define X0 -10000
-#  define X1 +10000
-  {
-    unsigned int a[X1-X0+1];
-    int i, n, iv;
-
-    for ( i = 0; i < X1-X0+1; i++ ) { a[i] = 0; }
-    n = nsquare * pos_n;
-    for ( i = 0; i < n; i++ )
-      {
-	iv = pc_on_sq[0][i];
-	if      ( iv < X0 ) { iv = X0; }
-	else if ( iv > X1 ) { iv = X1; }
-	a[ iv - X0 ] += 1;
-      }
-
-    pf = file_open( "dist.dat", "w" );
-    if ( pf == NULL ) { return -2; }
-
-    for ( i = X0; i <= X1; i++ ) { fprintf( pf, "%d %d\n", i, a[i-X0] ); }
-
-    iret = file_close( pf );
-    if ( iret < 0 ) { return iret; }
-  }
-#  undef x0
-#  undef x1
-#endif
 
   return 1;
 }
