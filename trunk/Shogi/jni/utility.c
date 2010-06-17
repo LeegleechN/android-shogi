@@ -518,7 +518,7 @@ com_turn_start( tree_t * restrict ptree, int flag )
 #if defined(DBG_EASY)
   if ( easy_move && easy_move != move )
     {
-      out_warning( "EASY MOVE DITECTION FAILED." );
+      out_warning( "EASY MOVE DETECTION FAILED." );
     }
 #endif
 

@@ -49,7 +49,7 @@ int cmd_thread( char **lasts );
 int cmd_mpv( char **lasts );
 #endif
 
-int proce_cui( tree_t * restrict ptree );
+
 int cmd_usrmove( tree_t * restrict ptree, const char *str_move,
 			char **last );
 

@@ -18,7 +18,7 @@ LIB =libBonanza.a
 # -DCSA_LAN         enables bonanza to talk CSA Shogi TCP/IP protcol.
 # -DNO_LOGGING      suppresses dumping log files.
 
-OPT =-DDEBUG -DMINIMUM -DNO_LOGGING -DCSA_LAN
+OPT =-DDEBUG -DMINIMUM -DNO_LOGGING
 
 help:
 	@echo "try targets as:"
