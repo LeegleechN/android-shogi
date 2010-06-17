@@ -992,6 +992,7 @@ extern const char *str_off;
 extern const char *str_book;
 extern const char *str_hash;
 extern const char *str_fv;
+extern const char *str_game_csa;
 extern const char *str_book_error;
 extern const char *str_perpet_check;
 extern const char *str_bad_cmdline;
