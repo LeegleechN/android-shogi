@@ -29,3 +29,12 @@ JNIEXPORT jint JNICALL Java_com_stelluxstudios_Shogi_Engine_magicNumber
      __android_log_write(ANDROID_LOG_ERROR,"bonanza",buf);
      return;
   }
+  
+  JNIEXPORT void JNICALL Java_com_stelluxstudios_Shogi_Engine_getBoardString
+  (JNIEnv * env, jobject caller)
+  {
+     tree_t* ptree = &tree;
+    FILE* f = fopen("/sdcard/Android/com.stelluxstudios.Shogi/board_out.txt","w");
+    out_board(ptree, f, 0, 0);
+    fclose(f);
+  }
