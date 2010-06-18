@@ -1,15 +1,11 @@
 package com.stelluxstudios.Shogi;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStream;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -30,6 +26,8 @@ public class BoardActivity extends Activity {
         e.newGame();
         
         boardText = (TextView)findViewById(R.id.boardText);
+        boardText.setBackgroundResource(R.drawable.ban_kaya_b);
+        boardText.setTextColor(Color.BLACK);
      
         Button b2 = (Button)findViewById(R.id.buttonMove);
         b2.setOnClickListener(new OnClickListener() {
@@ -42,6 +40,7 @@ public class BoardActivity extends Activity {
 					FileReader board = new FileReader("/sdcard/Android/com.stelluxstudios.Shogi/board_out.txt");
 					char[] buffer = new char[2048];
 					board.read(buffer);
+					Board.fromString(new String(buffer));
 					boardText.setText(new String(buffer));
 					board.close();
 					
