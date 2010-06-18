@@ -4,9 +4,9 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
-<TextView  
-    android:layout_width="fill_parent" 
+     <Button  android:layout_width="fill_parent" android:id="@+id/buttonMove"
     android:layout_height="wrap_content" 
-    android:text="@string/hello"
-    />
+    android:text="make move"/>
+      <TextView  android:layout_width="fill_parent" android:id="@+id/boardText"
+    android:layout_height="fill_parent" android:text="make a move to refresh" android:typeface="monospace" />
 </LinearLayout>

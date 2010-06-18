@@ -36,7 +36,7 @@ JNIEXPORT void JNICALL Java_com_stelluxstudios_Shogi_Engine_makeMove
  * Method:    getBoardString
  * Signature: ()[B
  */
-JNIEXPORT jbyteArray JNICALL Java_com_stelluxstudios_Shogi_Engine_getBoardString
+JNIEXPORT void JNICALL Java_com_stelluxstudios_Shogi_Engine_getBoardString
   (JNIEnv *, jobject);
 
 /*

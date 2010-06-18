@@ -1,49 +1,61 @@
 package com.stelluxstudios.Shogi;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class BoardActivity extends Activity {
    
+	private TextView boardText;
+	
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
 
-        /* Create a TextView and set its content.
-         * the text is retrieved by calling a native
-         * function.
-         */
-        TextView  tv = new TextView(this);
-        tv.setText( stringFromJNI() );
-        setContentView(tv);
+        setContentView(R.layout.main);
+        
+        final Engine e = new Engine();
+        e.newGame();
+        
+        boardText = (TextView)findViewById(R.id.boardText);
+     
+        Button b2 = (Button)findViewById(R.id.buttonMove);
+        b2.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				e.makeMove();
+				e.getBoardString();
+				try {
+					FileReader board = new FileReader("/sdcard/Android/com.stelluxstudios.Shogi/board_out.txt");
+					char[] buffer = new char[2048];
+					board.read(buffer);
+					boardText.setText(new String(buffer));
+					board.close();
+					
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+			}
+		});
+        
     }
 
-    /* A native method that is implemented by the
-     * 'hello-jni' native library, which is packaged
-     * with this application.
-     */
-    public native String  stringFromJNI();
-
-    /* This is another native method declaration that is *not*
-     * implemented by 'hello-jni'. This is simply to show that
-     * you can declare as many native methods in your Java code
-     * as you want, their implementation is searched in the
-     * currently loaded native libraries only the first time
-     * you call them.
-     *
-     * Trying to call this function will result in a
-     * java.lang.UnsatisfiedLinkError exception !
-     */
-    public native String  unimplementedStringFromJNI();
-
-    /* this is used to load the 'hello-jni' library on application
-     * startup. The library has already been unpacked into
-     * /data/data/com.example.HelloJni/lib/libhello-jni.so at
-     * installation time by the package manager.
-     */
     static {
-        System.loadLibrary("hello-jni");
+        System.loadLibrary("bonanza");
     }
 }

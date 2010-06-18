@@ -12,6 +12,6 @@ public class Engine
 	public native void applyMove(byte[] move);
 	public native void makeMove();
 	
-	public native byte[] getBoardString();
+	public native void getBoardString();
 	
 }
