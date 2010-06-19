@@ -11,6 +11,18 @@ public class Board {
 	private List<Piece> whiteHand = new ArrayList<Piece>(), 
 						blackHand = new ArrayList<Piece>();
 	
+	public final static String initialConfig = 
+"'  9  8  7  6  5  4  3  2  1 \n"+
+"P1-KY-KE-GI-KI-OU-KI-GI-KE-KY\n"+
+"P2 * -HI *  *  *  *  * -KA * \n"+
+"P3-FU-FU-FU-FU-FU-FU-FU-FU-FU\n"+
+"P4 *  *  *  *  *  *  *  *  * \n"+
+"P5 *  *  *  *  *  *  *  *  * \n"+
+"P6 *  * +FU *  *  *  *  *  * \n"+
+"P7+FU+FU * +FU+FU+FU+FU+FU+FU\n"+
+"P8 * +KA *  *  *  *  * +HI * \n"+
+"P9+KY+KE+GI+KI+OU+KI+GI+KE+KY\n";
+	
 	public static Board fromString(String in)
 	{
 		Board b = new Board();
@@ -43,6 +55,17 @@ public class Board {
 		}
 		catch (Exception e) {
 			throw new RuntimeException(e);
+		}
+	}
+	
+	private Board()
+	{
+		for (int i = 0 ; i < 9 ; i++)
+		{
+			for (int j = 0 ; j <9 ; j++)
+			{
+				field[i][j] = Piece.Empty;
+			}
 		}
 	}
 	

@@ -4,16 +4,14 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import android.app.Activity;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.TextView;
 
 public class BoardActivity extends Activity {
    
-	private TextView boardText;
+	private BoardView boardView;
 	
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -25,9 +23,8 @@ public class BoardActivity extends Activity {
         final Engine e = new Engine();
         e.newGame();
         
-        boardText = (TextView)findViewById(R.id.boardText);
-        boardText.setBackgroundResource(R.drawable.ban_kaya_b);
-        boardText.setTextColor(Color.BLACK);
+        final BoardView boardView = (BoardView)findViewById(R.id.boardView);
+       
      
         Button b2 = (Button)findViewById(R.id.buttonMove);
         b2.setOnClickListener(new OnClickListener() {
@@ -36,13 +33,15 @@ public class BoardActivity extends Activity {
 			public void onClick(View v) {
 				e.makeMove();
 				e.getBoardString();
+				
 				try {
-					FileReader board = new FileReader("/sdcard/Android/com.stelluxstudios.Shogi/board_out.txt");
+					FileReader boardFile = new FileReader("/sdcard/Android/com.stelluxstudios.Shogi/board_out.txt");
 					char[] buffer = new char[2048];
-					board.read(buffer);
-					Board.fromString(new String(buffer));
-					boardText.setText(new String(buffer));
-					board.close();
+					boardFile.read(buffer);
+					Board board = Board.fromString(new String(buffer));
+					boardView.setBoard(board);
+					boardView.invalidate();
+					boardFile.close();
 					
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
