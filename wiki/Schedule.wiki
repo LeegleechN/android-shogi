@@ -15,7 +15,7 @@
    * ~~rewrite get_cputime function in time.c to work with ARM~~
  * Write a wrapper that will interact with the GUI portion of the program for saving and loading games, time controls, difficulty settings, etc.
 
- * Deliverable: Can embed the engine inside another C program by including a short header and a pre-compiled library
+ * ~~Deliverable: Can embed the engine inside another C program by including a short header and a pre-compiled library~~
  * Deliverable: Second tutorial entry about designing the interaction between the Java UI code and the C/C++ engine code
 
 
@@ -23,7 +23,7 @@
 
 Write the Java Native Invocation (JNI) layer for the engine library. This is a wrapper that converts the C library into a Java library that is then accessible to the GUI layer. Configure the engine to use minimal memory and run quickly enough on a smartphone processor for testing.
 
- * Deliverable: Can start a new game and enter a move using Java code running on a device. This invokes the native engine code and sends back the computer’s move in response.
+ * ~~Deliverable: Can start a new game and enter a move using Java code running on a device. This invokes the native engine code and sends back the computer’s move in response.~~
  * Deliverable: Third tutorial entry focusing on practical use of the Android NDK to write wrapper libraries.
 
 
