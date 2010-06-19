@@ -1,9 +1,12 @@
 package com.stelluxstudios.Shogi;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.List;
+
+import android.util.Log;
 
 public class Board {
 	
@@ -25,10 +28,12 @@ public class Board {
 	
 	public static Board fromString(String in)
 	{
+		Log.d("BoardDecode", in);
 		Board b = new Board();
+		BufferedReader stream = null;
 		try{
 		
-		BufferedReader stream = new BufferedReader(new StringReader(in));
+		stream = new BufferedReader(new StringReader(in));
 		
 		//skip the first line, it's just the coordinates
 		stream.readLine();
@@ -50,14 +55,43 @@ public class Board {
 			//skip to the beginning of the next line
 			stream.readLine();
 		}
+		
+		String nextLine = stream.readLine();
+		
+		//Check if there's nothing in hand
+		if (nextLine == null)
+			return b;
+		interpretHand(nextLine);
+		
+		nextLine = stream.readLine();
+		
+		//Check if there's nothing in hand
+		if (nextLine == null)
+			return b;
+		interpretHand(nextLine);
+		
 		return b;
 		
 		}
 		catch (Exception e) {
 			throw new RuntimeException(e);
 		}
+		finally
+		{
+			if (stream!= null)
+				try {
+					stream.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		}
 	}
 	
+	private static void interpretHand(String nextLine) {
+		return;
+	}
+
 	private Board()
 	{
 		for (int i = 0 ; i < 9 ; i++)
@@ -101,9 +135,9 @@ public class Board {
 		WSilverGeneral  ("Silver General"  ,"","ggin" ,"-GI"),
 		WGoldGeneral    ("Gold General"    ,"","gkin", "-KI"),
 		WBishop         ("Bishop"          ,"","gkaku","-KA"),
-		WDragonHorse    ("Dragon Horse"    ,"","guma" , "-" ),
+		WDragonHorse    ("Dragon Horse"    ,"","guma" ,"-UM" ),
 		WRook           ("Rook"            ,"","ghi"  ,"-HI"),
-		WDragonKing     ("Dragon King"     ,"","gryu" , "-" ),
+		WDragonKing     ("Dragon King"     ,"","gryu" ,"-RY" ),
 		WKing           ("King"            ,"","gou"  ,"-OU"),
 		BPawn           ("Pawn"            ,"","sfu"  ,"+FU"),
 		BLance          ("Lance"           ,"","skyo" ,"+KY"),
@@ -111,9 +145,9 @@ public class Board {
 		BSilverGeneral  ("Silver General"  ,"","sgin" ,"+GI"),
 		BGoldGeneral    ("Gold General"    ,"","skin", "+KI"),
 		BBishop         ("Bishop"          ,"","skaku","+KA"),
-		BDragonHorse    ("Dragon Horse"    ,"","suma" , "+" ),
+		BDragonHorse    ("Dragon Horse"    ,"","suma" ,"+UM" ),
 		BRook           ("Rook"            ,"","shi"  ,"+HI"),
-		BDragonKing     ("Dragon King"     ,"","sryu" , "+" ),
+		BDragonKing     ("Dragon King"     ,"","sryu" ,"+RY" ),
 		BKing           ("King"            ,"","sou"  ,"+OU"),
 		Empty           ("Empty","",""," * ");
 		
