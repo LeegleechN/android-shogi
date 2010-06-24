@@ -1,12 +1,9 @@
 #include "bonanza.h"
 #include "com_stelluxstudios_Shogi_Engine.h"
 #include <android/log.h>
-
-JNIEXPORT jint JNICALL Java_com_stelluxstudios_Shogi_Engine_magicNumber
-  (JNIEnv * env, jobject caller)
-  {
-    return 57357;
-  }
+#include <unistd.h>
+#include <sys/stat.h>
+#include <fcntl.h>
   
   JNIEXPORT void JNICALL Java_com_stelluxstudios_Shogi_Engine_newGame
   (JNIEnv * env, jobject caller)
@@ -27,6 +24,18 @@ JNIEXPORT jint JNICALL Java_com_stelluxstudios_Shogi_Engine_magicNumber
      char buf[128];
      sprintf(buf,"com_turn_start: ret %d",ret);
      __android_log_write(ANDROID_LOG_ERROR,"bonanza",buf);
+     
+     /*
+     int fd = open("/proc/sys/vm/drop_caches",O_WRONLY);
+        sprintf(buf,"opened fd: %d",fd);
+     __android_log_write(ANDROID_LOG_ERROR,"bonanza",buf);
+     char* str = "3";
+     int len = strlen(str);
+     int written = write(fd,str,len);
+     sprintf(buf,"wrote: %d",written);
+     __android_log_write(ANDROID_LOG_ERROR,"bonanza",buf);
+     close(fd);
+     */
      return;
   }
   

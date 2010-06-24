@@ -31,7 +31,7 @@ typedef int sckt_t;
 #  define PRIx64        "I64x"
 #  define UINT64_C(u)  ( u )
 
-//#  define restrict      __restrict
+#  define restrict      __restrict
 #  define strtok_r      strtok_s
 #  define read          _read
 #  define strncpy( dst, src, len ) strncpy_s( dst, len, src, _TRUNCATE )
