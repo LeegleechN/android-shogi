@@ -18,7 +18,7 @@ LIB =libBonanza.a
 # -DCSA_LAN         enables bonanza to talk CSA Shogi TCP/IP protcol.
 # -DNO_LOGGING      suppresses dumping log files.
 
-OPT =-DDEBUG -DMINIMUM -DNO_LOGGING
+OPT =-DNDEBUG -DMINIMUM -DNO_LOGGING
 
 help:
 	@echo "try targets as:"
@@ -27,7 +27,7 @@ help:
 	@echo "  icc"
 
 gcc:
-	$(MAKE) CC=gcc CFLAGS='-std=gnu99 -ggdb -Wall $(OPT)' LDFLAG1='-lm -lpthread' bonanza
+	$(MAKE) CC=gcc CFLAGS='-std=gnu99 -g -Wall $(OPT)' LDFLAG1='-lm -lpthread' bonanza
 	$(AR) r $(LIB) $(OBJS)
 
 icc:

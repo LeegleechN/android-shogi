@@ -245,14 +245,16 @@ const char *str_delimiters   = " \t,";
 const char *str_fmt_line     = "Line %u: %s";
 const char *str_on           = "on";
 const char *str_off          = "off";
+#ifdef ANDROID
+const char *str_game_csa     = "/sdcard/Android/com.stelluxstudios.Shogi/game.csa";
+const char *str_fv           = "/sdcard/Android/com.stelluxstudios.Shogi/fv.bin";
+const char *str_book         = "/sdcard/Android/com.stelluxstudios.Shogi/book.bin";
+const char *str_hash         = "/sdcard/Android/com.stelluxstudios.Shogi/hash.bin";
+#else
+const char *str_game_csa     = "game.csa";
+const char *str_fv           = "fv.bin";
 const char *str_book         = "book.bin";
 const char *str_hash         = "hash.bin";
-#ifdef ANDROID
-const char *str_game_csa      = "/sdcard/Android/com.stelluxstudios.Shogi/game.csa";
-const char *str_fv           = "/sdcard/Android/com.stelluxstudios.Shogi/fv.bin";
-#else
-const char *str_game_csa      = "game.csa";
-const char *str_fv           = "fv.bin";
 #endif
 const char *str_book_error   = "invalid opening book";
 const char *str_io_error     = "I/O error";
