@@ -6,8 +6,6 @@ import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.util.Log;
-
 public class Board {
 	
 	private Piece[][] field = new Piece[9][9];
@@ -28,7 +26,6 @@ public class Board {
 	
 	public static Board fromString(String in)
 	{
-		Log.d("BoardDecode", in);
 		Board b = new Board();
 		BufferedReader stream = null;
 		try{
@@ -130,9 +127,13 @@ public class Board {
 	
 	public static enum Piece{
 		WPawn           ("Pawn"            ,"","gfu"  ,"-FU"),
+		WPromotedPawn   ("Promoted Pawn"   ,"","gto"  ,"-TO"),
 		WLance          ("Lance"           ,"","gkyo" ,"-KY"),
+		WPromotedLance  ("Promoted Lance"  ,"","gnkyo","-NY"),
 		WKnight         ("Knight"          ,"","gkei" ,"-KE"),
+		WPromotedKnight ("Promoted Knight" ,"","gnkei","-NK"),
 		WSilverGeneral  ("Silver General"  ,"","ggin" ,"-GI"),
+		WPromotedSilver ("Promoted Silver" ,"","gngin","-NG"),
 		WGoldGeneral    ("Gold General"    ,"","gkin", "-KI"),
 		WBishop         ("Bishop"          ,"","gkaku","-KA"),
 		WDragonHorse    ("Dragon Horse"    ,"","guma" ,"-UM" ),
@@ -140,9 +141,13 @@ public class Board {
 		WDragonKing     ("Dragon King"     ,"","gryu" ,"-RY" ),
 		WKing           ("King"            ,"","gou"  ,"-OU"),
 		BPawn           ("Pawn"            ,"","sfu"  ,"+FU"),
+		BPromotedPawn   ("Promoted Pawn"   ,"","sto"  ,"+TO"),
 		BLance          ("Lance"           ,"","skyo" ,"+KY"),
+		BPromotedLance  ("Promoted Lance"  ,"","snkyo","+NY"),
 		BKnight         ("Knight"          ,"","skei" ,"+KE"),
+		BPromotedKnight ("Promoted Knight" ,"","snkei","+NK"),
 		BSilverGeneral  ("Silver General"  ,"","sgin" ,"+GI"),
+		BPromotedSilver ("Promoted Silver" ,"","sngin","+NG"),
 		BGoldGeneral    ("Gold General"    ,"","skin", "+KI"),
 		BBishop         ("Bishop"          ,"","skaku","+KA"),
 		BDragonHorse    ("Dragon Horse"    ,"","suma" ,"+UM" ),
