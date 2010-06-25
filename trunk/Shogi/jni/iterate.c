@@ -760,7 +760,7 @@ set_root_beta( int nfail_high, int root_beta_old )
     case 2:  root_beta_old  = score_bound;                          break;
     default:
       out_error( "Error at set_root_beta!" );
-      exit(1);
+      //exit(1);
     }
   if ( root_beta_old > score_max_eval ) { root_beta_old = score_bound; }
 
@@ -790,7 +790,7 @@ set_root_alpha( int nfail_low, int root_alpha_old )
     case 2:  root_alpha_old  = -score_bound;                         break;
     default:
       out_error( "Error at set_root_alpha!" );
-      exit(1);
+      //exit(1);
     }
   if ( root_alpha_old < -score_max_eval ) { root_alpha_old = -score_bound; }
 

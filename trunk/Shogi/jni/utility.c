@@ -454,7 +454,11 @@ com_turn_start( tree_t * restrict ptree, int flag )
 
   if ( ! ( flag & flag_from_ponder ) )
     {
-      assert( ! ( game_status & mask_game_end ) );
+     
+      if (game_status & mask_game_end)
+      {
+        return -1;
+      }
       
       time_start = time_turn_start;
       
