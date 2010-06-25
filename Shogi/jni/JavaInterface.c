@@ -16,7 +16,7 @@
      return;
   }
   
-  JNIEXPORT void JNICALL Java_com_stelluxstudios_Shogi_Engine_makeMove
+  JNIEXPORT jint JNICALL Java_com_stelluxstudios_Shogi_Engine_makeMove
   (JNIEnv * env, jobject caller)
   {  
     tree_t* ptree = &tree;
@@ -25,6 +25,30 @@
      sprintf(buf,"com_turn_start: ret %d",ret);
      __android_log_write(ANDROID_LOG_ERROR,"bonanza",buf);
      
+      if (game_status & flag_quit)
+    {
+      __android_log_write(ANDROID_LOG_ERROR,"bonanza","wtf quitting");  
+      __android_log_write(ANDROID_LOG_ERROR,"bonanza",str_error==NULL?"null":str_error);  
+      return -2;
+    }
+    
+    if (game_status & flag_mated)
+    {
+      __android_log_write(ANDROID_LOG_ERROR,"bonanza","mated");  
+      return 18;
+    }
+    if (game_status & flag_resigned)
+    {  __android_log_write(ANDROID_LOG_ERROR,"bonanza","resigned");
+      return 19;
+    }
+    if (game_status & flag_drawn)
+    {  __android_log_write(ANDROID_LOG_ERROR,"bonanza","drawn");
+      return 20;
+    }
+    if (game_status & flag_suspend)
+    {  __android_log_write(ANDROID_LOG_ERROR,"bonanza","suspend");
+      return 21;
+    }
      /*
      int fd = open("/proc/sys/vm/drop_caches",O_WRONLY);
         sprintf(buf,"opened fd: %d",fd);
@@ -36,7 +60,7 @@
      __android_log_write(ANDROID_LOG_ERROR,"bonanza",buf);
      close(fd);
      */
-     return;
+     return ret;
   }
   
   JNIEXPORT void JNICALL Java_com_stelluxstudios_Shogi_Engine_getBoardString

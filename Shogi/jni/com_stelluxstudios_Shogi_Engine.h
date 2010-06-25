@@ -28,7 +28,7 @@ JNIEXPORT void JNICALL Java_com_stelluxstudios_Shogi_Engine_applyMove
  * Method:    makeMove
  * Signature: ()V
  */
-JNIEXPORT void JNICALL Java_com_stelluxstudios_Shogi_Engine_makeMove
+JNIEXPORT jint JNICALL Java_com_stelluxstudios_Shogi_Engine_makeMove
   (JNIEnv *, jobject);
 
 /*
@@ -37,14 +37,6 @@ JNIEXPORT void JNICALL Java_com_stelluxstudios_Shogi_Engine_makeMove
  * Signature: ()[B
  */
 JNIEXPORT void JNICALL Java_com_stelluxstudios_Shogi_Engine_getBoardString
-  (JNIEnv *, jobject);
-
-/*
- * Class:     com_stelluxstudios_Shogi_Engine
- * Method:    magicNumber
- * Signature: ()I
- */
-JNIEXPORT jint JNICALL Java_com_stelluxstudios_Shogi_Engine_magicNumber
   (JNIEnv *, jobject);
 
 #ifdef __cplusplus
