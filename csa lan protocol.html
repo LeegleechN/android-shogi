@@ -1,0 +1,255 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+
+
+	
+		<meta http-equiv="content-type" content="text/html; 
+charset=ISO-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>TCP/IP Server Protocol</title>
+	</head><body bgcolor="#ffffff">
+		<div align="center">
+			<h3>Server Protocol Ver 1.1</h3>
+		</div>
+		<h3>1. Background</h3>
+		<p>This document specifies the CSA SHOGI protocol for computers to 
+play Shogi. </p>
+		<h3>2. Overview</h3>
+		<p>This protocol assumes there is one server computer acting as the 
+judge, and two or more clients acting as shogi players.</p>
+		<p>First, the server sends a game condition to two clients which are 
+connected; the game will start when, both the clients have agreed to the
+ condition.  While playing a game, the player to move sends his move to 
+the server and the server measures the time consumed and also determines
+ whether the move is legal.</p>
+		<h3>3.  Protocol</h3>
+		<p>Initially, the server starts the CSA SHOGI service by listening on 
+TCP port 4081.  When a client wishes to make use of the service, it 
+establishes a TCP connection with the server.  After the connection is 
+established, the client and CSA SHOGI server exchange human-readable 
+commands and responses (respectively) until the connection is closed or 
+aborted.  Commands and responses in the CSA SHOGI must consist of 
+case-sensitive ASCII characters in 0x21..0x7f, LF (0x0a) and space 
+(0x20).  All messages are terminated by an LF.  TAB must NOT be used.  </p>
+		<h3>3.1 Login and Logout</h3>
+		<p>Once the TCP connection has been opened by a CSA SHOGI client, the 
+client must then identify and authenticate itself to the CSA SHOGI 
+server by LOGIN command.  (NOTE: the CSA SHOGI server does NOT issue any
+ greeting).  After successful authentication, the session enters a 
+GAME-WAITING state.  The client can close the session by LOGOUT command.
+  Also, the server may disconnect the session.</p>
+		<p>The LOGIN command identifies the client to the server and carries 
+the plain-text password authenticating this user.  </p>
+		<pre>   Syntax:
+   LOGIN &lt;username&gt; &lt;password&gt;
+
+   Responses:
+   LOGIN:&lt;username&gt; OK
+   -- login completed, now in GAME-WAITING state
+   LOGIN:incorrect
+   -- login failure: user name or password rejected</pre>
+		<p>The &lt;username&gt; consists of digits ('0'-'9'), lowercase or 
+uppercase letters ('A'-'Z', 'a'-'z'), underscore ('_'), hyphen ('-'), 
+and may be up to 32 characters long.  The &lt;password&gt; may be up to 
+32 characters long.  The &lt;password&gt; must not contain any space 
+characters.  </p>
+		<p>Here is the summary for the LOGOUT command that is only allowed in a
+ GAME-WAITING state.  </p>
+		<pre>   Syntax:
+   LOGOUT
+
+   Responses:
+   LOGOUT:completed</pre>
+		<h3>3. 2 Game Condition</h3>
+		<p>The server may send the GAME CONDITION to a client in a 
+GAME-WAITING state, in the following format.  </p>
+		<pre>   BEGIN Game_Summary
+   Protocol_Version:1.1
+   Protocol_Mode:Server
+   Format:Shogi 1.0
+   Declaration:Jishogi 1.1
+   Game_ID:20060505-CSA14-3-5-7
+   Name+:TANUKI
+   Name-:KITSUNE
+   Your_Turn:+
+   Rematch_On_Draw:NO
+   To_Move:+
+   BEGIN Time
+   Time_Unit:1sec
+   Total_Time:1500
+   Least_Time_Per_Move:1
+   END Time
+   BEGIN Position
+   P1-KY-KE-GI-KI-OU-KI-GI-KE-KY
+   P2 * -HI * * * * * -KA *
+   P3-FU-FU-FU-FU-FU-FU-FU-FU-FU
+   P4 * * * * * * * * *
+   P5 * * * * * * * * *
+   P6 * * * * * * * * *
+   P7+FU+FU+FU+FU+FU+FU+FU+FU+FU
+   P8 * +KA * * * * * +HI *
+   P9+KY+KE+GI+KI+OU+KI+GI+KE+KY
+   P+
+   P-
+   +
+   +2726FU,T12
+   -3334FU,T6
+   END Position
+   END Game_Summary</pre>
+		<p>A GAME CONDITION is hierarchically structured by BEGIN and END 
+pairs. The first line of a GAME CONDITION is 'BEGIN Game_Summary' and 
+the last is 'END Game_Summary.'  A game condition consists of three 
+blocks; general information (described in 3.2.1), definition of position
+ (described in 3.2.2), and definition of time control (described in 
+3.2.3).</p>
+		<h3>3.2.1 General Information</h3>
+		<p>Each line in general information defines the value of a key in the 
+format 'key:value.'</p>
+		<p>The following fields are mandatory;</p>
+		<pre>   Protocol_Version:1.1
+   -- (fixed in this protocol)
+   Format:Shogi 1.0
+   -- (fixed in this protocol)
+
+   Name+:string
+   -- name of the first player
+   Name-:string
+   -- name of the second player
+
+   Your_Turn:[+-]
+   -- whether the client receiving the message plays first or second.  
+   To_Move:[+-]
+   -- player to move in the initial position
+      (usually '+' except when resuming an adjourned game)</pre>
+		<p>Optional fields:</p>
+		<pre>   Protocol_Mode:Server
+   -- (fixed in this protocol)
+
+   Declaration:Jishogi 1.1
+   -- (fixed at least in the CSA Championship 2006)
+
+   Game_ID:string
+   -- string is a game id.
+
+   Rematch_On_Draw:NO
+   -- (fixed at least in the CSA Championship 2006)</pre>
+		<h3>3.2.2 Definition of Time Control</h3>
+		<p>The definition of time control is enclosed by 'BEGIN Time' and 'END
+ Time.'  When the definition of time control is omitted, clients are 
+allowed to use infinite time.</p>
+		<p>One of the following fields is mandatory:</p>
+		<pre>   Total_Time:digits
+   -- the total time that each player can use in the whole game.  
+   Byoyomi:digits
+   -- the maximum time that each player can use for each move.  </pre>
+		<p>Optional fields:</p>
+		<pre>   Time_Unit:digits(min|sec|msec)
+   -- default value:1sec
+   -- semantics:specifies unit of digits used in other fields.  
+
+   Least_Time_Per_Move:digits
+   -- default value:0
+   -- semantics: if non-zero, the value is recorded as the consumed time of a player when the player played a move in a shorter time than the value.  
+
+   Time_Roundup:(YES|NO)
+   -- default value:NO
+   -- semantics: whether time less than one time unit will be rounded up.  </pre>
+		<p>3.2.3 Definition of Position</p>
+		<p>The definition of the initial position is enclosed by 'BEGIN 
+Position' and 'END Position', and is written in the CSA file format.  
+This definition may contain moves in addition to position, and in such 
+cases, the game starts with a position after all the moves applied.  </p>
+		<p>Property 'N+' and 'N-' must not be used, with 'Name+' and 'Name+' 
+fields in general information being used instead.  Moreover, 'AL' must 
+not be used for the representation of captured pieces.  </p>
+		<h3>3.3 AGREEMENT</h3>
+		<p>When a client receives a GAME CONDITION, the client must send AGREE
+ or REJECT to the server.  </p>
+		<pre>   AGREE &lt;gameid&gt;
+   -- gameid may be omitted
+   REJECT &lt;gameid&gt;
+   -- gameid may be omitted</pre>
+		<p>When the server receives AGREE from both the clients, the server 
+sends a start message in the following format.</p>
+		<pre>   START:&lt;gameid&gt;</pre>
+		<p>Then both the clients enter a GAME state.  </p>
+		<p>Otherwise, if any client has rejected the game, the server sends a 
+REJECT message in the following format to both the clients.</p>
+		<pre>   REJECT:&lt;gameid&gt; by &lt;rejector&gt;</pre>
+		<p>Then both the clients enter a GAME-WAITING state.  </p>
+		<h3>3.4 Move Commands</h3>
+		<p>Clients must use any of the following commands in a GAME state, 
+which is a subset of the ones defined in the CSA file format.  </p>
+		<pre>- &lt;normal move&gt; (e.g.  , +7776FU)
+- %TORYO
+- %KACHI</pre>
+		<p>For each move sent by a client to move, the server sends a 
+MOVE-CONFIRMATION to both clients.  MOVE-CONFIRMATION is a line 
+consisting of the move and the consumed time joined by a comma (',').  </p>
+		<p>In the case of illegal moves, the move included in 
+MOVE-CONFIRMATION must be truncated up to 7 characters long.</p>
+		<p>An example of MOVE-CONFIRMATION:</p>
+		<pre>- +7776FU,T12
+- %TORYO,T4</pre>
+		<p>If the server detects a game-end, the server must send a 
+GAME-RESULT to both clients.  If the game was ended by a client command,
+ a GAME-RESULT must be sent immediately after MOVE-CONFIRMATION.  In the
+ case of time-up, the server immediately sends a GAME-RESULT without 
+waiting for a message from the client to move.</p>
+		<p>GAME-RESULT consists of two lines beginning with the sharp ('#') 
+character.  The first line shows the reason and the second line shows 
+win or lose from the viewpoint of a client receiving the message.  
+Clients enter a GAME-WAITING state after they have received a 
+GAME-RESULT.  </p>
+		<p>The first line must be one of the following six messages:</p>
+		<pre>   #SENNICHITE
+   -- (draw by repetition)
+
+   #OUTE_SENNICHITE
+   -- (illegal move by repetition)
+
+   #ILLEGAL_MOVE
+   -- (other illegal moves including illegal use of %KACHI)
+
+   #TIME_UP
+
+   #RESIGN
+   -- (one player resigned by '%TORYO')
+
+   #JISHOGI
+   -- (one player declared a win by '%KACHI' and the declaration is legal)</pre>
+		<p>The second line must be one of the following three messages:</p>
+		<pre>   #DRAW
+   -- only after '#SENNICHITE'
+   #WIN
+   #LOSE</pre>
+		<p>For example, if a player has resigned after thinking four time 
+units, the player receives the following messages.  </p>
+		<pre>   %TORYO,T4
+   #RESIGN
+   #LOSE</pre>
+		<p>The other player also receives the following messages.   </p>
+		<pre>   %TORYO,T4
+   #RESIGN
+   #WIN</pre>
+		<h3>3.5 Summary</h3>
+		<p>Here is an example of messages in a game.  </p>
+		<pre>     client1           server                                     client2
+
+   1                &lt;- [GAME CONDITION] -&gt;
+   2 AGREE gamename -&gt;                                         &lt;- AGREE gamename
+   3                &lt;-  START:gamename  -&gt;
+   4                                                           &lt;- [the first move]
+   5                &lt;- [MOVE-CONFIRMATION for the first move]  -&gt;
+   6 [the second move] -&gt;
+   7                &lt;- [MOVE-CONFIRMATION for the second move] -&gt;
+   8                                                           &lt;- [the third move]
+   9                &lt;- [MOVE-CONFIRMATION for the third move]  -&gt;
+   ...
+           [%TORYO] -&gt;
+                    &lt;- [GAME-RESULT] -&gt;
+</pre>
+		<hr>
+		<p><a href="http://www.computer-shogi.org/index_e.html">CSA Home</a></p>
+	</body></html>
