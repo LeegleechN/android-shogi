@@ -134,9 +134,9 @@ ini( tree_t * restrict ptree )
   node_limit            = UINT64_MAX;
   time_response         = TIME_RESPONSE;
   sec_limit             = 0;
-  sec_limit_up          = 10U;
+  sec_limit_up          = 3U;
   sec_limit_depth       = UINT_MAX;
-  depth_limit           = PLY_MAX;
+  depth_limit           = 4;
   log2_ntrans_table     = 20;
   
   pf_book               = NULL;

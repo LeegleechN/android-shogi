@@ -4,6 +4,8 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -12,48 +14,94 @@ import android.widget.Button;
 public class BoardActivity extends Activity {
    
 	private BoardView boardView;
+	private Engine e;
+	private Button moveButton;
+	
+    static {
+        System.loadLibrary("bonanza");
+    }
+    
 	
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        
+        //Debug.startMethodTracing("Shogi_trace");
 
         setContentView(R.layout.main);
         
-        final Engine e = new Engine();
+        e = new Engine();
         e.newGame();
         
-        final BoardView boardView = (BoardView)findViewById(R.id.boardView);
+        boardView = (BoardView)findViewById(R.id.boardView);
        
      
-        Button b2 = (Button)findViewById(R.id.buttonMove);
-        b2.setOnClickListener(new OnClickListener() {
+        moveButton= (Button)findViewById(R.id.buttonMove);
+        moveButton.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				e.makeMove();
-				e.getBoardString();
+		makeMove();	        
+    }
+        });
+    }
+    
+    private void makeMove()
+    {
+    	int ret = e.makeMove();
+    	if (ret > 1)
+    	{
+    		AlertDialog.Builder b = new AlertDialog.Builder(BoardActivity.this);
+    		b.setTitle("Game Over");
+    		b.setPositiveButton("Quit", new DialogInterface.OnClickListener() {
 				
-				try {
-					FileReader boardFile = new FileReader("/sdcard/Android/com.stelluxstudios.Shogi/board_out.txt");
-					char[] buffer = new char[2048];
-					boardFile.read(buffer);
-					Board board = Board.fromString(new String(buffer));
-					boardView.setBoard(board);
-					boardView.invalidate();
-					boardFile.close();
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					BoardActivity.this.finish();
 					
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
 				}
+			});
+    		b.create().show();
+    		
+    	}	
+    	else
+    	{
+			e.getBoardString();
+			System.gc();
+			
+			try 
+			{
+				FileReader boardFile = new FileReader("/sdcard/Android/com.stelluxstudios.Shogi/board_out.txt");
+				char[] buffer = new char[2048];
+				boardFile.read(buffer);
+				Board board = Board.fromString(new String(buffer));
+				boardView.setBoard(board);
+				boardView.invalidate();
+				boardFile.close();
 				
+			} 
+			catch (IOException e1) 
+			{
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
 			}
-		});
-        
+			
+			moveButton.post(new Runnable() {
+				
+				@Override
+				public void run() {
+					makeMove();
+					
+				}
+			});
+			
+    	}
     }
 
-    static {
-        System.loadLibrary("bonanza");
+    @Override
+    protected void onPause() {
+    	//Debug.stopMethodTracing();
+    	super.onPause();
     }
 }

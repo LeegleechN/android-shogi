@@ -88,7 +88,7 @@ extern unsigned char ailast_one[512];
 #define SHELL_H_LEN             7
 #define MAX_ANSWER              8
 #define PLY_INC                 8
-#define PLY_MAX                 48
+#define PLY_MAX                 8
 #define RAND_N                  624
 #define TC_NMOVE                37U
 #define SEC_MARGIN              30U
