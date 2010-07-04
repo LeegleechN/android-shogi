@@ -39,15 +39,18 @@
     }
     if (game_status & flag_resigned)
     {  __android_log_write(ANDROID_LOG_ERROR,"bonanza","resigned");
-      return 19;
+      if (root_turn) //white resigned
+      	return 19;
+      else
+      	return 20; //black resigned
     }
     if (game_status & flag_drawn)
     {  __android_log_write(ANDROID_LOG_ERROR,"bonanza","drawn");
-      return 20;
+      return 21;
     }
     if (game_status & flag_suspend)
     {  __android_log_write(ANDROID_LOG_ERROR,"bonanza","suspend");
-      return 21;
+      return 22;
     }
      /*
      int fd = open("/proc/sys/vm/drop_caches",O_WRONLY);
