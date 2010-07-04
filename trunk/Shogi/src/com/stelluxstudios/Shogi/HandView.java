@@ -28,10 +28,12 @@ public class HandView extends LinearLayout
 	public void updateFromPieceList(List<Piece> in)
 	{
 		removeAllViews();
-		PieceView test = new PieceView(getContext(), Piece.BPawn, this);
-		PieceView test2 = new PieceView(getContext(), Piece.BLance, this);
-		addView(test);
-		addView(test2);
+		
+		for (Piece p : in)
+		{
+			PieceView pv = new PieceView(getContext(), p, this);
+			addView(pv);
+		}
 		invalidate();
 	}
 	
