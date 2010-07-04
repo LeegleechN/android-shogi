@@ -14,6 +14,7 @@ import android.widget.Button;
 public class BoardActivity extends Activity {
    
 	private BoardView boardView;
+	private HandView blackHandView, whiteHandView;
 	private Engine e;
 	private Button moveButton;
 	
@@ -35,6 +36,8 @@ public class BoardActivity extends Activity {
         e.newGame();
         
         boardView = (BoardView)findViewById(R.id.boardView);
+        whiteHandView = (HandView) findViewById(R.id.whiteHand);
+        blackHandView = (HandView) findViewById(R.id.blackHand);
        
      
         moveButton= (Button)findViewById(R.id.buttonMove);
@@ -78,6 +81,11 @@ public class BoardActivity extends Activity {
 				Board board = Board.fromString(new String(buffer));
 				boardView.setBoard(board);
 				boardView.invalidate();
+				
+				whiteHandView.updateFromPieceList(board.getWhiteHand());
+				blackHandView.updateFromPieceList(board.getBlackHand());
+				whiteHandView.highlightsEnabled = false;
+				
 				boardFile.close();
 				
 			} 
@@ -86,7 +94,7 @@ public class BoardActivity extends Activity {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-			
+			/*
 			moveButton.post(new Runnable() {
 				
 				@Override
@@ -95,7 +103,7 @@ public class BoardActivity extends Activity {
 					
 				}
 			});
-			
+		*/	
     	}
     }
 

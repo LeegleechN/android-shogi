@@ -7,8 +7,21 @@
      <Button  android:layout_width="fill_parent" android:id="@+id/buttonMove"
     android:layout_height="wrap_content" 
     android:text="make move"/>
+    <com.stelluxstudios.Shogi.HandView
+     android:layout_width="fill_parent" 
+   android:id="@+id/whiteHand"
+   android:layout_height="wrap_content"
+    />
+    
    <com.stelluxstudios.Shogi.BoardView 
    android:layout_width="fill_parent" 
    android:id="@+id/boardView"
-   android:layout_height="fill_parent" />
+   android:layout_height="wrap_content" />
+   
+   
+    <com.stelluxstudios.Shogi.HandView
+     android:layout_width="fill_parent" 
+   android:id="@+id/blackHand"
+   android:layout_height="wrap_content"
+    />
 </LinearLayout>

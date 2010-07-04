@@ -18,7 +18,7 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE    := bonanza
 
-LOCAL_CFLAGS := -DNDEBUG -DMINIMUM -DNO_LOGGING -DANDROID -DNO_STDOUT
+LOCAL_CFLAGS := -DNDEBUG -DMINIMUM -DNO_LOGGING -DANDROID -DNO_STDOUT -std=c99
 LOCAL_LDLIBS := -llog
 
 LOCAL_SRC_FILES := data.c io.c proce.c utility.c ini.c attack.c book.c \ makemove.c unmake.c time.c csa.c valid.c bitop.c iterate.c searchr.c \ search.c quiesrch.c evaluate.c swap.c  hash.c root.c next.c movgenex.c \
