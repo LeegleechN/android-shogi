@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -77,8 +78,10 @@ public class BoardActivity extends Activity {
 			{
 				FileReader boardFile = new FileReader("/sdcard/Android/com.stelluxstudios.Shogi/board_out.txt");
 				char[] buffer = new char[2048];
-				boardFile.read(buffer);
-				Board board = Board.fromString(new String(buffer));
+				int read = boardFile.read(buffer);
+				String boardString = new String(buffer,0,read);
+				Board board = Board.fromString(boardString);
+				Log.d("Board", boardString);
 				boardView.setBoard(board);
 				boardView.invalidate();
 				

@@ -28,7 +28,8 @@ public class Board {
 	{
 		Board b = new Board();
 		BufferedReader stream = null;
-		try{
+		try
+		{
 		
 		stream = new BufferedReader(new StringReader(in));
 		
@@ -55,21 +56,15 @@ public class Board {
 		
 		String nextLine = stream.readLine();
 		
-		//Check if there's nothing in hand
-		if (nextLine == null)
-			return b;
-		interpretHand(nextLine);
-		
-		nextLine = stream.readLine();
-		
-		//Check if there's nothing in hand
-		if (nextLine == null)
-			return b;
-		interpretHand(nextLine);
+		while (nextLine != null)
+		{
+			interpretHand(nextLine,b);
+			nextLine = stream.readLine();
+		}
 		
 		return b;
-		
 		}
+		
 		catch (Exception e) {
 			throw new RuntimeException(e);
 		}
@@ -85,8 +80,32 @@ public class Board {
 		}
 	}
 	
-	private static void interpretHand(String nextLine) {
-		return;
+	private static void interpretHand(String line,Board board) {
+		int length = line.length();
+		//2 for the P+/P- header, for because the piece codes are 2 chars, and there's 2 chars of spacer '00's.
+		int numPieces = (length - 2) / 4;
+		boolean isBlack;
+		
+		
+		if (line.subSequence(0, 2).equals("P+"))
+			isBlack = true;
+		else if (line.subSequence(0, 2).equals("P-"))
+			isBlack = false;
+		else
+			throw new IllegalArgumentException("The given line does not seem to be a piece in hand line");
+		
+		for (int i = 0 ; i < numPieces ; i++)
+		{
+			CharSequence pieceAbbr = line.subSequence(4 + 2 * i, 6 + 2 * i);
+			String fullPieceAbbr = (isBlack?"+":"-") + pieceAbbr;
+			
+			Piece piece = Piece.from3CharCode(fullPieceAbbr);
+			if (isBlack)
+				board.blackHand.add(piece);
+			else
+				board.whiteHand.add(piece);
+		}
+			
 	}
 
 	private Board()
