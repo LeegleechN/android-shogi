@@ -36,17 +36,17 @@ public class Board {
 		stream.readLine();
 		
 		char[] buffer = new char[3];
-		for (int row = 0 ; row < 9 ; row++)
+		for (int y = 0 ; y < 9 ; y++)
 		{
 			//skip the row coordinates
 			stream.read(buffer, 0, 2);
 			
-			for (int col = 0; col < 9 ; col++)
+			for (int x = 0; x < 9 ; x++)
 			{
 				//read everything in groups of 3
 				stream.read(buffer,0,3);
 				Piece p = Piece.from3CharCode(new String(buffer));
-				b.setPiece(p, row, col);
+				b.setPiece(p, x, y);
 			}
 			
 			//skip to the beginning of the next line
