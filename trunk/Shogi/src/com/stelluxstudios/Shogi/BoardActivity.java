@@ -56,8 +56,37 @@ public class BoardActivity extends Activity {
     	int ret = e.makeMove();
     	if (ret > 1)
     	{
+    		String cause = "Game ended for unknown reason";
+    		if (ret == 18)
+    			cause = "Checkmate!";
+    		if (ret == 19)
+    			cause = "White resigns!";
+    		if (ret == 20)
+    			cause = "Black resigns!";
+    		if (ret == 21)
+    			cause = "Draw!";
+    		if (ret == 22)
+    			cause = "Game has been suspended??";
     		AlertDialog.Builder b = new AlertDialog.Builder(BoardActivity.this);
     		b.setTitle("Game Over");
+    		b.setMessage(cause);
+    		b.setPositiveButton("Quit", new DialogInterface.OnClickListener() {
+				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					BoardActivity.this.finish();
+					
+				}
+			});
+    		b.create().show();
+    		
+    	}	
+    	else if (ret < 0)
+    	{
+    		String cause = "Lost communication with Bonanza engine!";
+    		AlertDialog.Builder b = new AlertDialog.Builder(BoardActivity.this);
+    		b.setTitle("Error");
+    		b.setMessage(cause);
     		b.setPositiveButton("Quit", new DialogInterface.OnClickListener() {
 				
 				@Override
@@ -86,7 +115,9 @@ public class BoardActivity extends Activity {
 				boardView.invalidate();
 				
 				whiteHandView.updateFromPieceList(board.getWhiteHand());
+				whiteHandView.invalidate();
 				blackHandView.updateFromPieceList(board.getBlackHand());
+				blackHandView.invalidate();
 				whiteHandView.highlightsEnabled = false;
 				
 				boardFile.close();
@@ -97,7 +128,7 @@ public class BoardActivity extends Activity {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-			/*
+			
 			moveButton.post(new Runnable() {
 				
 				@Override
@@ -106,7 +137,7 @@ public class BoardActivity extends Activity {
 					
 				}
 			});
-		*/	
+		
     	}
     }
 

@@ -6,6 +6,8 @@ import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.util.Log;
+
 public class Board {
 	
 	private Piece[][] field = new Piece[9][9];
@@ -96,10 +98,18 @@ public class Board {
 		
 		for (int i = 0 ; i < numPieces ; i++)
 		{
-			CharSequence pieceAbbr = line.subSequence(4 + 2 * i, 6 + 2 * i);
+			CharSequence pieceAbbr = line.subSequence(4 + 4 * i, 6 + 4 * i);
 			String fullPieceAbbr = (isBlack?"+":"-") + pieceAbbr;
 			
-			Piece piece = Piece.from3CharCode(fullPieceAbbr);
+			Log.d("Board", "trying to parse: " + fullPieceAbbr);
+			Piece piece = null;
+			try
+			{
+				piece = Piece.from3CharCode(fullPieceAbbr);
+			}
+			catch (Exception e) {
+				Log.d("Board", "parse exception");
+			}
 			if (isBlack)
 				board.blackHand.add(piece);
 			else

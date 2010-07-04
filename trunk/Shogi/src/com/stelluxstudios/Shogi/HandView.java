@@ -34,7 +34,6 @@ public class HandView extends LinearLayout
 			PieceView pv = new PieceView(getContext(), p, this);
 			addView(pv);
 		}
-		invalidate();
 	}
 	
 	//returns first highlighted piece (there should never be more than one highlighted
