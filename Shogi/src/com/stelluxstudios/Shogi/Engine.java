@@ -9,7 +9,7 @@ public class Engine
 	
 	public native void newGame();
 	
-	public native void applyMove(byte[] move);
+	public native int tryApplyMove(byte[] move);
 	public native int makeMove();
 	
 	public native void getBoardString();

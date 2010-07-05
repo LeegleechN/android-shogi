@@ -16,6 +16,31 @@
      return;
   }
   
+  
+  
+  JNIEXPORT jint JNICALL Java_com_stelluxstudios_Shogi_Engine_tryApplyMove
+  (JNIEnv * env, jobject caller, jbyteArray str)
+  {
+	jbyte* ptr = (*env)->GetByteArrayElements(env,str,NULL);
+  
+	tree_t* ptree = &tree;
+  	unsigned int move;
+	int iret = interpret_CSA_move( ptree, &move, ptr );
+	(*env)->ReleaseByteArrayElements(env,str,ptr,0);
+	
+	if ( iret < 0 ) { return iret; }
+
+	iret = make_move_root( ptree, move, ( flag_history | flag_time | flag_rep
+					  | flag_detect_hang
+					  | flag_rejections ) );
+    if ( iret < 0 ) { return iret; }	
+	
+	
+	
+	return 0;
+  }
+  
+  
   JNIEXPORT jint JNICALL Java_com_stelluxstudios_Shogi_Engine_makeMove
   (JNIEnv * env, jobject caller)
   {  
