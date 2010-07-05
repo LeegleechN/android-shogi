@@ -8,8 +8,6 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class BoardActivity extends Activity {
@@ -18,6 +16,9 @@ public class BoardActivity extends Activity {
 	private HandView blackHandView, whiteHandView;
 	private Engine e;
 	private Button moveButton;
+	
+	private boolean whiteIsComp, blackIsComp;
+	
 	
     static {
         System.loadLibrary("bonanza");
@@ -33,22 +34,37 @@ public class BoardActivity extends Activity {
 
         setContentView(R.layout.main);
         
+        whiteIsComp = false;
+        blackIsComp = false;
+        
         e = new Engine();
         e.newGame();
         
         boardView = (BoardView)findViewById(R.id.boardView);
         whiteHandView = (HandView) findViewById(R.id.whiteHand);
         blackHandView = (HandView) findViewById(R.id.blackHand);
-       
-     
+        
+
+        String move = "7776FU";
+        
+        int ret = e.tryApplyMove(move.getBytes());
+        Log.d("Engine", "tried applying human move, got: " + ret);
+        
+        e.getBoardString();
+        String boardString = getBoardString();
+        updateViewsFromBoardString(boardString);
+        
+  
+     /*
         moveButton= (Button)findViewById(R.id.buttonMove);
         moveButton.setOnClickListener(new OnClickListener() {
 			
+        	
 			@Override
 			public void onClick(View v) {
 		makeMove();	        
     }
-        });
+        });*/
     }
     
     private void makeMove()
@@ -103,31 +119,9 @@ public class BoardActivity extends Activity {
 			e.getBoardString();
 			System.gc();
 			
-			try 
-			{
-				FileReader boardFile = new FileReader("/sdcard/Android/com.stelluxstudios.Shogi/board_out.txt");
-				char[] buffer = new char[2048];
-				int read = boardFile.read(buffer);
-				String boardString = new String(buffer,0,read);
-				Board board = Board.fromString(boardString);
-				Log.d("Board", boardString);
-				boardView.setBoard(board);
-				boardView.invalidate();
-				
-				whiteHandView.updateFromPieceList(board.getWhiteHand());
-				whiteHandView.invalidate();
-				blackHandView.updateFromPieceList(board.getBlackHand());
-				blackHandView.invalidate();
-				whiteHandView.highlightsEnabled = false;
-				
-				boardFile.close();
-				
-			} 
-			catch (IOException e1) 
-			{
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
+			String boardString = getBoardString();
+			updateViewsFromBoardString(boardString);
+			
 			
 			moveButton.post(new Runnable() {
 				
@@ -145,5 +139,39 @@ public class BoardActivity extends Activity {
     protected void onPause() {
     	//Debug.stopMethodTracing();
     	super.onPause();
+    }
+    
+    String getBoardString()
+    {
+    	try 
+		{
+			FileReader boardFile = new FileReader("/sdcard/Android/com.stelluxstudios.Shogi/board_out.txt");
+			char[] buffer = new char[2048];
+			int read = boardFile.read(buffer);
+			String boardString = new String(buffer,0,read);
+			
+			Log.d("Board", boardString);
+	
+			boardFile.close();
+			return boardString;
+			
+		} 
+		catch (IOException e1) 
+		{
+			return null;
+		}
+    }
+    
+    private void updateViewsFromBoardString(String boardString)
+    {
+    	Board board = Board.fromString(boardString);
+		boardView.setBoard(board);
+		boardView.invalidate();
+		
+		whiteHandView.updateFromPieceList(board.getWhiteHand());
+		whiteHandView.invalidate();
+		blackHandView.updateFromPieceList(board.getBlackHand());
+		blackHandView.invalidate();
+		whiteHandView.highlightsEnabled = false;
     }
 }

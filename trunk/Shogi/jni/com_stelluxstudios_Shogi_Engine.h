@@ -10,23 +10,20 @@ extern "C" {
 /*
  * Class:     com_stelluxstudios_Shogi_Engine
  * Method:    newGame
- * Signature: ()V
  */
 JNIEXPORT void JNICALL Java_com_stelluxstudios_Shogi_Engine_newGame
   (JNIEnv *, jobject);
 
 /*
  * Class:     com_stelluxstudios_Shogi_Engine
- * Method:    applyMove
- * Signature: ([B)V
+ * Method:    tryApplyMove
  */
-JNIEXPORT void JNICALL Java_com_stelluxstudios_Shogi_Engine_applyMove
+JNIEXPORT  jint JNICALL Java_com_stelluxstudios_Shogi_Engine_tryApplyMove
   (JNIEnv *, jobject, jbyteArray);
 
 /*
  * Class:     com_stelluxstudios_Shogi_Engine
  * Method:    makeMove
- * Signature: ()V
  */
 JNIEXPORT jint JNICALL Java_com_stelluxstudios_Shogi_Engine_makeMove
   (JNIEnv *, jobject);
@@ -34,7 +31,6 @@ JNIEXPORT jint JNICALL Java_com_stelluxstudios_Shogi_Engine_makeMove
 /*
  * Class:     com_stelluxstudios_Shogi_Engine
  * Method:    getBoardString
- * Signature: ()[B
  */
 JNIEXPORT void JNICALL Java_com_stelluxstudios_Shogi_Engine_getBoardString
   (JNIEnv *, jobject);
