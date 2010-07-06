@@ -8,6 +8,8 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class BoardActivity extends Activity {
@@ -55,7 +57,7 @@ public class BoardActivity extends Activity {
         updateViewsFromBoardString(boardString);
         
   
-     /*
+     
         moveButton= (Button)findViewById(R.id.buttonMove);
         moveButton.setOnClickListener(new OnClickListener() {
 			
@@ -64,7 +66,7 @@ public class BoardActivity extends Activity {
 			public void onClick(View v) {
 		makeMove();	        
     }
-        });*/
+        });
     }
     
     private void makeMove()
@@ -122,7 +124,7 @@ public class BoardActivity extends Activity {
 			String boardString = getBoardString();
 			updateViewsFromBoardString(boardString);
 			
-			
+			/*
 			moveButton.post(new Runnable() {
 				
 				@Override
@@ -131,7 +133,7 @@ public class BoardActivity extends Activity {
 					
 				}
 			});
-		
+		*/
     	}
     }
 
