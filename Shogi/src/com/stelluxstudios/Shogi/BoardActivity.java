@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+import com.stelluxstudios.Shogi.Board.Player;
+
 public class BoardActivity extends Activity {
    
 	private BoardView boardView;
@@ -46,15 +48,8 @@ public class BoardActivity extends Activity {
         whiteHandView = (HandView) findViewById(R.id.whiteHand);
         blackHandView = (HandView) findViewById(R.id.blackHand);
         
-
-        String move = "7776FU";
-        
-        int ret = e.tryApplyMove(move.getBytes());
-        Log.d("Engine", "tried applying human move, got: " + ret);
-        
         e.getBoardString();
-        String boardString = getBoardString();
-        updateViewsFromBoardString(boardString);
+        updateStateFromEngine();
         
   
      
@@ -122,7 +117,7 @@ public class BoardActivity extends Activity {
 			System.gc();
 			
 			String boardString = getBoardString();
-			updateViewsFromBoardString(boardString);
+			updateStateFromEngine();
 			
 			/*
 			moveButton.post(new Runnable() {
@@ -135,6 +130,23 @@ public class BoardActivity extends Activity {
 			});
 		*/
     	}
+    }
+    
+    //returns true if the move worked, false if it was illegal
+    public boolean tryMakeHumanMove(String move)
+    {
+    	 int ret = e.tryApplyMove(move.getBytes());
+         Log.d("Engine", "tried applying human move, got: " + ret);
+         
+         if (ret == 0)
+         {
+        	 e.getBoardString();
+        	 updateStateFromEngine();
+        	 return true;
+         }
+        	
+         else
+        	 return false;
     }
 
     @Override
@@ -164,9 +176,18 @@ public class BoardActivity extends Activity {
 		}
     }
     
-    private void updateViewsFromBoardString(String boardString)
+    private void updateStateFromEngine()
     {
+    	String boardString = getBoardString();
     	Board board = Board.fromString(boardString);
+    	
+    	int player = e.getCurrentPlayer();
+    	if (player == 0)
+    		board.setCurrentPlayer(Player.Black);
+    	else
+    		board.setCurrentPlayer(Player.White);
+    	
+    	
 		boardView.setBoard(board);
 		boardView.invalidate();
 		

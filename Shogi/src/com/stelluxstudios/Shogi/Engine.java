@@ -14,4 +14,6 @@ public class Engine
 	
 	public native void getBoardString();
 	
+	public native int getCurrentPlayer();
+	
 }

@@ -10,11 +10,14 @@ import android.util.Log;
 
 public class Board {
 	
+	public enum Player{White,Black};
 	private Piece[][] field = new Piece[9][9];
 	private List<Piece> whiteHand = new ArrayList<Piece>(), 
 						blackHand = new ArrayList<Piece>();
 	
-	public final static String initialConfig = 
+	private Player currentPlayer;
+	
+	private final static String initialConfig = 
 "'  9  8  7  6  5  4  3  2  1 \n"+
 "P1-KY-KE-GI-KI-OU-KI-GI-KE-KY\n"+
 "P2 * -HI *  *  *  *  * -KA * \n"+
@@ -25,6 +28,8 @@ public class Board {
 "P7+FU+FU * +FU+FU+FU+FU+FU+FU\n"+
 "P8 * +KA *  *  *  *  * +HI * \n"+
 "P9+KY+KE+GI+KI+OU+KI+GI+KE+KY\n";
+	
+	
 	
 	//these should be in Piece, but I couldn't get that placement to work with the Piece constructors
 	public final static int 
@@ -57,6 +62,13 @@ public class Board {
 	ROOK_MOVEMENT = FORWARD_SLIDE | BACK_SLIDE | LEFT_SLIDE | RIGHT_SLIDE,
 	BISHOP_MOVEMENT = DIAG_FORWARD_LEFT_ONE | DIAG_FORWARD_RIGHT_SLIDE | DIAG_BACK_LEFT_SLIDE | DIAG_BACK_RIGHT_SLIDE;
 	
+	
+	public static Board makeNew()
+	{
+		Board b = Board.fromString(initialConfig);
+		b.currentPlayer = Player.Black;
+		return b;
+	}
 	
 	public static Board fromString(String in)
 	{
@@ -186,50 +198,61 @@ public class Board {
 		return blackHand;
 	}
 	
+	public void setCurrentPlayer(Player p)
+	{
+		currentPlayer = p;
+	}
+	public Player getCurrentPlayer()
+	{
+		return currentPlayer;
+	}
+	
 	
 	public static enum Piece{
-		WPawn           ("Pawn"            ,"","gfu"  ,"-FU", FORWARD_ONE),
-		WPromotedPawn   ("Promoted Pawn"   ,"","gto"  ,"-TO", GOLD_MOVEMENT),
-		WLance          ("Lance"           ,"","gkyo" ,"-KY", FORWARD_SLIDE),
-		WPromotedLance  ("Promoted Lance"  ,"","gnkyo","-NY", GOLD_MOVEMENT),
-		WKnight         ("Knight"          ,"","gkei" ,"-KE", FORWARD_LEFT_KNIGHT | FORWARD_RIGHT_KNIGHT),
-		WPromotedKnight ("Promoted Knight" ,"","gnkei","-NK", GOLD_MOVEMENT),
-		WSilverGeneral  ("Silver General"  ,"","ggin" ,"-GI", SILVER_MOVEMENT),
-		WPromotedSilver ("Promoted Silver" ,"","gngin","-NG", GOLD_MOVEMENT),
-		WGoldGeneral    ("Gold General"    ,"","gkin", "-KI", GOLD_MOVEMENT),
-		WBishop         ("Bishop"          ,"","gkaku","-KA", BISHOP_MOVEMENT),
-		WDragonHorse    ("Dragon Horse"    ,"","guma" ,"-UM", BISHOP_MOVEMENT | KING_MOVEMENT),
-		WRook           ("Rook"            ,"","ghi"  ,"-HI", ROOK_MOVEMENT),
-		WDragonKing     ("Dragon King"     ,"","gryu" ,"-RY", ROOK_MOVEMENT | KING_MOVEMENT),
-		WKing           ("King"            ,"","gou"  ,"-OU", KING_MOVEMENT),
-		BPawn           ("Pawn"            ,"","sfu"  ,"+FU", FORWARD_ONE),
-		BPromotedPawn   ("Promoted Pawn"   ,"","sto"  ,"+TO", GOLD_MOVEMENT),
-		BLance          ("Lance"           ,"","skyo" ,"+KY", FORWARD_SLIDE),
-		BPromotedLance  ("Promoted Lance"  ,"","snkyo","+NY", GOLD_MOVEMENT),
-		BKnight         ("Knight"          ,"","skei" ,"+KE", FORWARD_LEFT_KNIGHT | FORWARD_RIGHT_KNIGHT),
-		BPromotedKnight ("Promoted Knight" ,"","snkei","+NK", GOLD_MOVEMENT),
-		BSilverGeneral  ("Silver General"  ,"","sgin" ,"+GI", SILVER_MOVEMENT),
-		BPromotedSilver ("Promoted Silver" ,"","sngin","+NG", GOLD_MOVEMENT),
-		BGoldGeneral    ("Gold General"    ,"","skin", "+KI", GOLD_MOVEMENT),
-		BBishop         ("Bishop"          ,"","skaku","+KA", BISHOP_MOVEMENT),
-		BDragonHorse    ("Dragon Horse"    ,"","suma" ,"+UM", BISHOP_MOVEMENT | KING_MOVEMENT),
-		BRook           ("Rook"            ,"","shi"  ,"+HI", ROOK_MOVEMENT),
-		BDragonKing     ("Dragon King"     ,"","sryu" ,"+RY", ROOK_MOVEMENT | KING_MOVEMENT),
-		BKing           ("King"            ,"","sou"  ,"+OU", KING_MOVEMENT),
-		Empty           ("Empty","",""," * ",0);
+		WPawn           ("Pawn"            ,"",Player.White,"gfu"  ,"-FU", FORWARD_ONE),
+		WPromotedPawn   ("Promoted Pawn"   ,"",Player.White,"gto"  ,"-TO", GOLD_MOVEMENT),
+		WLance          ("Lance"           ,"",Player.White,"gkyo" ,"-KY", FORWARD_SLIDE),
+		WPromotedLance  ("Promoted Lance"  ,"",Player.White,"gnkyo","-NY", GOLD_MOVEMENT),
+		WKnight         ("Knight"          ,"",Player.White,"gkei" ,"-KE", FORWARD_LEFT_KNIGHT | FORWARD_RIGHT_KNIGHT),
+		WPromotedKnight ("Promoted Knight" ,"",Player.White,"gnkei","-NK", GOLD_MOVEMENT),
+		WSilverGeneral  ("Silver General"  ,"",Player.White,"ggin" ,"-GI", SILVER_MOVEMENT),
+		WPromotedSilver ("Promoted Silver" ,"",Player.White,"gngin","-NG", GOLD_MOVEMENT),
+		WGoldGeneral    ("Gold General"    ,"",Player.White,"gkin", "-KI", GOLD_MOVEMENT),
+		WBishop         ("Bishop"          ,"",Player.White,"gkaku","-KA", BISHOP_MOVEMENT),
+		WDragonHorse    ("Dragon Horse"    ,"",Player.White,"guma" ,"-UM", BISHOP_MOVEMENT | KING_MOVEMENT),
+		WRook           ("Rook"            ,"",Player.White,"ghi"  ,"-HI", ROOK_MOVEMENT),
+		WDragonKing     ("Dragon King"     ,"",Player.White,"gryu" ,"-RY", ROOK_MOVEMENT | KING_MOVEMENT),
+		WKing           ("King"            ,"",Player.White,"gou"  ,"-OU", KING_MOVEMENT),
+		BPawn           ("Pawn"            ,"",Player.Black,"sfu"  ,"+FU", FORWARD_ONE),
+		BPromotedPawn   ("Promoted Pawn"   ,"",Player.Black,"sto"  ,"+TO", GOLD_MOVEMENT),
+		BLance          ("Lance"           ,"",Player.Black,"skyo" ,"+KY", FORWARD_SLIDE),
+		BPromotedLance  ("Promoted Lance"  ,"",Player.Black,"snkyo","+NY", GOLD_MOVEMENT),
+		BKnight         ("Knight"          ,"",Player.Black,"skei" ,"+KE", FORWARD_LEFT_KNIGHT | FORWARD_RIGHT_KNIGHT),
+		BPromotedKnight ("Promoted Knight" ,"",Player.Black,"snkei","+NK", GOLD_MOVEMENT),
+		BSilverGeneral  ("Silver General"  ,"",Player.Black,"sgin" ,"+GI", SILVER_MOVEMENT),
+		BPromotedSilver ("Promoted Silver" ,"",Player.Black,"sngin","+NG", GOLD_MOVEMENT),
+		BGoldGeneral    ("Gold General"    ,"",Player.Black,"skin", "+KI", GOLD_MOVEMENT),
+		BBishop         ("Bishop"          ,"",Player.Black,"skaku","+KA", BISHOP_MOVEMENT),
+		BDragonHorse    ("Dragon Horse"    ,"",Player.Black,"suma" ,"+UM", BISHOP_MOVEMENT | KING_MOVEMENT),
+		BRook           ("Rook"            ,"",Player.Black,"shi"  ,"+HI", ROOK_MOVEMENT),
+		BDragonKing     ("Dragon King"     ,"",Player.Black,"sryu" ,"+RY", ROOK_MOVEMENT | KING_MOVEMENT),
+		BKing           ("King"            ,"",Player.Black,"sou"  ,"+OU", KING_MOVEMENT),
+		Empty           ("Empty","",null,""," * ",0);
 		
 
 		
 		public final String englishName, japName, shortJapName, japAbbr;
 		public final int movementCapabilities;
+		public final Player owner;
 		
-		Piece(String englishName, String japName,String shortJapName,String japAbbr, int movementCapabilities)
+		Piece(String englishName, String japName,Player owner,String shortJapName,String japAbbr, int movementCapabilities)
 		{
 			this.englishName = englishName;
 			this.japName = japName;
 			this.shortJapName = shortJapName;
 			this.japAbbr = japAbbr;
 			this.movementCapabilities = movementCapabilities;
+			this.owner = owner;
 		};
 		
 		static Piece from3CharCode(String in)
@@ -240,6 +263,14 @@ public class Board {
 					return p;
 			}
 			throw new RuntimeException();
+		}
+		
+		public Piece swapSides()
+		{
+			if (owner == Player.White)
+				return from3CharCode('+' + japAbbr.substring(1));
+			else
+				return from3CharCode('-' + japAbbr.substring(1));
 		}
 	
 	}
