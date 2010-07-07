@@ -91,6 +91,13 @@
      return ret;
   }
   
+    JNIEXPORT jint JNICALL Java_com_stelluxstudios_Shogi_Engine_getCurrentPlayer
+  (JNIEnv * env, jobject caller)
+  {
+	//0 indicates black, 1 indicates white
+	return root_turn;
+  }
+  
   JNIEXPORT void JNICALL Java_com_stelluxstudios_Shogi_Engine_getBoardString
   (JNIEnv * env, jobject caller)
   {

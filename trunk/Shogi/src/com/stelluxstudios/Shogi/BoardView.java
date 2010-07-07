@@ -4,14 +4,18 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
+import android.graphics.PorterDuff.Mode;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.ImageView;
 
 import com.stelluxstudios.Shogi.Board.Piece;
+import com.stelluxstudios.Shogi.Board.Player;
 
 public class BoardView extends ImageView {
 
@@ -22,6 +26,12 @@ public class BoardView extends ImageView {
 	top_pad = 10f,
 	widthPerPiece,
 	heightPerPiece;
+	
+	private UIState currentUIState = UIState.Clear;
+	private enum UIState{Clear,Piece_Selected,WaitingToPlaceFromHand};
+	
+	private int selectedI, selectedJ;
+	private Paint defaultPaint, selectedPaint;
 	
 	private boolean isInitialized = false;
 	
@@ -39,6 +49,11 @@ public class BoardView extends ImageView {
 	{		
 		background = BitmapFactory.decodeResource(getResources(), R.drawable.ban_kaya_b);
 		lines = BitmapFactory.decodeResource(getResources(), R.drawable.masu_dot);
+		
+		defaultPaint = new Paint();
+		
+		selectedPaint = new Paint();
+		selectedPaint.setColorFilter(new PorterDuffColorFilter(Color.BLUE, Mode.LIGHTEN));
 	}
 	
 	public void setBoard(Board board)
@@ -106,14 +121,14 @@ public class BoardView extends ImageView {
 					String piece_res_name = 
 						"koma_kinki_torafu_" + p.shortJapName;
 					int id = getResources().getIdentifier(piece_res_name, "drawable", "com.stelluxstudios.Shogi");
-					
+					boolean isSelected = (currentUIState == UIState.Piece_Selected && i == selectedI && j == selectedJ);
 					Bitmap bitmap = BitmapFactory.decodeResource(getResources(), id);
 					Rect bound = new Rect(
 							(int)((i*widthPerPiece) + left_pad),
 							(int)((j*heightPerPiece) + top_pad),
 							(int)(((i+1)*widthPerPiece)+ left_pad),
 							(int)(((j+1)*heightPerPiece) + top_pad));
-					canvas.drawBitmap(bitmap, null,bound, new Paint());
+					canvas.drawBitmap(bitmap, null,bound, isSelected?selectedPaint:defaultPaint);
 				}
 			}
 		}
@@ -138,12 +153,58 @@ public class BoardView extends ImageView {
 		
 		//bounds check
 		if (i < 0 || i> 8 || j < 0 || j>8)
+		{
+			currentUIState = UIState.Clear;
+			invalidate();
 			return true;
+		}
 		
-		Piece piece = board.pieceAt(i, j);
+		
+		Piece touchedPiece = board.pieceAt(i, j);
 		
 		Log.d("Touch", "detected a touch on the board at position: " + i + "," + j);
-		Log.d("Touch", "touched piece: " + piece.englishName);
+		Log.d("Touch", "touched piece: " + touchedPiece.englishName);
+		
+		
+		if (currentUIState == UIState.Clear)
+		{
+			//Check if the piece is owned by the current player. If it is, select it.
+			Player owner = touchedPiece.owner;
+			
+			if (owner != board.getCurrentPlayer())
+				return true;
+			
+			currentUIState = UIState.Piece_Selected;
+			selectedI = i;
+			selectedJ = j;
+			
+			invalidate();
+			return true;
+		}
+		if (currentUIState == UIState.Piece_Selected)
+		{
+			//for now, just try to move the piece
+			
+			Piece selectedPiece = board.pieceAt(selectedI, selectedJ);
+			
+			String move = "" + (9-selectedI) + (selectedJ+1) + (9-i) + (j +1) + selectedPiece.japAbbr.substring(1); //example: 7776FU
+			
+			boolean success = ((BoardActivity)getContext()).tryMakeHumanMove(move);
+			
+			if (success)
+			{
+				currentUIState = UIState.Clear;
+				invalidate();
+				return true;
+			}
+			else
+			{
+				Log.d("Move", "Move " + move + " rejected");
+				currentUIState = UIState.Clear;
+				invalidate();
+				return true;
+			}
+		}
 		
 		
 		

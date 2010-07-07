@@ -27,6 +27,9 @@ JNIEXPORT  jint JNICALL Java_com_stelluxstudios_Shogi_Engine_tryApplyMove
  */
 JNIEXPORT jint JNICALL Java_com_stelluxstudios_Shogi_Engine_makeMove
   (JNIEnv *, jobject);
+  
+  JNIEXPORT jint JNICALL Java_com_stelluxstudios_Shogi_Engine_getCurrentPlayer
+  (JNIEnv *, jobject);
 
 /*
  * Class:     com_stelluxstudios_Shogi_Engine
