@@ -77,6 +77,11 @@ public class HandView extends LinearLayout
 			pieceView.isHighlighted = false;
 		}
 	}
+
+	public void notifyOfSelection(Piece p) {
+		((BoardActivity)getContext()).notifyPieceInHand(p);
+		
+	}
 	
 
 }

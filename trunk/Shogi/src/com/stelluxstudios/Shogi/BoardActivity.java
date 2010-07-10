@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+import com.stelluxstudios.Shogi.Board.Piece;
 import com.stelluxstudios.Shogi.Board.Player;
 
 public class BoardActivity extends Activity {
@@ -196,5 +197,10 @@ public class BoardActivity extends Activity {
 		blackHandView.updateFromPieceList(board.getBlackHand());
 		blackHandView.invalidate();
 		whiteHandView.highlightsEnabled = false;
+    }
+    
+    public void notifyPieceInHand(Piece p)
+    {
+    	boardView.setSelectedPieceInHand(p);
     }
 }

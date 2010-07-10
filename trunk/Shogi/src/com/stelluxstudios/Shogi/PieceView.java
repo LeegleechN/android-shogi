@@ -28,10 +28,19 @@ public class PieceView extends ImageView {
 	
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
-		parent.clearHighlights();
-		isHighlighted = true;
-		parent.invalidate();
-		return true;
+		if (!isHighlighted)
+		{
+			parent.clearHighlights();
+			isHighlighted = true;
+			parent.notifyOfSelection(piece);
+			return true;
+		}
+		else
+		{
+			parent.clearHighlights();
+			parent.notifyOfSelection(null);
+			return true;
+		}
 	}
 	
 	@Override

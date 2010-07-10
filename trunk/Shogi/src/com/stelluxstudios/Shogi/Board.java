@@ -255,6 +255,26 @@ public class Board {
 		public final Player owner;
 		public final Piece promoted;
 		
+		/*
+		static
+		{
+			WPromotedPawn.dropped 	= BPawn; 			WPawn.dropped 			= BPawn;
+			WPromotedLance.dropped 	= BLance; 			WLance.dropped 			= BLance;
+			WPromotedKnight.dropped = BKnight;			WKnight.dropped			= BKnight;
+			WPromotedSilver.dropped = BSilverGeneral; 	WSilverGeneral.dropped 	= BSilverGeneral;
+			WGoldGeneral.dropped 	= BGoldGeneral;
+			WDragonHorse.dropped 	= BBishop; 			WBishop.dropped 		= BBishop;
+			WDragonKing.dropped 	= BRook; 			WRook.dropped 			= BRook;
+			
+			BPromotedPawn.dropped 	= WPawn; 			BPawn.dropped 			= WPawn;
+			BPromotedLance.dropped 	= WLance; 			BLance.dropped 			= WLance;
+			BPromotedKnight.dropped = WKnight; 			BKnight.dropped 		= WKnight;
+			BPromotedSilver.dropped = WSilverGeneral; 	BSilverGeneral.dropped 	= WSilverGeneral;
+			BGoldGeneral.dropped 	= WGoldGeneral;
+			BDragonHorse.dropped 	= WBishop; 			BBishop.dropped 		= WBishop;
+			BDragonKing.dropped 	= WRook; 			BRook.dropped 			= WRook;
+		}*/
+		
 		Piece(String englishName, String japName,Player owner,String shortJapName,String japAbbr, Piece promoted, int movementCapabilities)
 		{
 			this.englishName = englishName;
