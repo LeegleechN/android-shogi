@@ -2,7 +2,10 @@ package com.stelluxstudios.Shogi;
 
 import java.util.List;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -38,6 +41,9 @@ public class BoardView extends ImageView {
 	
 	private boolean isInitialized = false;
 	private boolean showMoveHints = true;
+	
+	private List<Position> legalMovesForSelectedPiece;
+	private String pieceName; //used for the promote dialog
 	
 	public BoardView(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -117,10 +123,10 @@ public class BoardView extends ImageView {
 		heightPerPiece = 48 * heightScaleRatio;
 		
 		boolean drawingHintOverlays = (showMoveHints && currentUIState == UIState.Piece_Selected);
-		List<Position> hintedPositions = board.getValidMovesForPiece(selectedI, selectedJ);
+		legalMovesForSelectedPiece = board.getValidMovesForPiece(selectedI, selectedJ);
 		
 		Log.d("Position", "hinted positions:");
-		for (Position p: hintedPositions)
+		for (Position p: legalMovesForSelectedPiece)
 			Log.d("Position", p.i + "," + p.j);
 		
 		for (int i = 0 ; i < 9 ; i++)
@@ -143,7 +149,7 @@ public class BoardView extends ImageView {
 					canvas.drawBitmap(bitmap, null,bound, isSelected?selectedPaint:defaultPaint);
 				}
 				
-				if (drawingHintOverlays && hintedPositions.contains(new Position(i, j)))
+				if (drawingHintOverlays && legalMovesForSelectedPiece.contains(new Position(i, j)))
 				{
 					canvas.drawBitmap(hintOverlay, null, bound, defaultPaint);
 				}
@@ -165,8 +171,8 @@ public class BoardView extends ImageView {
 		x -= left_pad;
 		y -= top_pad;
 		
-		int i = (int) (x/widthPerPiece);
-		int j = (int) (y/heightPerPiece);
+		final int i = (int) (x/widthPerPiece);
+		final int j = (int) (y/heightPerPiece);
 		
 		//bounds check
 		if (i < 0 || i> 8 || j < 0 || j>8)
@@ -200,32 +206,72 @@ public class BoardView extends ImageView {
 		}
 		if (currentUIState == UIState.Piece_Selected)
 		{
-			//for now, just try to move the piece
+			final Piece selectedPiece = board.pieceAt(selectedI, selectedJ);
 			
-			Piece selectedPiece = board.pieceAt(selectedI, selectedJ);
 			
-			String move = "" + (9-selectedI) + (selectedJ+1) + (9-i) + (j +1) + selectedPiece.japAbbr.substring(1); //example: 7776FU
-			
-			boolean success = ((BoardActivity)getContext()).tryMakeHumanMove(move);
-			
-			if (success)
+			if (!legalMovesForSelectedPiece.contains(new Position(i, j)))
 			{
 				currentUIState = UIState.Clear;
 				invalidate();
 				return true;
+			}
+			
+			pieceName = selectedPiece.japAbbr.substring(1);
+			
+			//you can promote if you started or ended in the promotion zone
+			if (selectedPiece.promoted != null && (
+					new Position(selectedI, selectedJ).inPromotionZone(board.getCurrentPlayer()) ||
+					new Position(i, j).inPromotionZone(board.getCurrentPlayer())))
+			{
+				
+				AlertDialog.Builder promoteDialog = new AlertDialog.Builder(getContext());
+				promoteDialog.setTitle("Promote?");
+				promoteDialog.setMessage("Would you like to promote this piece?");
+				promoteDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+					
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						pieceName = selectedPiece.promoted.japAbbr.substring(1);
+						submitMove(i, j);
+					}
+				});
+				promoteDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+					
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						submitMove(i, j);						
+					}
+				});
+				promoteDialog.show();
 			}
 			else
 			{
-				Log.d("Move", "Move " + move + " rejected");
-				currentUIState = UIState.Clear;
-				invalidate();
-				return true;
+				submitMove(i, j);
 			}
+			
+			
 		}
-		
-		
-		
 		return true;
+	}
+	
+	private void submitMove(int i, int j)
+	{
+		String move = "" + (9-selectedI) + (selectedJ+1) + (9-i) + (j+1) + pieceName; //example: 7776FU
+		Log.d("Move", "submitted move: " + move);
+		
+		boolean success = ((BoardActivity)getContext()).tryMakeHumanMove(move);
+		
+		if (success)
+		{
+			currentUIState = UIState.Clear;
+			invalidate();
+		}
+		else
+		{
+			Log.d("Move", "Move " + move + " rejected");
+			currentUIState = UIState.Clear;
+			invalidate();
+		}
 	}
 
 
