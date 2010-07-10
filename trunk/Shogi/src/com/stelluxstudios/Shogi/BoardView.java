@@ -1,5 +1,7 @@
 package com.stelluxstudios.Shogi;
 
+import java.util.List;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -16,11 +18,12 @@ import android.widget.ImageView;
 
 import com.stelluxstudios.Shogi.Board.Piece;
 import com.stelluxstudios.Shogi.Board.Player;
+import com.stelluxstudios.Shogi.MovementCalculator.Position;
 
 public class BoardView extends ImageView {
 
 	private Board board;
-	private Bitmap background, lines;
+	private Bitmap background, lines, hintOverlay;
 	private float 
 	left_pad = 12f,
 	top_pad = 10f,
@@ -34,6 +37,7 @@ public class BoardView extends ImageView {
 	private Paint defaultPaint, selectedPaint;
 	
 	private boolean isInitialized = false;
+	private boolean showMoveHints = true;
 	
 	public BoardView(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -49,6 +53,7 @@ public class BoardView extends ImageView {
 	{		
 		background = BitmapFactory.decodeResource(getResources(), R.drawable.ban_kaya_b);
 		lines = BitmapFactory.decodeResource(getResources(), R.drawable.masu_dot);
+		hintOverlay = BitmapFactory.decodeResource(getResources(), R.drawable.hint_overlay);
 		
 		defaultPaint = new Paint();
 		
@@ -111,11 +116,23 @@ public class BoardView extends ImageView {
 		widthPerPiece = 43 * widthScaleRatio;
 		heightPerPiece = 48 * heightScaleRatio;
 		
+		boolean drawingHintOverlays = (showMoveHints && currentUIState == UIState.Piece_Selected);
+		List<Position> hintedPositions = board.getValidMovesForPiece(selectedI, selectedJ);
+		
+		Log.d("Position", "hinted positions:");
+		for (Position p: hintedPositions)
+			Log.d("Position", p.i + "," + p.j);
+		
 		for (int i = 0 ; i < 9 ; i++)
 		{
 			for (int j = 0 ; j < 9 ; j++)
 			{
 				Piece p = board.pieceAt(i, j);
+				Rect bound = new Rect(
+						(int)((i*widthPerPiece) + left_pad),
+						(int)((j*heightPerPiece) + top_pad),
+						(int)(((i+1)*widthPerPiece)+ left_pad),
+						(int)(((j+1)*heightPerPiece) + top_pad));
 				if (p != Piece.Empty)
 				{
 					String piece_res_name = 
@@ -123,12 +140,12 @@ public class BoardView extends ImageView {
 					int id = getResources().getIdentifier(piece_res_name, "drawable", "com.stelluxstudios.Shogi");
 					boolean isSelected = (currentUIState == UIState.Piece_Selected && i == selectedI && j == selectedJ);
 					Bitmap bitmap = BitmapFactory.decodeResource(getResources(), id);
-					Rect bound = new Rect(
-							(int)((i*widthPerPiece) + left_pad),
-							(int)((j*heightPerPiece) + top_pad),
-							(int)(((i+1)*widthPerPiece)+ left_pad),
-							(int)(((j+1)*heightPerPiece) + top_pad));
 					canvas.drawBitmap(bitmap, null,bound, isSelected?selectedPaint:defaultPaint);
+				}
+				
+				if (drawingHintOverlays && hintedPositions.contains(new Position(i, j)))
+				{
+					canvas.drawBitmap(hintOverlay, null, bound, defaultPaint);
 				}
 			}
 		}
