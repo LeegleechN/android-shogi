@@ -311,6 +311,14 @@ public class MovementCalculator
 			return true;
 		}
 		
+		public boolean inPromotionZone(Player player)
+		{
+			if (player == Player.Black)
+				return (j<=2);
+			else
+				return (j>=6);
+		}
+		
 		@Override
 		public boolean equals(Object o) {
 			if (!(o instanceof Position))
