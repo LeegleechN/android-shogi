@@ -21,7 +21,7 @@
 
 3. June 14 - 18
 
-Write the Java Native Invocation (JNI) layer for the engine library. This is a wrapper that converts the C library into a Java library that is then accessible to the GUI layer. Configure the engine to use minimal memory and run quickly enough on a smartphone processor for testing.
+~~Write the Java Native Invocation (JNI) layer for the engine library. This is a wrapper that converts the C library into a Java library that is then accessible to the GUI layer. Configure the engine to use minimal memory and run quickly enough on a smartphone processor for testing.~~
 
  * ~~Deliverable: Can start a new game and enter a move using Java code running on a device. This invokes the native engine code and sends back the computer’s move in response.~~
  * Deliverable: Third tutorial entry focusing on practical use of the Android NDK to write wrapper libraries.
@@ -29,9 +29,9 @@ Write the Java Native Invocation (JNI) layer for the engine library. This is a w
 
 4. June 21 - July 9
 
-Write the user interface layer, including a board, rules enforcement and victory detection for a two player game, and the ability to play a game against the computer. The computer play will not yet be robust against interruption (e.g. from an incoming phone call).
+~~Write the user interface layer, including a board, rules enforcement and victory detection for a two player game, and the ability to play a game against the computer. The computer play will not yet be robust against interruption (e.g. from an incoming phone call).~~
 
- * Deliverable: A playable game of Shogi, both against the computer and human vs. human
+ * ~~Deliverable: A playable game of Shogi, both against the computer and human vs. human~~
  * Deliverable: Fourth tutorial entry explaining the UI code.
        
 5. July 12 - 23
