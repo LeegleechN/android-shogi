@@ -38,6 +38,7 @@ public class BoardView extends ImageView {
 	
 	private int selectedI, selectedJ;
 	private Paint defaultPaint, selectedPaint;
+	private Piece selectedPieceInHand;
 	
 	private boolean isInitialized = false;
 	private boolean showMoveHints = true;
@@ -204,7 +205,7 @@ public class BoardView extends ImageView {
 			invalidate();
 			return true;
 		}
-		if (currentUIState == UIState.Piece_Selected)
+		else if (currentUIState == UIState.Piece_Selected)
 		{
 			final Piece selectedPiece = board.pieceAt(selectedI, selectedJ);
 			
@@ -251,12 +252,24 @@ public class BoardView extends ImageView {
 			
 			
 		}
+		else if (currentUIState == UIState.WaitingToPlaceFromHand)
+		{
+			pieceName = selectedPieceInHand.japAbbr.substring(1);
+			submitMove(i, j);
+		}
 		return true;
 	}
 	
 	private void submitMove(int i, int j)
 	{
-		String move = "" + (9-selectedI) + (selectedJ+1) + (9-i) + (j+1) + pieceName; //example: 7776FU
+		String move;
+		if (currentUIState == UIState.Piece_Selected)
+			move = "" + (9-selectedI) + (selectedJ+1) + (9-i) + (j+1) + pieceName; //example: 7776FU
+		else if (currentUIState == UIState.WaitingToPlaceFromHand)
+			move = "00" + (9-i) + (j+1) + pieceName;
+		else
+			return;
+		
 		Log.d("Move", "submitted move: " + move);
 		
 		boolean success = ((BoardActivity)getContext()).tryMakeHumanMove(move);
@@ -270,6 +283,22 @@ public class BoardView extends ImageView {
 		{
 			Log.d("Move", "Move " + move + " rejected");
 			currentUIState = UIState.Clear;
+			invalidate();
+		}
+	}
+	
+	public void setSelectedPieceInHand(Piece piece)
+	{
+		if (piece != null)
+		{
+			currentUIState = UIState.WaitingToPlaceFromHand;
+			selectedPieceInHand = piece;
+			invalidate();
+		}
+		else
+		{
+			currentUIState = UIState.Clear;
+			selectedPieceInHand = null;
 			invalidate();
 		}
 	}
