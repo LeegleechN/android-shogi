@@ -8,6 +8,8 @@ import java.util.List;
 
 import android.util.Log;
 
+import com.stelluxstudios.Shogi.MovementCalculator.Position;
+
 public class Board {
 	
 	public enum Player{White,Black};
@@ -205,6 +207,12 @@ public class Board {
 	public Player getCurrentPlayer()
 	{
 		return currentPlayer;
+	}
+	
+	
+	public List<Position> getValidMovesForPiece(int i, int j)
+	{
+		return MovementCalculator.getValidMoves(this, i, j);
 	}
 	
 	
