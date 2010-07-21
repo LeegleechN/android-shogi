@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -28,6 +29,10 @@ public class BoardActivity extends Activity {
 	private Button moveButton;
 	
 	private boolean whiteIsComp, blackIsComp;
+	
+	SharedPreferences prefs;
+	
+	
 	
 	
     static {
@@ -229,5 +234,22 @@ public class BoardActivity extends Activity {
 		default:
 			throw new RuntimeException();
 		}
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		prefs = getSharedPreferences(Preferences.PREFS, MODE_PRIVATE);
+		
+		boolean moveHints = prefs.getBoolean("showingHints", true);
+		boardView.showMoveHints = moveHints;
+		
+		int boardPosition = prefs.getInt("boardImagePosition", 0);
+		int boardRes = Preferences.boardOptions[boardPosition];
+		boardView.setBackgroundRes(boardRes);
+		
+		int piecePosition = prefs.getInt("pieceImagePosition", 0);
+		String piecePrefix = Preferences.pieceResName[piecePosition];
+		boardView.piecePrefix = piecePrefix;	
 	}
 }
