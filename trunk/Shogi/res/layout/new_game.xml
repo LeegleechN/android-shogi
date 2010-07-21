@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    >
+    
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:text="White Player:"
+    />
+    
+    <Spinner 
+    android:id = "@+id/whitePlayerSpinner"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:prompt="@string/white_player"
+    />
+    
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:text="Black Player:"
+    />
+    
+    <Spinner 
+      android:id = "@+id/blackPlayerSpinner"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:prompt="@string/black_player"
+    />
+        <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:text="Handicap:"
+    />
+    <Spinner 
+      android:id = "@+id/handicapSpinner"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:prompt="@string/handicap"
+    />
+    <Button
+      android:id = "@+id/startButton"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text= "Start"/>
+</LinearLayout>

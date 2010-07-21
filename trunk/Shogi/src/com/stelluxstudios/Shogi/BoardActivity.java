@@ -226,13 +226,27 @@ public class BoardActivity extends Activity {
 		Intent i = new Intent();
 		switch (item.getItemId()) {
 		case 0:
+			i.setClassName(BoardActivity.this, NewGameActivity.class.getName());
+			startActivityForResult(i, 0);
 			return true;
 		case 1:
 			i.setClassName(BoardActivity.this, Preferences.class.getName());
-			startActivityForResult(i, 0);
+			startActivityForResult(i, 1);
 			return true;
 		default:
 			throw new RuntimeException();
+		}
+	}
+	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		switch (requestCode) {
+		case 0:
+			break;
+		case 1:
+			break;
+		default:
+			break;
 		}
 	}
 	

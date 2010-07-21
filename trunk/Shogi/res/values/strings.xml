@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, BoardActivity!</string>
     <string name="app_name">Shogi</string>
+    <string-array name="handicaps">
+    	<item>None</item>
+    	<item>Left lance</item>
+    	<item>Bishop</item>
+    	<item>Rook</item>
+    	<item>Rook and left lance</item>
+    	<item>Two piece</item>
+    	<item>Four piece</item>
+    	<item>Four piece</item>
+    	<item>Six piece</item> 
+    </string-array>
+    <string-array name="human_or_comp">
+    	<item>Human</item>
+    	<item>Computer</item>
+    </string-array>
+    <string name="white_player">White Player</string>
+    <string name="black_player">Black Player</string>
+    <string name="handicap">Handicap</string>
 </resources>
