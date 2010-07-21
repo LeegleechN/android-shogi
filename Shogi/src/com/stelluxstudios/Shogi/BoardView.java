@@ -33,6 +33,8 @@ public class BoardView extends ImageView {
 	widthPerPiece,
 	heightPerPiece;
 	
+	String boardGraphics, pieceGraphics;
+	
 	private UIState currentUIState = UIState.Clear;
 	private enum UIState{Clear,Piece_Selected,WaitingToPlaceFromHand};
 	
@@ -41,10 +43,14 @@ public class BoardView extends ImageView {
 	private Piece selectedPieceInHand;
 	
 	private boolean isInitialized = false;
-	private boolean showMoveHints = true;
+	boolean showMoveHints = true;
 	
 	private List<Position> legalMovesForSelectedPiece;
 	private String pieceName; //used for the promote dialog
+	
+	String piecePrefix = "koma_kinki_";
+	
+	int backgroundRes = R.drawable.ban_kaya_b;
 	
 	public BoardView(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -58,7 +64,7 @@ public class BoardView extends ImageView {
 	//Must be called when there is enough info to init properly
 	private void initialize()
 	{		
-		background = BitmapFactory.decodeResource(getResources(), R.drawable.ban_kaya_b);
+		setBackgroundRes(backgroundRes);
 		lines = BitmapFactory.decodeResource(getResources(), R.drawable.masu_dot);
 		hintOverlay = BitmapFactory.decodeResource(getResources(), R.drawable.hint_overlay);
 		
@@ -66,6 +72,14 @@ public class BoardView extends ImageView {
 		
 		selectedPaint = new Paint();
 		selectedPaint.setColorFilter(new PorterDuffColorFilter(Color.BLUE, Mode.LIGHTEN));
+	}
+	
+	public void setBackgroundRes(int res)
+	{
+		backgroundRes = res;
+		background = BitmapFactory.decodeResource(getResources(), res);
+		if (background == null)
+			background = BitmapFactory.decodeResource(getResources(), R.drawable.ban_kaya_b);
 	}
 	
 	public void setBoard(Board board)
@@ -143,7 +157,7 @@ public class BoardView extends ImageView {
 				if (p != Piece.Empty)
 				{
 					String piece_res_name = 
-						"koma_kinki_torafu_" + p.shortJapName;
+						piecePrefix + p.shortJapName;
 					int id = getResources().getIdentifier(piece_res_name, "drawable", "com.stelluxstudios.Shogi");
 					boolean isSelected = (currentUIState == UIState.Piece_Selected && i == selectedI && j == selectedJ);
 					Bitmap bitmap = BitmapFactory.decodeResource(getResources(), id);
