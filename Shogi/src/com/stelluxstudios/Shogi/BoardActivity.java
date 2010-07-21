@@ -6,9 +6,14 @@ import java.io.IOException;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ContextMenu;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
@@ -203,4 +208,26 @@ public class BoardActivity extends Activity {
     {
     	boardView.setSelectedPieceInHand(p);
     }
+    
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		menu.add(0, 0, 0, "New Game");
+		menu.add(0, 1, 0, "Preferences");
+		return true;
+	}
+	
+	public boolean onOptionsItemSelected(MenuItem item)
+	{
+		Intent i = new Intent();
+		switch (item.getItemId()) {
+		case 0:
+			return true;
+		case 1:
+			i.setClassName(BoardActivity.this, Preferences.class.getName());
+			startActivityForResult(i, 0);
+			return true;
+		default:
+			throw new RuntimeException();
+		}
+	}
 }
