@@ -5,14 +5,19 @@
 #include <sys/stat.h>
 #include <fcntl.h>
   
-  JNIEXPORT void JNICALL Java_com_stelluxstudios_Shogi_Engine_newGame
+   JNIEXPORT void JNICALL Java_com_stelluxstudios_Shogi_Engine_initialize
   (JNIEnv * env, jobject caller)
   {
      tree_t* ptree = &tree;
      int ret = ini(ptree);
-     char buf[128];
-     sprintf(buf,"cmd_new: ret %d",ret);
-     __android_log_write(ANDROID_LOG_ERROR,"bonanza",buf);
+     return;
+  }
+  
+  JNIEXPORT void JNICALL Java_com_stelluxstudios_Shogi_Engine_newGame
+  (JNIEnv * env, jobject caller)
+  {
+     tree_t* ptree = &tree;
+     int ret = ini_game(ptree,&min_posi_no_handicap,flag_time,"Player1","Player2");
      return;
   }
   
@@ -89,6 +94,28 @@
      close(fd);
      */
      return ret;
+  }
+  
+   JNIEXPORT jint JNICALL Java_com_stelluxstudios_Shogi_Engine_getGameStatus
+  (JNIEnv * env, jobject caller)
+  {
+	if (game_status & flag_quit)
+      return -2;
+    
+    if (game_status & flag_mated)
+      return 18;
+    if (game_status & flag_resigned)
+    {
+      if (root_turn) //white resigned
+      	return 19;
+      else
+      	return 20; //black resigned
+    }
+    if (game_status & flag_drawn)
+      return 21;
+	  
+    if (game_status & flag_suspend)
+      return 22;
   }
   
     JNIEXPORT jint JNICALL Java_com_stelluxstudios_Shogi_Engine_getCurrentPlayer

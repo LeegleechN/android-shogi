@@ -19,13 +19,13 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.ImageView;
 
-import com.stelluxstudios.Shogi.Board.Piece;
-import com.stelluxstudios.Shogi.Board.Player;
+import com.stelluxstudios.Shogi.Game.Piece;
+import com.stelluxstudios.Shogi.Game.Player;
 import com.stelluxstudios.Shogi.MovementCalculator.Position;
 
 public class BoardView extends ImageView {
 
-	private Board board;
+	private Game board;
 	private Bitmap background, lines, hintOverlay;
 	private float 
 	left_pad = 12f,
@@ -82,7 +82,7 @@ public class BoardView extends ImageView {
 			background = BitmapFactory.decodeResource(getResources(), R.drawable.ban_kaya_b);
 	}
 	
-	public void setBoard(Board board)
+	public void setGame(Game board)
 	{
 		this.board = board;
 	}
@@ -286,7 +286,7 @@ public class BoardView extends ImageView {
 		
 		Log.d("Move", "submitted move: " + move);
 		
-		boolean success = ((BoardActivity)getContext()).tryMakeHumanMove(move);
+		boolean success = ((GameActivity)getContext()).tryMakeHumanMove(move);
 		
 		if (success)
 		{

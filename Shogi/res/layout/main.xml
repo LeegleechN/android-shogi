@@ -4,9 +4,9 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
-     <Button  android:layout_width="fill_parent" android:id="@+id/buttonMove"
+  <!--    <Button  android:layout_width="fill_parent" android:id="@+id/buttonMove"
     android:layout_height="wrap_content" 
-    android:text="make move"/>
+    android:text="make move"/> -->
     <com.stelluxstudios.Shogi.HandView
      android:layout_width="fill_parent" 
    android:id="@+id/whiteHand"

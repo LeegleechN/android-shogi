@@ -7,7 +7,7 @@ import android.graphics.PorterDuff.Mode;
 import android.view.MotionEvent;
 import android.widget.ImageView;
 
-import com.stelluxstudios.Shogi.Board.Piece;
+import com.stelluxstudios.Shogi.Game.Piece;
 
 public class PieceView extends ImageView {
 

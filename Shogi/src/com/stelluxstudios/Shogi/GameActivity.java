@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.Menu;
@@ -18,15 +19,17 @@ import android.view.ContextMenu.ContextMenuInfo;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-import com.stelluxstudios.Shogi.Board.Piece;
-import com.stelluxstudios.Shogi.Board.Player;
+import com.stelluxstudios.Shogi.Game.Piece;
+import com.stelluxstudios.Shogi.Game.Player;
 
-public class BoardActivity extends Activity {
+public class GameActivity extends Activity {
    
 	private BoardView boardView;
 	private HandView blackHandView, whiteHandView;
 	private Engine e;
-	private Button moveButton;
+	private Game game;
+	private Handler handler = new Handler();
+	//private Button moveButton;
 	
 	private boolean whiteIsComp, blackIsComp;
 	
@@ -53,7 +56,7 @@ public class BoardActivity extends Activity {
         blackIsComp = false;
         
         e = new Engine();
-        e.newGame();
+        e.initialize();
         
         boardView = (BoardView)findViewById(R.id.boardView);
         whiteHandView = (HandView) findViewById(R.id.whiteHand);
@@ -61,74 +64,30 @@ public class BoardActivity extends Activity {
         
         e.getBoardString();
         updateStateFromEngine();
-        
+        mainLoop();
   
-     
+     /*
         moveButton= (Button)findViewById(R.id.buttonMove);
         moveButton.setOnClickListener(new OnClickListener() {
 			
         	
 			@Override
 			public void onClick(View v) {
-		makeMove();	        
+		makeComputerMove();	        
     }
-        });
+        }); */
     }
     
-    private void makeMove()
+    private void makeComputerMove()
     {
-    	int ret = e.makeMove();
-    	if (ret > 1)
-    	{
-    		String cause = "Game ended for unknown reason";
-    		if (ret == 18)
-    			cause = "Checkmate!";
-    		if (ret == 19)
-    			cause = "White resigns!";
-    		if (ret == 20)
-    			cause = "Black resigns!";
-    		if (ret == 21)
-    			cause = "Draw!";
-    		if (ret == 22)
-    			cause = "Game has been suspended??";
-    		AlertDialog.Builder b = new AlertDialog.Builder(BoardActivity.this);
-    		b.setTitle("Game Over");
-    		b.setMessage(cause);
-    		b.setPositiveButton("Quit", new DialogInterface.OnClickListener() {
-				
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					BoardActivity.this.finish();
-					
-				}
-			});
-    		b.create().show();
-    		
-    	}	
-    	else if (ret < 0)
-    	{
-    		String cause = "Lost communication with Bonanza engine!";
-    		AlertDialog.Builder b = new AlertDialog.Builder(BoardActivity.this);
-    		b.setTitle("Error");
-    		b.setMessage(cause);
-    		b.setPositiveButton("Quit", new DialogInterface.OnClickListener() {
-				
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					BoardActivity.this.finish();
-					
-				}
-			});
-    		b.create().show();
-    		
-    	}	
-    	else
-    	{
-			e.getBoardString();
-			System.gc();
-			
-			String boardString = getBoardString();
-			updateStateFromEngine();
+    	e.makeMove();	
+    	processGameStatus();
+    	
+		e.getBoardString();
+		System.gc();
+		
+		String boardString = getBoardString();
+		updateStateFromEngine();
 			
 			/*
 			moveButton.post(new Runnable() {
@@ -140,7 +99,6 @@ public class BoardActivity extends Activity {
 				}
 			});
 		*/
-    	}
     }
     
     //returns true if the move worked, false if it was illegal
@@ -153,6 +111,13 @@ public class BoardActivity extends Activity {
          {
         	 e.getBoardString();
         	 updateStateFromEngine();
+        	 handler.post(new Runnable() {
+				
+				@Override
+				public void run() {
+					mainLoop();
+				}
+			});
         	 return true;
          }
         	
@@ -190,21 +155,21 @@ public class BoardActivity extends Activity {
     private void updateStateFromEngine()
     {
     	String boardString = getBoardString();
-    	Board board = Board.fromString(boardString);
+    	game = Game.fromString(boardString);
     	
     	int player = e.getCurrentPlayer();
     	if (player == 0)
-    		board.setCurrentPlayer(Player.Black);
+    		game.setCurrentPlayer(Player.Black);
     	else
-    		board.setCurrentPlayer(Player.White);
+    		game.setCurrentPlayer(Player.White);
     	
     	
-		boardView.setBoard(board);
+		boardView.setGame(game);
 		boardView.invalidate();
 		
-		whiteHandView.updateFromPieceList(board.getWhiteHand());
+		whiteHandView.updateFromPieceList(game.getWhiteHand());
 		whiteHandView.invalidate();
-		blackHandView.updateFromPieceList(board.getBlackHand());
+		blackHandView.updateFromPieceList(game.getBlackHand());
 		blackHandView.invalidate();
 		whiteHandView.highlightsEnabled = false;
     }
@@ -226,11 +191,11 @@ public class BoardActivity extends Activity {
 		Intent i = new Intent();
 		switch (item.getItemId()) {
 		case 0:
-			i.setClassName(BoardActivity.this, NewGameActivity.class.getName());
+			i.setClassName(GameActivity.this, NewGameActivity.class.getName());
 			startActivityForResult(i, 0);
 			return true;
 		case 1:
-			i.setClassName(BoardActivity.this, Preferences.class.getName());
+			i.setClassName(GameActivity.this, Preferences.class.getName());
 			startActivityForResult(i, 1);
 			return true;
 		default:
@@ -242,6 +207,13 @@ public class BoardActivity extends Activity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		switch (requestCode) {
 		case 0:
+			if (resultCode == NewGameActivity.NEW_GAME_RESULT)
+			{
+				boolean whiteIsComp = data.getBooleanExtra("whiteIsComp", true);
+				boolean blackIsComp = data.getBooleanExtra("blackIsComp", true);
+				int handicapPosition = data.getIntExtra("handicap", 0);
+				startGame(Game.initialConfig, whiteIsComp, blackIsComp);
+			}
 			break;
 		case 1:
 			break;
@@ -265,5 +237,96 @@ public class BoardActivity extends Activity {
 		int piecePosition = prefs.getInt("pieceImagePosition", 0);
 		String piecePrefix = Preferences.pieceResName[piecePosition];
 		boardView.piecePrefix = piecePrefix;	
+	}
+	
+	//TODO implement boardPosition (i.e. loading save games)
+	void startGame(String boardPosition,boolean whiteIsComp, boolean blackIsComp)
+	{
+		this.whiteIsComp = whiteIsComp;
+		this.blackIsComp = blackIsComp;
+		e.newGame();
+		e.getBoardString();
+		updateStateFromEngine();
+		mainLoop();
+	}
+
+	void mainLoop()
+	{
+		Player currentPlayer = game.getCurrentPlayer();
+		boolean compTakesMove = (currentPlayer == Player.White && whiteIsComp || currentPlayer == Player.Black && blackIsComp);
+
+		if (compTakesMove)
+		{
+			makeComputerMove();
+			if (!processGameStatus())
+			{
+				handler.postDelayed(new Runnable()
+				{
+					@Override
+					public void run()
+					{
+						mainLoop();
+					}
+				},200);
+				return;
+			}
+		} 
+		else
+		{
+			processGameStatus();
+			return;
+		}
+	}
+	
+	//returns true if the game is over
+	boolean processGameStatus()
+	{
+		int gameStatus = e.getGameStatus();
+		String cause = "Game ended for unknown reason";
+		if (gameStatus == 18)
+			cause = "Checkmate!";
+		if (gameStatus == 19)
+			cause = "White resigns!";
+		if (gameStatus == 20)
+			cause = "Black resigns!";
+		if (gameStatus == 21)
+			cause = "Draw!";
+		if (gameStatus == 22)
+			cause = "Game has been suspended??";
+		
+		if (gameStatus > 1)
+    	{
+    		AlertDialog.Builder b = new AlertDialog.Builder(GameActivity.this);
+    		b.setTitle("Game Over");
+    		b.setMessage(cause);
+    		b.setPositiveButton("Quit", new DialogInterface.OnClickListener() {
+				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					GameActivity.this.finish();
+					
+				}
+			});
+    		b.create().show();
+    		return true;
+    	}
+		else if (gameStatus < 0)
+    	{
+    		cause = "Lost communication with Bonanza engine!";
+    		AlertDialog.Builder b = new AlertDialog.Builder(GameActivity.this);
+    		b.setTitle("Error");
+    		b.setMessage(cause);
+    		b.setPositiveButton("Quit", new DialogInterface.OnClickListener() {
+				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					GameActivity.this.finish();
+					
+				}
+			});
+    		b.create().show();
+    		return true;
+    	}	
+		return false;
 	}
 }
