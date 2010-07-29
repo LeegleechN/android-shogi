@@ -8,6 +8,10 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
+import android.graphics.BitmapFactory.Options;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -18,6 +22,8 @@ import android.view.View;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.stelluxstudios.Shogi.Game.Piece;
 import com.stelluxstudios.Shogi.Game.Player;
@@ -35,8 +41,11 @@ public class GameActivity extends Activity {
 	
 	SharedPreferences prefs;
 	
+	TextView turnReminder;
+	ImageView turnReminderImage;
 	
-	
+	Matrix upsideDownMatrix;
+	Bitmap pointingUp, pointingDown;
 	
     static {
         System.loadLibrary("bonanza");
@@ -61,6 +70,13 @@ public class GameActivity extends Activity {
         boardView = (BoardView)findViewById(R.id.boardView);
         whiteHandView = (HandView) findViewById(R.id.whiteHand);
         blackHandView = (HandView) findViewById(R.id.blackHand);
+        turnReminder = (TextView)findViewById(R.id.turnReminder);
+        turnReminderImage = (ImageView)findViewById(R.id.turnReminderImage);
+        
+        upsideDownMatrix = new Matrix();
+        upsideDownMatrix.postRotate(180);
+        pointingUp = BitmapFactory.decodeResource(getResources(), R.drawable.empty);
+        pointingDown = Bitmap.createBitmap(pointingUp, 0, 0, pointingUp.getWidth(), pointingUp.getHeight(), upsideDownMatrix, false);
         
         e.getBoardString();
         updateStateFromEngine();
@@ -172,6 +188,17 @@ public class GameActivity extends Activity {
 		blackHandView.updateFromPieceList(game.getBlackHand());
 		blackHandView.invalidate();
 		whiteHandView.highlightsEnabled = false;
+		
+		if (game.getCurrentPlayer() == Player.Black)
+		{
+			turnReminderImage.setImageBitmap(pointingUp);
+			turnReminder.setText("Black's Turn");
+		}
+		else
+		{
+			turnReminderImage.setImageBitmap(pointingDown);
+			turnReminder.setText("White's Turn");
+		}
     }
     
     public void notifyPieceInHand(Piece p)
@@ -237,6 +264,10 @@ public class GameActivity extends Activity {
 		int piecePosition = prefs.getInt("pieceImagePosition", 0);
 		String piecePrefix = Preferences.pieceResName[piecePosition];
 		boardView.piecePrefix = piecePrefix;	
+		whiteHandView.piecePrefix = piecePrefix;
+		whiteHandView.setBackgroundResource(boardRes);
+		blackHandView.piecePrefix = piecePrefix;
+		blackHandView.setBackgroundResource(boardRes);
 	}
 	
 	//TODO implement boardPosition (i.e. loading save games)
