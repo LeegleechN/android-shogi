@@ -48,7 +48,7 @@ public class BoardView extends ImageView {
 	private List<Position> legalMovesForSelectedPiece;
 	private String pieceName; //used for the promote dialog
 	
-	String piecePrefix = "koma_kinki_";
+	public String piecePrefix = "koma_kinki_";
 	
 	int backgroundRes = R.drawable.ban_kaya_b;
 	

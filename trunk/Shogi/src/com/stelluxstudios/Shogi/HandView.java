@@ -13,6 +13,7 @@ public class HandView extends LinearLayout
 	public boolean highlightsEnabled = true;
 	public PieceView highlightedView;
 	public boolean isBlack; //otherwise, is white
+	String piecePrefix;
 	
 	public HandView(Context context) {
 		super(context);
