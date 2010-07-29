@@ -6,7 +6,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
 
-import com.stelluxstudios.Shogi.Board.Piece;
+import com.stelluxstudios.Shogi.Game.Piece;
 
 public class HandView extends LinearLayout
 {	
@@ -79,7 +79,7 @@ public class HandView extends LinearLayout
 	}
 
 	public void notifyOfSelection(Piece p) {
-		((BoardActivity)getContext()).notifyPieceInHand(p);
+		((GameActivity)getContext()).notifyPieceInHand(p);
 		
 	}
 	

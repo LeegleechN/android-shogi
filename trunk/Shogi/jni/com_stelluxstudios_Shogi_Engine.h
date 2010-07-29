@@ -7,6 +7,9 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+JNIEXPORT void JNICALL Java_com_stelluxstudios_Shogi_Engine_initialize
+  (JNIEnv *, jobject);
 /*
  * Class:     com_stelluxstudios_Shogi_Engine
  * Method:    newGame
@@ -26,6 +29,9 @@ JNIEXPORT  jint JNICALL Java_com_stelluxstudios_Shogi_Engine_tryApplyMove
  * Method:    makeMove
  */
 JNIEXPORT jint JNICALL Java_com_stelluxstudios_Shogi_Engine_makeMove
+  (JNIEnv *, jobject);
+  
+  JNIEXPORT jint JNICALL Java_com_stelluxstudios_Shogi_Engine_getGameStatus
   (JNIEnv *, jobject);
   
   JNIEXPORT jint JNICALL Java_com_stelluxstudios_Shogi_Engine_getCurrentPlayer

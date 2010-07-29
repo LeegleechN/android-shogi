@@ -10,7 +10,7 @@ import android.util.Log;
 
 import com.stelluxstudios.Shogi.MovementCalculator.Position;
 
-public class Board {
+public class Game {
 	
 	public enum Player{White,Black};
 	private Piece[][] field = new Piece[9][9];
@@ -19,7 +19,7 @@ public class Board {
 	
 	private Player currentPlayer;
 	
-	private final static String initialConfig = 
+	public final static String initialConfig = 
 "'  9  8  7  6  5  4  3  2  1 \n"+
 "P1-KY-KE-GI-KI-OU-KI-GI-KE-KY\n"+
 "P2 * -HI *  *  *  *  * -KA * \n"+
@@ -65,16 +65,16 @@ public class Board {
 	BISHOP_MOVEMENT = DIAG_FORWARD_LEFT_ONE | DIAG_FORWARD_RIGHT_SLIDE | DIAG_BACK_LEFT_SLIDE | DIAG_BACK_RIGHT_SLIDE;
 	
 	
-	public static Board makeNew()
+	public static Game makeNew()
 	{
-		Board b = Board.fromString(initialConfig);
+		Game b = Game.fromString(initialConfig);
 		b.currentPlayer = Player.Black;
 		return b;
 	}
 	
-	public static Board fromString(String in)
+	public static Game fromString(String in)
 	{
-		Board b = new Board();
+		Game b = new Game();
 		BufferedReader stream = null;
 		try
 		{
@@ -128,7 +128,7 @@ public class Board {
 		}
 	}
 	
-	private static void interpretHand(String line,Board board) {
+	private static void interpretHand(String line,Game board) {
 		int length = line.length();
 		//2 for the P+/P- header, for because the piece codes are 2 chars, and there's 2 chars of spacer '00's.
 		int numPieces = (length - 2) / 4;
@@ -164,7 +164,7 @@ public class Board {
 			
 	}
 
-	private Board()
+	private Game()
 	{
 		for (int i = 0 ; i < 9 ; i++)
 		{
@@ -175,9 +175,9 @@ public class Board {
 		}
 	}
 	
-	public static Board newBoard()
+	public static Game newBoard()
 	{
-		return new Board();
+		return new Game();
 	}
 	
 	public Piece pieceAt(int row, int col)

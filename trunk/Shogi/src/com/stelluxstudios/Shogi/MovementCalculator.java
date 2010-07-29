@@ -1,18 +1,18 @@
 package com.stelluxstudios.Shogi;
 
-import static com.stelluxstudios.Shogi.Board.*;
+import static com.stelluxstudios.Shogi.Game.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.stelluxstudios.Shogi.Board.Piece;
-import com.stelluxstudios.Shogi.Board.Player;
+import com.stelluxstudios.Shogi.Game.Piece;
+import com.stelluxstudios.Shogi.Game.Player;
 
 public class MovementCalculator 
 {
 	//enforces movement restrictions by whose turn it is, in addition to all other constraints
 	//The resulting list may have duplicates
-	public static List<Position> getValidMoves(Board b,int i, int j)
+	public static List<Position> getValidMoves(Game b,int i, int j)
 	{
 		List<Position> out = new ArrayList<Position>();
 		if (!Position.boundsCheck(i,j))
@@ -200,7 +200,7 @@ public class MovementCalculator
 		return out;
 	}
 	
-	private static boolean isLegalTarget(Board b, Position p)
+	private static boolean isLegalTarget(Game b, Position p)
 	{
 		if (!Position.boundsCheck(p.i, p.j))
 			return false;

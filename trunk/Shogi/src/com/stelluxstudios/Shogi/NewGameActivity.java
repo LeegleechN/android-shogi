@@ -45,11 +45,11 @@ public class NewGameActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				setResult(NEW_GAME_RESULT);
 				Intent i = getIntent();
-				i.putExtra("whiteIsHuman",whitePlayerSpinner.getSelectedItemPosition() == 0);
-				i.putExtra("blackIsHuman",blackPlayerSpinner.getSelectedItemPosition() == 0);
+				i.putExtra("whiteIsComp",whitePlayerSpinner.getSelectedItemPosition() == 1);
+				i.putExtra("blackIsComp",blackPlayerSpinner.getSelectedItemPosition() == 1);
 				i.putExtra("handicap", handicapSpinner.getSelectedItemPosition());
+				setResult(NEW_GAME_RESULT, i);
 				finish();
 			}
 		});
