@@ -52,13 +52,17 @@ public class BoardView extends ImageView {
 	
 	int backgroundRes = R.drawable.ban_kaya_b;
 	
+	GameActivity gameActivity;
+	
 	public BoardView(Context context, AttributeSet attrs) {
 		super(context, attrs);
+		gameActivity = (GameActivity)context;
 	}
 
 	
 	public BoardView(Context context) {
 		super(context);
+		gameActivity = (GameActivity)context;
 	}
 	
 	//Must be called when there is enough info to init properly
@@ -216,6 +220,9 @@ public class BoardView extends ImageView {
 			selectedI = i;
 			selectedJ = j;
 			
+			//deselect any pieces in the hand
+			gameActivity.notifyPieceSelectedOnBoard();
+			
 			invalidate();
 			return true;
 		}
@@ -286,7 +293,7 @@ public class BoardView extends ImageView {
 		
 		Log.d("Move", "submitted move: " + move);
 		
-		boolean success = ((GameActivity)getContext()).tryMakeHumanMove(move);
+		boolean success = gameActivity.tryMakeHumanMove(move);
 		
 		if (success)
 		{
