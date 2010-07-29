@@ -21,13 +21,15 @@ public class PieceView extends ImageView {
 		this.parent = parent;
 		
 		String piece_res_name = 
-			"koma_kinki_torafu_" + piece.shortJapName;
+			parent.piecePrefix + piece.shortJapName;
 		int id = getResources().getIdentifier(piece_res_name, "drawable", "com.stelluxstudios.Shogi");
 		setImageResource(id);
 	}
 	
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
+		if (!parent.highlightsEnabled)
+			return false;
 		if (!isHighlighted)
 		{
 			parent.clearHighlights();

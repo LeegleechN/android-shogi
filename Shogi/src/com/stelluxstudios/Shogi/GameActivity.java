@@ -187,23 +187,33 @@ public class GameActivity extends Activity {
 		whiteHandView.invalidate();
 		blackHandView.updateFromPieceList(game.getBlackHand());
 		blackHandView.invalidate();
-		whiteHandView.highlightsEnabled = false;
+		
 		
 		if (game.getCurrentPlayer() == Player.Black)
 		{
 			turnReminderImage.setImageBitmap(pointingUp);
 			turnReminder.setText("Black's Turn");
+			whiteHandView.highlightsEnabled = false;
+			blackHandView.highlightsEnabled = true;
 		}
 		else
 		{
 			turnReminderImage.setImageBitmap(pointingDown);
 			turnReminder.setText("White's Turn");
+			blackHandView.highlightsEnabled = false;
+			whiteHandView.highlightsEnabled = true;
 		}
     }
     
     public void notifyPieceInHand(Piece p)
     {
     	boardView.setSelectedPieceInHand(p);
+    }
+    
+    public void notifyPieceSelectedOnBoard()
+    {
+    	whiteHandView.clearHighlights();
+    	blackHandView.clearHighlights();
     }
     
 	@Override

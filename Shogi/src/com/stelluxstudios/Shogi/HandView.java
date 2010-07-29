@@ -4,6 +4,7 @@ import java.util.List;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.widget.LinearLayout;
 
 import com.stelluxstudios.Shogi.Game.Piece;
@@ -82,6 +83,13 @@ public class HandView extends LinearLayout
 	public void notifyOfSelection(Piece p) {
 		((GameActivity)getContext()).notifyPieceInHand(p);
 		
+	}
+	
+	@Override
+	public boolean onTouchEvent(MotionEvent event)
+	{
+		clearHighlights();
+		return true;
 	}
 	
 
