@@ -1,0 +1,1692 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg3738"
+   version="1.1"
+   inkscape:version="0.47 r22583"
+   sodipodi:docname="western.svg">
+  <defs
+     id="defs3740">
+    <marker
+       inkscape:stockid="TriangleOutM"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="TriangleOutM"
+       style="overflow:visible">
+      <path
+         id="path5245"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;marker-start:none"
+         transform="scale(0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleInM"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="TriangleInM"
+       style="overflow:visible">
+      <path
+         id="path5236"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;marker-start:none"
+         transform="scale(-0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleInS"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="TriangleInS"
+       style="overflow:visible">
+      <path
+         id="path5239"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;marker-start:none"
+         transform="scale(-0.2)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleInL"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="TriangleInL"
+       style="overflow:visible">
+      <path
+         id="path5233"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;marker-start:none"
+         transform="scale(-0.8)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Mstart"
+       style="overflow:visible">
+      <path
+         id="path5105"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;marker-start:none"
+         transform="scale(0.4) translate(10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Lend"
+       style="overflow:visible;">
+      <path
+         id="path5120"
+         style="font-size:12.0;fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(1.1) rotate(180) translate(1,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Mend"
+       style="overflow:visible;">
+      <path
+         id="path5108"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;marker-start:none;"
+         transform="scale(0.4) rotate(180) translate(10,0)" />
+    </marker>
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective3746" />
+    <inkscape:perspective
+       id="perspective3732"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3795"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3829"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3851"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3873"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3895"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3938"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3960"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective4003"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective4054"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective4097"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective4140"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective4206"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective4249"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective4298"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective9154"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <marker
+       inkscape:stockid="TriangleInM"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleInM-3"
+       style="overflow:visible">
+      <path
+         id="path5236-4"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         transform="scale(-0.4,-0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutM"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleOutM-4"
+       style="overflow:visible">
+      <path
+         id="path5245-6"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleInM"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker9162"
+       style="overflow:visible">
+      <path
+         id="path9164"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         transform="scale(-0.4,-0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutM"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker9166"
+       style="overflow:visible">
+      <path
+         id="path9168"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <inkscape:perspective
+       id="perspective9216"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <marker
+       inkscape:stockid="TriangleInM"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleInM-4"
+       style="overflow:visible">
+      <path
+         id="path5236-9"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         transform="scale(-0.4,-0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutM"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleOutM-6"
+       style="overflow:visible">
+      <path
+         id="path5245-3"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleInM"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker9224"
+       style="overflow:visible">
+      <path
+         id="path9226"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         transform="scale(-0.4,-0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutM"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker9228"
+       style="overflow:visible">
+      <path
+         id="path9230"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <inkscape:perspective
+       id="perspective9278"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective9321"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <marker
+       inkscape:stockid="TriangleInM"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleInM-6"
+       style="overflow:visible">
+      <path
+         id="path5236-3"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         transform="scale(-0.4,-0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutM"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleOutM-61"
+       style="overflow:visible">
+      <path
+         id="path5245-5"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleInM"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker9329"
+       style="overflow:visible">
+      <path
+         id="path9331"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         transform="scale(-0.4,-0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutM"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker9333"
+       style="overflow:visible">
+      <path
+         id="path9335"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <inkscape:perspective
+       id="perspective9460"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <marker
+       inkscape:stockid="TriangleInM"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleInM-5"
+       style="overflow:visible">
+      <path
+         id="path5236-41"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         transform="scale(-0.4,-0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutM"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleOutM-2"
+       style="overflow:visible">
+      <path
+         id="path5245-0"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleInM"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker9468"
+       style="overflow:visible">
+      <path
+         id="path9470"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         transform="scale(-0.4,-0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutM"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker9472"
+       style="overflow:visible">
+      <path
+         id="path9474"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <inkscape:perspective
+       id="perspective9528"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective9566"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <filter
+       id="filter3263"
+       inkscape:label="Drop shadow"
+       width="1.5"
+       height="1.5"
+       x="-.25"
+       y="-.25">
+      <feGaussianBlur
+         id="feGaussianBlur3265"
+         in="SourceAlpha"
+         stdDeviation="1.000000"
+         result="blur" />
+      <feColorMatrix
+         id="feColorMatrix3267"
+         result="bluralpha"
+         type="matrix"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.500000 0 " />
+      <feOffset
+         id="feOffset3269"
+         in="bluralpha"
+         dx="1.000000"
+         dy="1.000000"
+         result="offsetBlur" />
+      <feMerge
+         id="feMerge3271">
+        <feMergeNode
+           id="feMergeNode3273"
+           in="offsetBlur" />
+        <feMergeNode
+           id="feMergeNode3275"
+           in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter
+       id="filter3313"
+       inkscape:label="Drop shadow"
+       width="1.5"
+       height="1.5"
+       x="-.25"
+       y="-.25">
+      <feGaussianBlur
+         id="feGaussianBlur3315"
+         in="SourceAlpha"
+         stdDeviation="1.000000"
+         result="blur" />
+      <feColorMatrix
+         id="feColorMatrix3317"
+         result="bluralpha"
+         type="matrix"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.500000 0 " />
+      <feOffset
+         id="feOffset3319"
+         in="bluralpha"
+         dx="1.000000"
+         dy="1.000000"
+         result="offsetBlur" />
+      <feMerge
+         id="feMerge3321">
+        <feMergeNode
+           id="feMergeNode3323"
+           in="offsetBlur" />
+        <feMergeNode
+           id="feMergeNode3325"
+           in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter
+       id="filter3327"
+       inkscape:label="Drop shadow"
+       width="1.5"
+       height="1.5"
+       x="-.25"
+       y="-.25">
+      <feGaussianBlur
+         id="feGaussianBlur3329"
+         in="SourceAlpha"
+         stdDeviation="1.000000"
+         result="blur" />
+      <feColorMatrix
+         id="feColorMatrix3331"
+         result="bluralpha"
+         type="matrix"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.500000 0 " />
+      <feOffset
+         id="feOffset3333"
+         in="bluralpha"
+         dx="1.000000"
+         dy="1.000000"
+         result="offsetBlur" />
+      <feMerge
+         id="feMerge3335">
+        <feMergeNode
+           id="feMergeNode3337"
+           in="offsetBlur" />
+        <feMergeNode
+           id="feMergeNode3339"
+           in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter
+       id="filter3341"
+       inkscape:label="Drop shadow"
+       width="1.5"
+       height="1.5"
+       x="-.25"
+       y="-.25">
+      <feGaussianBlur
+         id="feGaussianBlur3343"
+         in="SourceAlpha"
+         stdDeviation="1.000000"
+         result="blur" />
+      <feColorMatrix
+         id="feColorMatrix3345"
+         result="bluralpha"
+         type="matrix"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.500000 0 " />
+      <feOffset
+         id="feOffset3347"
+         in="bluralpha"
+         dx="1.000000"
+         dy="1.000000"
+         result="offsetBlur" />
+      <feMerge
+         id="feMerge3349">
+        <feMergeNode
+           id="feMergeNode3351"
+           in="offsetBlur" />
+        <feMergeNode
+           id="feMergeNode3353"
+           in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter
+       id="filter3355"
+       inkscape:label="Drop shadow"
+       width="1.5"
+       height="1.5"
+       x="-.25"
+       y="-.25">
+      <feGaussianBlur
+         id="feGaussianBlur3357"
+         in="SourceAlpha"
+         stdDeviation="1.000000"
+         result="blur" />
+      <feColorMatrix
+         id="feColorMatrix3359"
+         result="bluralpha"
+         type="matrix"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.500000 0 " />
+      <feOffset
+         id="feOffset3361"
+         in="bluralpha"
+         dx="1.000000"
+         dy="1.000000"
+         result="offsetBlur" />
+      <feMerge
+         id="feMerge3363">
+        <feMergeNode
+           id="feMergeNode3365"
+           in="offsetBlur" />
+        <feMergeNode
+           id="feMergeNode3367"
+           in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter
+       id="filter3369"
+       inkscape:label="Drop shadow"
+       width="1.5"
+       height="1.5"
+       x="-.25"
+       y="-.25">
+      <feGaussianBlur
+         id="feGaussianBlur3371"
+         in="SourceAlpha"
+         stdDeviation="1.000000"
+         result="blur" />
+      <feColorMatrix
+         id="feColorMatrix3373"
+         result="bluralpha"
+         type="matrix"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.500000 0 " />
+      <feOffset
+         id="feOffset3375"
+         in="bluralpha"
+         dx="1.000000"
+         dy="1.000000"
+         result="offsetBlur" />
+      <feMerge
+         id="feMerge3377">
+        <feMergeNode
+           id="feMergeNode3379"
+           in="offsetBlur" />
+        <feMergeNode
+           id="feMergeNode3381"
+           in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter
+       id="filter3383"
+       inkscape:label="Drop shadow"
+       width="1.5"
+       height="1.5"
+       x="-.25"
+       y="-.25">
+      <feGaussianBlur
+         id="feGaussianBlur3385"
+         in="SourceAlpha"
+         stdDeviation="1.000000"
+         result="blur" />
+      <feColorMatrix
+         id="feColorMatrix3387"
+         result="bluralpha"
+         type="matrix"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.500000 0 " />
+      <feOffset
+         id="feOffset3389"
+         in="bluralpha"
+         dx="1.000000"
+         dy="1.000000"
+         result="offsetBlur" />
+      <feMerge
+         id="feMerge3391">
+        <feMergeNode
+           id="feMergeNode3393"
+           in="offsetBlur" />
+        <feMergeNode
+           id="feMergeNode3395"
+           in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter
+       id="filter3397"
+       inkscape:label="Drop shadow"
+       width="1.5"
+       height="1.5"
+       x="-.25"
+       y="-.25">
+      <feGaussianBlur
+         id="feGaussianBlur3399"
+         in="SourceAlpha"
+         stdDeviation="1.000000"
+         result="blur" />
+      <feColorMatrix
+         id="feColorMatrix3401"
+         result="bluralpha"
+         type="matrix"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.500000 0 " />
+      <feOffset
+         id="feOffset3403"
+         in="bluralpha"
+         dx="1.000000"
+         dy="1.000000"
+         result="offsetBlur" />
+      <feMerge
+         id="feMerge3405">
+        <feMergeNode
+           id="feMergeNode3407"
+           in="offsetBlur" />
+        <feMergeNode
+           id="feMergeNode3409"
+           in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter
+       id="filter3411"
+       inkscape:label="Drop shadow"
+       width="1.5"
+       height="1.5"
+       x="-.25"
+       y="-.25">
+      <feGaussianBlur
+         id="feGaussianBlur3413"
+         in="SourceAlpha"
+         stdDeviation="1.000000"
+         result="blur" />
+      <feColorMatrix
+         id="feColorMatrix3415"
+         result="bluralpha"
+         type="matrix"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.500000 0 " />
+      <feOffset
+         id="feOffset3417"
+         in="bluralpha"
+         dx="1.000000"
+         dy="1.000000"
+         result="offsetBlur" />
+      <feMerge
+         id="feMerge3419">
+        <feMergeNode
+           id="feMergeNode3421"
+           in="offsetBlur" />
+        <feMergeNode
+           id="feMergeNode3423"
+           in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter
+       id="filter3425"
+       inkscape:label="Drop shadow"
+       width="1.5"
+       height="1.5"
+       x="-.25"
+       y="-.25">
+      <feGaussianBlur
+         id="feGaussianBlur3427"
+         in="SourceAlpha"
+         stdDeviation="1.000000"
+         result="blur" />
+      <feColorMatrix
+         id="feColorMatrix3429"
+         result="bluralpha"
+         type="matrix"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.500000 0 " />
+      <feOffset
+         id="feOffset3431"
+         in="bluralpha"
+         dx="1.000000"
+         dy="1.000000"
+         result="offsetBlur" />
+      <feMerge
+         id="feMerge3433">
+        <feMergeNode
+           id="feMergeNode3435"
+           in="offsetBlur" />
+        <feMergeNode
+           id="feMergeNode3437"
+           in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter
+       id="filter3439"
+       inkscape:label="Drop shadow"
+       width="1.5"
+       height="1.5"
+       x="-.25"
+       y="-.25">
+      <feGaussianBlur
+         id="feGaussianBlur3441"
+         in="SourceAlpha"
+         stdDeviation="1.000000"
+         result="blur" />
+      <feColorMatrix
+         id="feColorMatrix3443"
+         result="bluralpha"
+         type="matrix"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.500000 0 " />
+      <feOffset
+         id="feOffset3445"
+         in="bluralpha"
+         dx="1.000000"
+         dy="1.000000"
+         result="offsetBlur" />
+      <feMerge
+         id="feMerge3447">
+        <feMergeNode
+           id="feMergeNode3449"
+           in="offsetBlur" />
+        <feMergeNode
+           id="feMergeNode3451"
+           in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter
+       id="filter3453"
+       inkscape:label="Drop shadow"
+       width="1.5"
+       height="1.5"
+       x="-.25"
+       y="-.25">
+      <feGaussianBlur
+         id="feGaussianBlur3455"
+         in="SourceAlpha"
+         stdDeviation="1.000000"
+         result="blur" />
+      <feColorMatrix
+         id="feColorMatrix3457"
+         result="bluralpha"
+         type="matrix"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.500000 0 " />
+      <feOffset
+         id="feOffset3459"
+         in="bluralpha"
+         dx="1.000000"
+         dy="1.000000"
+         result="offsetBlur" />
+      <feMerge
+         id="feMerge3461">
+        <feMergeNode
+           id="feMergeNode3463"
+           in="offsetBlur" />
+        <feMergeNode
+           id="feMergeNode3465"
+           in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter
+       id="filter3467"
+       inkscape:label="Drop shadow"
+       width="1.5"
+       height="1.5"
+       x="-.25"
+       y="-.25">
+      <feGaussianBlur
+         id="feGaussianBlur3469"
+         in="SourceAlpha"
+         stdDeviation="1.000000"
+         result="blur" />
+      <feColorMatrix
+         id="feColorMatrix3471"
+         result="bluralpha"
+         type="matrix"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.500000 0 " />
+      <feOffset
+         id="feOffset3473"
+         in="bluralpha"
+         dx="1.000000"
+         dy="1.000000"
+         result="offsetBlur" />
+      <feMerge
+         id="feMerge3475">
+        <feMergeNode
+           id="feMergeNode3477"
+           in="offsetBlur" />
+        <feMergeNode
+           id="feMergeNode3479"
+           in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <inkscape:perspective
+       id="perspective2991"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8"
+     inkscape:cx="341.37471"
+     inkscape:cy="659.37459"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1138"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:snap-object-midpoints="false"
+     inkscape:snap-midpoints="false" />
+  <metadata
+     id="metadata3743">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g2884"
+       transform="matrix(1.25,0,0,-1.25,319.46125,425.78629)"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\fu.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757">
+      <path
+         d="M 0,0 -15.575,5.925 -32.529,0 l -4.613,-43.875 43.146,0 L 0,0 z"
+         style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path2886" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:27.71681213px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="321.94379"
+       y="432.54816"
+       id="text3769"
+       transform="scale(0.90954568,1.09945)"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\fu.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757"><tspan
+         sodipodi:role="line"
+         id="tspan3771"
+         x="321.94379"
+         y="432.54816">P</tspan></text>
+    <rect
+       style="fill:#000000"
+       id="rect3785"
+       width="2.7095857"
+       height="21.205772"
+       x="298.74695"
+       y="425.95407"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\fu.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757" />
+    <g
+       id="g2884-4"
+       transform="matrix(1.25,0,0,-1.25,436.60411,424.35772)"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kin.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757">
+      <path
+         d="M 0,0 -15.575,5.925 -32.529,0 l -4.613,-43.875 43.146,0 L 0,0 z"
+         style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path2886-0" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:27.71681213px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="447.40466"
+       y="429.64096"
+       id="text3769-9"
+       transform="scale(0.90954568,1.09945)"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kin.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757"><tspan
+         sodipodi:role="line"
+         id="tspan3771-4"
+         x="447.40466"
+         y="429.64096">G</tspan></text>
+    <rect
+       style="fill:#000000"
+       id="rect3785-8"
+       width="2.7095857"
+       height="21.205772"
+       x="415.88983"
+       y="424.52548"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kin.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757" />
+    <rect
+       style="fill:#000000"
+       id="rect3785-8-8"
+       width="2.7095857"
+       height="21.205772"
+       x="433.8042"
+       y="-427.79587"
+       transform="matrix(0,1,-1,0,0,0)"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kin.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757" />
+    <rect
+       style="fill:#000000"
+       id="rect3785-8-8-2"
+       width="2.1089463"
+       height="11.222542"
+       x="602.6972"
+       y="16.508059"
+       transform="matrix(0.72579598,0.68791002,-0.72579598,0.68791002,0,0)"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kin.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757" />
+    <rect
+       style="fill:#000000"
+       id="rect3785-8-8-2-4"
+       width="2.1089463"
+       height="11.222542"
+       x="27.901688"
+       y="591.20984"
+       transform="matrix(-0.72579598,0.68791002,0.72579598,0.68791002,0,0)"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kin.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757" />
+    <g
+       id="g2884-4-5"
+       transform="matrix(1.25,0,0,-1.25,539.18474,424.57222)"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\gin.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757">
+      <path
+         d="M 0,0 -15.575,5.925 -32.529,0 l -4.613,-43.875 43.146,0 L 0,0 z"
+         style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path2886-0-5" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:27.71681213px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="562.26935"
+       y="430.1806"
+       id="text3769-9-1"
+       transform="scale(0.90954568,1.09945)"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\gin.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757"><tspan
+         sodipodi:role="line"
+         id="tspan3771-4-7"
+         x="562.26935"
+         y="430.1806">S</tspan></text>
+    <rect
+       style="fill:#000000"
+       id="rect3785-8-1"
+       width="2.7095857"
+       height="21.205772"
+       x="-61.108025"
+       y="-685.97217"
+       transform="matrix(-0.70710678,0.70710678,-0.70710678,-0.70710678,0,0)"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\gin.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757" />
+    <rect
+       style="fill:#000000"
+       id="rect3785-8-8-1"
+       width="2.7095857"
+       height="21.205772"
+       x="-676.75464"
+       y="49.098625"
+       transform="matrix(-0.70710678,-0.70710678,0.70710678,-0.70710678,0,0)"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\gin.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757" />
+    <rect
+       style="fill:#000000"
+       id="rect3785-8-8-2-7"
+       width="2.1087713"
+       height="9.8411074"
+       x="532.37415"
+       y="438.87271"
+       transform="matrix(0.99972404,-0.0234912,-0.03054996,0.99953324,0,0)"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\gin.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757" />
+    <g
+       id="g2884-4-6"
+       transform="matrix(1.25,0,0,-1.25,323.03268,525.78629)"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\to.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757">
+      <path
+         d="M 0,0 -15.575,5.925 -32.529,0 l -4.613,-43.875 43.146,0 L 0,0 z"
+         style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path2886-0-1" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:27.71681213000000100px;font-style:normal;font-weight:normal;fill:#ff2a2a;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="324.10919"
+       y="521.8949"
+       id="text3769-9-4"
+       transform="scale(0.90954568,1.09945)"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\to.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757"><tspan
+         sodipodi:role="line"
+         id="tspan3771-4-2"
+         x="324.10919"
+         y="521.8949">P</tspan></text>
+    <rect
+       style="fill:#ff2a2a"
+       id="rect3785-8-3"
+       width="2.7095857"
+       height="21.205772"
+       x="302.31839"
+       y="525.95404"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\to.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757" />
+    <rect
+       style="fill:#ff2a2a"
+       id="rect3785-8-8-22"
+       width="2.7095857"
+       height="21.205772"
+       x="535.23279"
+       y="-314.22443"
+       transform="matrix(0,1,-1,0,0,0)"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\to.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757" />
+    <rect
+       style="fill:#ff2a2a"
+       id="rect3785-8-8-2-1"
+       width="2.1089463"
+       height="11.222542"
+       x="598.18024"
+       y="168.46954"
+       transform="matrix(0.72579598,0.68791002,-0.72579598,0.68791002,0,0)"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\to.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757" />
+    <rect
+       style="fill:#ff2a2a"
+       id="rect3785-8-8-2-4-6"
+       width="2.1089463"
+       height="11.222542"
+       x="179.86317"
+       y="586.69287"
+       transform="matrix(-0.72579598,0.68791002,0.72579598,0.68791002,0,0)"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\to.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757" />
+    <g
+       id="g2884-4-6-8"
+       transform="matrix(1.25,0,0,-1.25,437.15932,538.21437)"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\na.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757">
+      <path
+         d="M 0,0 -15.575,5.925 -32.529,0 l -4.613,-43.875 43.146,0 L 0,0 z"
+         style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path2886-0-1-5" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:27.71681213px;font-style:normal;font-weight:normal;fill:#ff2a2a;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="449.58572"
+       y="533.19879"
+       id="text3769-9-4-7"
+       transform="scale(0.90954568,1.09945)"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\na.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757"><tspan
+         sodipodi:role="line"
+         id="tspan3771-4-2-6"
+         x="449.58572"
+         y="533.19879">S</tspan></text>
+    <rect
+       style="fill:#ff2a2a"
+       id="rect3785-8-3-1"
+       width="2.7095857"
+       height="21.205772"
+       x="416.44504"
+       y="538.38214"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\na.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757" />
+    <rect
+       style="fill:#ff2a2a"
+       id="rect3785-8-8-22-8"
+       width="2.7095857"
+       height="21.205772"
+       x="547.66089"
+       y="-428.35107"
+       transform="matrix(0,1,-1,0,0,0)"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\na.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757" />
+    <rect
+       style="fill:#ff2a2a"
+       id="rect3785-8-8-2-1-9"
+       width="2.1089463"
+       height="11.222542"
+       x="685.83521"
+       y="98.88105"
+       transform="matrix(0.72579598,0.68791002,-0.72579598,0.68791002,0,0)"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\na.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757" />
+    <rect
+       style="fill:#ff2a2a"
+       id="rect3785-8-8-2-4-6-2"
+       width="2.1089463"
+       height="11.222542"
+       x="110.27468"
+       y="674.34784"
+       transform="matrix(-0.72579598,0.68791002,0.72579598,0.68791002,0,0)"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\na.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757" />
+    <g
+       id="g4906">
+      <g
+         inkscape:export-ydpi="47.837578"
+         inkscape:export-xdpi="47.837578"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\nakyo.png"
+         transform="matrix(1.25,0,0,-1.25,542.72027,685.19157)"
+         id="g2884-4-6-8-7-3">
+        <path
+           id="path2886-0-1-5-9-4"
+           style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none;"
+           d="M 0,0 -15.575,5.925 -32.529,0 l -4.613,-43.875 43.146,0 L 0,0 z" />
+      </g>
+      <text
+         inkscape:export-ydpi="47.837578"
+         inkscape:export-xdpi="47.837578"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\nakyo.png"
+         transform="scale(0.90954568,1.09945)"
+         id="text3769-9-4-7-5-1"
+         y="666.42188"
+         x="567.86603"
+         style="font-size:27.71681213000000100px;font-style:normal;font-weight:normal;fill:#ff2a2a;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans;"
+         xml:space="preserve"><tspan
+           y="666.42188"
+           x="567.86603"
+           id="tspan3771-4-2-6-4-1"
+           sodipodi:role="line">L</tspan></text>
+      <rect
+         inkscape:export-ydpi="47.837578"
+         inkscape:export-xdpi="47.837578"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\nakyo.png"
+         y="685.35938"
+         x="522.00598"
+         height="21.205772"
+         width="2.7095857"
+         id="rect3785-8-3-1-3-3"
+         style="fill:#ff2a2a;" />
+      <rect
+         inkscape:export-ydpi="47.837578"
+         inkscape:export-xdpi="47.837578"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\nakyo.png"
+         transform="matrix(0,1,-1,0,0,0)"
+         y="-533.91199"
+         x="694.63812"
+         height="21.205772"
+         width="2.7095857"
+         id="rect3785-8-8-22-8-1-8"
+         style="fill:#ff2a2a;" />
+      <rect
+         inkscape:export-ydpi="47.837578"
+         inkscape:export-xdpi="47.837578"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\nakyo.png"
+         transform="matrix(0.72579598,0.68791002,-0.72579598,0.68791002,0,0)"
+         y="132.98904"
+         x="865.38483"
+         height="11.222542"
+         width="2.1089463"
+         id="rect3785-8-8-2-1-9-2-7"
+         style="fill:#ff2a2a;" />
+      <rect
+         inkscape:export-ydpi="47.837578"
+         inkscape:export-xdpi="47.837578"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\nakyo.png"
+         transform="matrix(-0.72579598,0.68791002,0.72579598,0.68791002,0,0)"
+         y="853.89746"
+         x="144.38268"
+         height="11.222542"
+         width="2.1089463"
+         id="rect3785-8-8-2-4-6-2-3-4"
+         style="fill:#ff2a2a;" />
+    </g>
+    <g
+       id="g3078">
+      <g
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\ou.png"
+         transform="matrix(1.25,0,0,-1.25,410.89537,311.43513)"
+         id="g2884-2">
+        <path
+           id="path2886-7"
+           style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           d="M 0,0 -15.575,5.925 -32.529,0 l -4.613,-43.875 43.146,0 L 0,0 z" />
+      </g>
+      <text
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\ou.png"
+         transform="scale(0.90954568,1.09945)"
+         id="text3769-7"
+         y="327.56604"
+         x="421.09671"
+         style="font-size:27.71681213px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+         xml:space="preserve"><tspan
+           id="tspan4166"
+           y="327.56604"
+           x="421.09671"
+           sodipodi:role="line">K</tspan></text>
+      <rect
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\ou.png"
+         y="311.60291"
+         x="390.18106"
+         height="21.205772"
+         width="2.7095857"
+         id="rect3785-3"
+         style="fill:#000000" />
+      <rect
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\ou.png"
+         transform="matrix(0,-1,1,0,0,0)"
+         style="fill:#000000"
+         id="rect4192"
+         width="2.7095857"
+         height="21.205772"
+         x="-323.56058"
+         y="380.93295" />
+      <rect
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\ou.png"
+         y="38.420864"
+         x="-506.04633"
+         height="21.205772"
+         width="2.7095857"
+         id="rect4194"
+         style="fill:#000000"
+         transform="matrix(-0.70710678,-0.70710678,0.70710678,-0.70710678,0,0)" />
+      <rect
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\ou.png"
+         transform="matrix(0.70710678,-0.70710678,-0.70710678,-0.70710678,0,0)"
+         style="fill:#000000"
+         id="rect4196"
+         width="2.7095857"
+         height="21.205772"
+         x="47.668957"
+         y="-515.29443" />
+    </g>
+    <g
+       id="g2884-4-6-8-7-3-9"
+       transform="matrix(1.25,0,0,-1.25,567.3184,543.64343)"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kei.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757">
+      <path
+         d="M 0,0 -15.575,5.925 -32.529,0 l -4.613,-43.875 43.146,0 L 0,0 z"
+         style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path2886-0-1-5-9-4-8" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:27.71681213px;font-style:normal;font-weight:normal;fill:#ff2a2a;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="592.55438"
+       y="536.94647"
+       id="text3769-9-4-7-5-1-6"
+       transform="scale(0.90954568,1.09945)"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kei.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757"><tspan
+         sodipodi:role="line"
+         id="tspan3771-4-2-6-4-1-5"
+         x="592.55438"
+         y="536.94647">N</tspan></text>
+    <rect
+       style="fill:#ff2a2a"
+       id="rect3785-8-3-1-3-3-0"
+       width="2.7095857"
+       height="21.205772"
+       x="546.60413"
+       y="543.81122"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kei.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757" />
+    <rect
+       style="fill:#ff2a2a"
+       id="rect3785-8-8-22-8-1-8-2"
+       width="2.7095857"
+       height="21.205772"
+       x="553.08997"
+       y="-558.51013"
+       transform="matrix(0,1,-1,0,0,0)"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kei.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757" />
+    <rect
+       style="fill:#ff2a2a"
+       id="rect3785-8-8-2-1-9-2-7-8"
+       width="2.1089463"
+       height="11.222542"
+       x="779.44769"
+       y="13.160667"
+       transform="matrix(0.72579598,0.68791002,-0.72579598,0.68791002,0,0)"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kei.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757" />
+    <rect
+       style="fill:#ff2a2a"
+       id="rect3785-8-8-2-4-6-2-3-4-6"
+       width="2.1089463"
+       height="11.222542"
+       x="24.554298"
+       y="767.96033"
+       transform="matrix(-0.72579598,0.68791002,0.72579598,0.68791002,0,0)"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kei.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757" />
+    <g
+       id="g2884-4-0"
+       transform="matrix(1.25,0,0,-1.25,226.96125,359.71486)"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kei.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757">
+      <path
+         d="M 0,0 -15.575,5.925 -32.529,0 l -4.613,-43.875 43.146,0 L 0,0 z"
+         style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path2886-0-2" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:27.71681213px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="218.48347"
+       y="371.17014"
+       id="text3769-9-48"
+       transform="scale(0.90954568,1.09945)"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kei.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757"><tspan
+         sodipodi:role="line"
+         id="tspan3771-4-6"
+         x="218.48347"
+         y="371.17014">N</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:21.65922165px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="213.59987"
+       y="355.54166"
+       id="text4286"
+       transform="scale(0.94021545,1.063586)"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kei.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757"><tspan
+         sodipodi:role="line"
+         id="tspan4288"
+         x="213.59987"
+         y="355.54166">V</tspan></text>
+    <path
+       id="path2886-6-0"
+       style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none;"
+       d="m 265.93847,685.19157 -19.46875,-7.40625 -21.1925,7.40625 -5.76625,54.84375 53.9325,0 -7.505,-54.84375 z" />
+    <path
+       id="path6656-6"
+       d="m 239.98204,688.21343 12.83892,12.83892"
+       style="fill:none;stroke:#000000;stroke-width:1.26900005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2.0999999;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#TriangleInM);marker-mid:none;marker-end:url(#TriangleOutM)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.26900005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2.0999999;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#TriangleInM);marker-mid:none;marker-end:url(#TriangleOutM)"
+       d="m 239.98204,701.05235 12.83891,-12.83891"
+       id="path9144-6" />
+    <text
+       transform="scale(0.90954568,1.09945)"
+       id="text3769-1-1"
+       y="667.1109"
+       x="262.54285"
+       style="font-size:27.71681213px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         y="667.1109"
+         x="262.54285"
+         id="tspan3771-3-8"
+         sodipodi:role="line">B</tspan></text>
+    <path
+       id="path2886-6-7"
+       style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none;"
+       d="m 108.85975,511.44533 -19.468747,-7.40625 -21.1925,7.40625 -5.76625,54.84375 53.932497,0 -7.505,-54.84375 z"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\hi.png"
+       inkscape:export-xdpi="47.837578"
+       inkscape:export-ydpi="47.837578" />
+    <path
+       id="path6656-8"
+       d="m 89.196515,511.6819 0,18.15697"
+       style="fill:none;stroke:#000000;stroke-width:1.26900005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2.0999999;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#TriangleInM);marker-mid:none;marker-end:url(#TriangleOutM)"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\hi.png"
+       inkscape:export-xdpi="47.837578"
+       inkscape:export-ydpi="47.837578" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.26900005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2.0999999;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#TriangleInM);marker-mid:none;marker-end:url(#TriangleOutM)"
+       d="m 80.118028,520.76038 18.15696,0"
+       id="path9144-8"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\hi.png"
+       inkscape:export-xdpi="47.837578"
+       inkscape:export-ydpi="47.837578" />
+    <text
+       transform="scale(0.90954568,1.09945)"
+       id="text3769-1-2"
+       y="509.08078"
+       x="88.732048"
+       style="font-size:27.71681213px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       xml:space="preserve"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\hi.png"
+       inkscape:export-xdpi="47.837578"
+       inkscape:export-ydpi="47.837578"><tspan
+         y="509.08078"
+         x="88.732048"
+         id="tspan3771-3-9"
+         sodipodi:role="line">R</tspan></text>
+    <g
+       id="g3488"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\ryu.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757">
+      <g
+         id="g2884-4-6-1"
+         transform="matrix(1.25,0,0,-1.25,121.60411,711.50057)">
+        <path
+           d="M 0,0 -15.575,5.925 -32.529,0 l -4.613,-43.875 43.146,0 L 0,0 z"
+           style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none;"
+           id="path2886-0-1-3" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-size:27.71681213000000100px;font-style:normal;font-weight:normal;fill:#ff2a2a;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans;"
+         x="102.64854"
+         y="690.81055"
+         id="text3769-9-4-5"
+         transform="scale(0.90954568,1.09945)"><tspan
+           sodipodi:role="line"
+           id="tspan3771-4-2-9"
+           x="102.64854"
+           y="690.81055">R</tspan></text>
+      <path
+         style="fill:#ff2a2a;fill-opacity:1;stroke:#ff2a2a;stroke-width:0.16000000000000000;stroke-linecap:butt;stroke-miterlimit:2.09999989999999980;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;"
+         d="m 101.30544,732.35398 c -0.37774,-0.64825 -1.03359,-1.77526 -1.457451,-2.50446 l -0.770653,-1.32584 1.194514,-0.0361 1.19451,-0.0361 0,-3.40469 0,-3.40469 -3.4047,0 -3.404691,0 -0.03614,1.19498 -0.03614,1.19497 -2.399113,-1.39193 c -1.319511,-0.76556 -2.443641,-1.43589 -2.498066,-1.48964 -0.08423,-0.0833 4.658274,-2.91765 4.881652,-2.91765 0.04326,0 0.07866,0.5114 0.07866,1.13642 l 0,1.13642 3.409264,0 3.409264,0 0,-3.40926 0,-3.40926 -1.19416,0 -1.194151,0 1.399671,-2.43068 c 0.76983,-1.33688 1.43678,-2.4722 1.48212,-2.52292 0.0702,-0.0785 2.91578,4.68847 2.91578,4.88451 0,0.038 -0.51139,0.0691 -1.13642,0.0691 l -1.13642,0 0,3.40926 0,3.40926 3.40926,0 3.40927,0 0,-1.13642 c 0,-0.62504 0.0301,-1.13643 0.0668,-1.13643 0.0602,0 4.86737,2.7523 4.95916,2.83933 0.0211,0.02 -1.08691,0.69001 -2.46224,1.48892 l -2.50061,1.45259 -0.0361,-1.18579 -0.0361,-1.18577 -3.40469,0 -3.40469,0 0,3.40468 0,3.40469 1.17414,0.0361 1.17415,0.0361 -1.41212,2.43716 c -0.77667,1.34044 -1.44241,2.46746 -1.47942,2.50447 -0.037,0.037 -0.37636,-0.46309 -0.75409,-1.11134 l 0,0 z"
+         id="path9366" />
+      <path
+         style="fill:#ff2a2a;stroke:#ff2a2a;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+         d="m 102.02541,721.03215 3.85121,3.8512"
+         id="path9556" />
+      <path
+         style="fill:#ff2a2a;stroke:#ff2a2a;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+         d="m 97.76383,716.83371 3.8512,3.8512"
+         id="path9556-3" />
+      <path
+         id="path9580"
+         d="m 101.61503,721.03215 -3.8512,3.8512"
+         style="fill:#ff2a2a;stroke:#ff2a2a;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;" />
+      <path
+         id="path9582"
+         d="m 105.87662,716.83371 -3.8512,3.8512"
+         style="fill:#ff2a2a;stroke:#ff2a2a;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;" />
+    </g>
+    <g
+       id="g3499"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\uma.png"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-ydpi="44.157757">
+      <g
+         id="g2884-4-6-1-7"
+         transform="matrix(1.25,0,0,-1.25,401.42554,704.17915)">
+        <path
+           d="M 0,0 -15.575,5.925 -32.529,0 l -4.613,-43.875 43.146,0 L 0,0 z"
+           style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none;"
+           id="path2886-0-1-3-7" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-size:27.71681213000000100px;font-style:normal;font-weight:normal;fill:#ff2a2a;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans;"
+         x="411.27002"
+         y="684.15137"
+         id="text3769-9-4-5-7"
+         transform="scale(0.90954568,1.09945)"><tspan
+           sodipodi:role="line"
+           id="tspan3771-4-2-9-7"
+           x="411.27002"
+           y="684.15137">B</tspan></text>
+      <path
+         style="fill:#ff2a2a;fill-opacity:1;stroke:#ff2a2a;stroke-width:0.16000000000000000;stroke-linecap:butt;stroke-miterlimit:2.09999989999999980;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;"
+         d="m 389.30774,722.2748 c -0.72548,-0.19128 -1.98616,-0.52444 -2.8015,-0.74035 l -1.48243,-0.39258 0.8191,-0.87018 0.8191,-0.87019 -2.40748,-2.40748 -2.40748,-2.40748 -2.40748,2.40748 -2.40748,2.40749 0.81943,0.87051 0.81942,0.87053 -2.68066,0.71218 c -1.47438,0.39171 -2.74325,0.71258 -2.81974,0.71305 -0.1185,7.2e-4 1.23081,-5.35698 1.38876,-5.51493 0.0306,-0.0306 0.41721,0.30602 0.85917,0.74797 l 0.80357,0.80358 2.41072,-2.41071 2.41071,-2.41072 -2.41071,-2.41071 -2.41072,-2.41071 -0.8444,0.8444 -0.84439,0.8444 -0.72902,-2.70848 c -0.40098,-1.48966 -0.73216,-2.76406 -0.73596,-2.832 -0.006,-0.10512 5.37701,1.2535 5.51563,1.39212 0.0269,0.0269 -0.31272,0.41048 -0.7547,0.85245 l -0.80356,0.80356 2.41071,2.41072 2.41072,2.41072 2.41071,-2.41072 2.41071,-2.41072 -0.80357,-0.80356 c -0.44197,-0.44198 -0.78228,-0.82488 -0.75638,-0.85078 0.0426,-0.0426 5.38793,-1.49559 5.51436,-1.49895 0.0291,-8e-4 -0.28065,1.25648 -0.68823,2.79389 l -0.74107,2.79534 -0.86402,-0.81294 -0.86401,-0.81293 -2.40748,2.40748 -2.40747,2.40749 2.40747,2.40747 2.40748,2.40747 0.85578,-0.80469 0.8558,-0.8047 0.7248,2.72185 c 0.39865,1.49702 0.72482,2.7647 0.72483,2.81702 0,0.0524 -0.59358,-0.0612 -1.31906,-0.2526 l 0,0 z"
+         id="path9366-3" />
+      <path
+         id="path9584"
+         d="m 382.12129,713.82827 5.44643,0"
+         style="fill:#ff2a2a;stroke:#ff2a2a;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;" />
+      <path
+         id="path9586"
+         d="m 376.13916,713.87293 5.44642,0"
+         style="fill:#ff2a2a;stroke:#ff2a2a;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;" />
+      <path
+         style="fill:#ff2a2a;stroke:#ff2a2a;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+         d="m 381.8311,714.11846 0,5.44642"
+         id="path9588" />
+      <path
+         style="fill:#ff2a2a;stroke:#ff2a2a;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+         d="m 381.87577,708.13632 0,5.44643"
+         id="path9590" />
+    </g>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3277"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Bitstream Vera Sans;font-style:normal;font-weight:normal;font-size:40px"><flowRegion
+         id="flowRegion3279"><rect
+           id="rect3281"
+           width="81.428574"
+           height="118.57143"
+           x="615"
+           y="350.21933" /></flowRegion><flowPara
+         id="flowPara3283" /></flowRoot>    <g
+       inkscape:export-ydpi="44.157757"
+       inkscape:export-xdpi="44.157757"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\ryu.png"
+       id="g3510"
+       transform="translate(443.45697,-44.446712)" />
+    <path
+       inkscape:export-ydpi="47.837578"
+       inkscape:export-xdpi="47.837578"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kyo.png"
+       d="m 207.8547,518.5164 -19.46875,-7.40625 -21.1925,7.40625 -5.76625,54.84375 53.9325,0 -7.505,-54.84375 z"
+       style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none;"
+       id="path4668" />
+    <path
+       inkscape:export-ydpi="47.837578"
+       inkscape:export-xdpi="47.837578"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kyo.png"
+       style="fill:none;stroke:#000000;stroke-width:1.26900005000000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2.09999989999999980;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#TriangleInM);marker-mid:none;marker-end:none"
+       d="m 188.19146,518.75297 0,18.15697"
+       id="path4670" />
+    <text
+       inkscape:export-ydpi="47.837578"
+       inkscape:export-xdpi="47.837578"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kyo.png"
+       xml:space="preserve"
+       style="font-size:27.71681213px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="197.57205"
+       y="515.51227"
+       id="text4674"
+       transform="scale(0.90954568,1.09945)"><tspan
+         sodipodi:role="line"
+         id="tspan4676"
+         x="197.57205"
+         y="515.51227">L</tspan></text>
+  </g>
+</svg>
