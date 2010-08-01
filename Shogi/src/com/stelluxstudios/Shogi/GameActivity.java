@@ -64,9 +64,6 @@ public class GameActivity extends Activity {
         whiteIsComp = false;
         blackIsComp = false;
         
-        e = new Engine();
-        e.initialize();
-        
         boardView = (BoardView)findViewById(R.id.boardView);
         whiteHandView = (HandView) findViewById(R.id.whiteHand);
         blackHandView = (HandView) findViewById(R.id.blackHand);
@@ -78,20 +75,7 @@ public class GameActivity extends Activity {
         pointingUp = BitmapFactory.decodeResource(getResources(), R.drawable.empty);
         pointingDown = Bitmap.createBitmap(pointingUp, 0, 0, pointingUp.getWidth(), pointingUp.getHeight(), upsideDownMatrix, false);
         
-        e.getBoardString();
-        updateStateFromEngine();
-        mainLoop();
-  
-     /*
-        moveButton= (Button)findViewById(R.id.buttonMove);
-        moveButton.setOnClickListener(new OnClickListener() {
-			
-        	
-			@Override
-			public void onClick(View v) {
-		makeComputerMove();	        
-    }
-        }); */
+        e = new Engine();
     }
     
     private void makeComputerMove()
@@ -262,6 +246,9 @@ public class GameActivity extends Activity {
 	@Override
 	protected void onResume() {
 		super.onResume();
+		
+		boolean have_sd_card = ContentDownloader.verifyContentPresence(this,handler);
+		
 		prefs = getSharedPreferences(Preferences.PREFS, MODE_PRIVATE);
 		
 		boolean moveHints = prefs.getBoolean("showingHints", true);
@@ -278,6 +265,14 @@ public class GameActivity extends Activity {
 		whiteHandView.setBackgroundResource(boardRes);
 		blackHandView.piecePrefix = piecePrefix;
 		blackHandView.setBackgroundResource(boardRes);
+		
+		if (have_sd_card)
+		{
+		 e.initialize();
+	     e.getBoardString();
+	     updateStateFromEngine();
+	     mainLoop();
+		}
 	}
 	
 	//TODO implement boardPosition (i.e. loading save games)
