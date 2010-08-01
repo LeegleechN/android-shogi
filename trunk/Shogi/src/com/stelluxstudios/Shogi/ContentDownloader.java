@@ -35,7 +35,7 @@ public class ContentDownloader
 	final static String opening_book = "book.bin";
 	final static String hash = "hash.bin";
 	final static String content_URL = "http://android-shogi.googlecode.com/files/shogi_sdcard.zip";
-	final static int content_size = 41213680; //in bytes
+	final static int content_size = 41314313; //in bytes
 	public static final int SUCCESSFUL_SETUP = 0;
 	public static final int FAILED_SETUP = 1;
 	
@@ -60,6 +60,7 @@ public class ContentDownloader
 				}
 			});
 			b.show();
+			return false;
 		}
 		
 		path_to_storage = new File(sdcard,content_directory);
@@ -105,10 +106,10 @@ public class ContentDownloader
 				}
 			});
 			b.show();
-			
+			return false;
 		}
 		
-		return false;
+		return true;
 	}
 	
 	//downloads the content into temporary storage, and returns the path
