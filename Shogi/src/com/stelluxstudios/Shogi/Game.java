@@ -26,8 +26,8 @@ public class Game {
 "P3-FU-FU-FU-FU-FU-FU-FU-FU-FU\n"+
 "P4 *  *  *  *  *  *  *  *  * \n"+
 "P5 *  *  *  *  *  *  *  *  * \n"+
-"P6 *  * +FU *  *  *  *  *  * \n"+
-"P7+FU+FU * +FU+FU+FU+FU+FU+FU\n"+
+"P6 *  *  *  *  *  *  *  *  * \n"+
+"P7+FU+FU+FU+FU+FU+FU+FU+FU+FU\n"+
 "P8 * +KA *  *  *  *  * +HI * \n"+
 "P9+KY+KE+GI+KI+OU+KI+GI+KE+KY\n";
 	

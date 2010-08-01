@@ -28,8 +28,8 @@ public class DownloadActivity extends Activity
 			@Override
 			public void run()
 			{
-				//File zipFile = ContentDownloader.downloadContent(DownloadActivity.this,status,getWindow());
-				File zipFile = new File(new File(Environment.getExternalStorageDirectory(),ContentDownloader.content_directory),"shogi_sdcard.zip");
+				File zipFile = ContentDownloader.downloadContent(DownloadActivity.this,status,getWindow());
+				//File zipFile = new File(new File(Environment.getExternalStorageDirectory(),ContentDownloader.content_directory),"shogi_sdcard.zip");
 				if (zipFile != null)
 				{
 					finished_setup = ContentDownloader.extractContent(DownloadActivity.this,zipFile,status);
