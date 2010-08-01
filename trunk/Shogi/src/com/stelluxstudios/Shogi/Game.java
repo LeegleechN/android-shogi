@@ -147,7 +147,7 @@ public class Game {
 			CharSequence pieceAbbr = line.subSequence(4 + 4 * i, 6 + 4 * i);
 			String fullPieceAbbr = (isBlack?"+":"-") + pieceAbbr;
 			
-			Log.d("Board", "trying to parse: " + fullPieceAbbr);
+			//Log.d("Board", "trying to parse: " + fullPieceAbbr);
 			Piece piece = null;
 			try
 			{

@@ -238,6 +238,19 @@ public class GameActivity extends Activity {
 			break;
 		case 1:
 			break;
+		case 2:
+			if (resultCode == ContentDownloader.SUCCESSFUL_SETUP)
+			{
+				 e.initialize();
+			     e.getBoardString();
+			     updateStateFromEngine();
+			     mainLoop();
+			}
+			else
+			{
+				//can't do anything useful
+				finish();
+			}
 		default:
 			break;
 		}
@@ -246,8 +259,6 @@ public class GameActivity extends Activity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		
-		boolean have_sd_card = ContentDownloader.verifyContentPresence(this,handler);
 		
 		prefs = getSharedPreferences(Preferences.PREFS, MODE_PRIVATE);
 		
@@ -266,7 +277,10 @@ public class GameActivity extends Activity {
 		blackHandView.piecePrefix = piecePrefix;
 		blackHandView.setBackgroundResource(boardRes);
 		
-		if (have_sd_card)
+		boardView.setGame(Game.makeNew());
+		boolean sdcard_is_set_up = ContentDownloader.verifyContentPresence(this,handler);
+		
+		if (sdcard_is_set_up)
 		{
 		 e.initialize();
 	     e.getBoardString();

@@ -17,8 +17,8 @@ public class Preferences extends Activity {
 	
 	static int[] boardOptions = new int[]{R.drawable.ban_gohan,R.drawable.ban_kaya_a,R.drawable.ban_kaya_b,R.drawable.ban_kaya_c,
 			R.drawable.ban_kaya_d,R.drawable.ban_muji,R.drawable.ban_oritatami,R.drawable.ban_stripe};
-	static int[] pieceOptions = new int[]{R.drawable.koma_dirty_skei,R.drawable.koma_kinki_skei,R.drawable.koma_ryoko_skei};
-	static String[] pieceResName = new String[]{"koma_dirty_", "koma_kinki_", "koma_ryoko_"};
+	static int[] pieceOptions = new int[]{R.drawable.koma_western_skei,R.drawable.koma_dirty_skei,R.drawable.koma_kinki_skei,R.drawable.koma_ryoko_skei};
+	static String[] pieceResName = new String[]{"koma_western_","koma_dirty_", "koma_kinki_", "koma_ryoko_"};
 	                                   
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
