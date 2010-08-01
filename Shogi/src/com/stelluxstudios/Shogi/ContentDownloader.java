@@ -1,7 +1,10 @@
 package com.stelluxstudios.Shogi;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -9,6 +12,8 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -25,14 +30,16 @@ import android.widget.TextView;
 
 public class ContentDownloader
 {
-	final static String content_directory = "/Android/com.stelluxstudios.Shogi/";
+	public final static String content_directory = "/Android/com.stelluxstudios.Shogi/";
 	final static String fv = "fv.bin";
 	final static String opening_book = "book.bin";
 	final static String hash = "hash.bin";
 	final static String content_URL = "http://android-shogi.googlecode.com/files/shogi_sdcard.zip";
 	final static int content_size = 41213680; //in bytes
+	public static final int SUCCESSFUL_SETUP = 0;
+	public static final int FAILED_SETUP = 1;
 	
-	static File path_to_storage,fv_file,opening_book_file,hash_file;
+	public static File path_to_storage,fv_file,opening_book_file,hash_file;
 	//returns true if content is properly installed, false on failure
 	public static boolean verifyContentPresence(final Activity context,final Handler handler)
 	{
@@ -82,11 +89,10 @@ public class ContentDownloader
 						{
 							Intent i = new Intent();
 							i.setClassName(context, DownloadActivity.class.getName());
-							
-							context.startActivityForResult(i, 1);
+							context.startActivityForResult(i, 2);
 						}
 					});
-					dialog.cancel();
+					dialog.dismiss();
 				}
 			});
 			b.setNegativeButton("Later", new OnClickListener()
@@ -139,16 +145,17 @@ public class ContentDownloader
 			File out_file = new File(path_to_storage,"shogi_sdcard.zip");
 			out_file.delete();
 			
-			FileWriter out_stream = new FileWriter(out_file);
+			FileOutputStream out_stream = new FileOutputStream(out_file);
 	        URLConnection urlConnection = url.openConnection();
 	        urlConnection.setConnectTimeout(1000);
 	        urlConnection.setReadTimeout(1000);
-	        BufferedReader breader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+	        BufferedInputStream breader = new BufferedInputStream((urlConnection.getInputStream()));
 	        
 	        int downloaded = 0;
-	        String line;
-	        while((line = breader.readLine()) != null) {
-	        	downloaded += line.length();
+	        byte[] buffer = new byte[1024];
+	        int received;
+	        while((received = breader.read(buffer)) != -1) {
+	        	downloaded += received;
 	        	final int progress = (int)((downloaded/(float)content_size) * 10000);
 	        	final int downloaded_copy = downloaded;
 	        	status_text.post(new Runnable()
@@ -162,9 +169,17 @@ public class ContentDownloader
 					}
 				});
 	        	
-	            out_stream.write(line);
+	            out_stream.write(buffer,0,received);
 	        }
-
+	        status_text.post(new Runnable()
+			{
+				
+				@Override
+				public void run()
+				{
+					progressUpdateWindow.setFeatureInt(Window.FEATURE_PROGRESS, 10000);
+				}
+			});
 	        out_stream.close();
 	        return out_file;
 		}
@@ -194,4 +209,92 @@ public class ContentDownloader
 		}
 	}
 	
+	public static boolean extractContent(final Activity context, File zipFile,final TextView status)
+	{
+		fv_file.delete();
+		opening_book_file.delete();
+		hash_file.delete();
+		
+		status.post(new Runnable()
+		{
+			
+			@Override
+			public void run()
+			{
+				context.setTitle("Extracting");
+				status.setText("bytes extracted: 0");
+			}
+		});
+		try
+		{
+			// have to use an inputstream because the file system isn't capable
+			// of seeking the amounts it requests (it'll throw an exception in the ZipFile constructor)
+			ZipInputStream zipinputstream = new ZipInputStream(new FileInputStream(zipFile));
+			ZipEntry entry;
+			byte[] buf = new byte[1024];
+			entry = zipinputstream.getNextEntry();
+			int total = 0;
+			while (entry != null)
+			{
+				// for each entry to be extracted
+				String entryName = entry.getName();
+
+				int n;
+				FileOutputStream fileoutputstream;
+				File newFile = new File(path_to_storage, entryName);
+
+				fileoutputstream = new FileOutputStream(newFile);
+
+				while ((n = zipinputstream.read(buf, 0, 1024)) > -1)
+				{
+					fileoutputstream.write(buf, 0, n);
+					total += n;
+					final int total_copy = total;
+					status.post(new Runnable()
+					{
+						
+						@Override
+						public void run()
+						{
+							status.setText("bytes extracted: " + total_copy);
+						}
+					});
+				}
+
+				fileoutputstream.close();
+				zipinputstream.closeEntry();
+				entry = zipinputstream.getNextEntry();
+
+			}
+
+			zipinputstream.close();
+			return true;
+		} catch (IOException e)
+		{
+			e.printStackTrace();
+			status.post(new Runnable()
+			{
+				
+				@Override
+				public void run()
+				{
+					AlertDialog.Builder b = new AlertDialog.Builder(context);
+					b.setTitle("Extraction Error");
+					b.setMessage("Downloaded File may be corrupted. Please try again.");
+					b.setPositiveButton("OK", new OnClickListener()
+					{
+						
+						@Override
+						public void onClick(DialogInterface dialog, int which)
+						{
+							context.finish();
+						}
+					});
+					b.show();
+					}
+				}
+			);
+			return false;
+		}
+	}
 }
