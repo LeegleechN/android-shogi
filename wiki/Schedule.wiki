@@ -36,7 +36,7 @@
        
 5. July 12 - 23
 
-Continue polishing the UI layer. In particular, properly implement the Android application lifecycle, which details how the application may potentially be interrupted or shut down if the user navigates away or the system is low on memory. This requires being able to save the full state of the application and cleanly exit the Shogi library at potentially any time. Add a game setup option to set time controls, handicaps, and computer difficulty. Write the help file. Create a set of 'western' style pieces that are more comprehensible to people who don't know kanji.
+Continue polishing the UI layer. In particular, properly implement the Android application lifecycle, which details how the application may potentially be interrupted or shut down if the user navigates away or the system is low on memory. This requires being able to save the full state of the application and cleanly exit the Shogi library at potentially any time. Add a game setup option to set ~~players~~ and handicaps. Write the help file. ~~Create a set of 'western' style pieces that are more comprehensible to people who don't know kanji~~. Detect if the support files are installed on the sdcard, and download them if they aren't.
 
  * Deliverable: A robust game of Shogi that will be released onto the Android Market to begin receiving feedback.
  * Deliverable: Tutorial focused on handling the Android application lifecycle, in particular when interacting with code that was not designed for it.
