@@ -1,6 +1,8 @@
 package com.stelluxstudios.Shogi;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.WeakHashMap;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -48,9 +50,11 @@ public class BoardView extends ImageView {
 	private List<Position> legalMovesForSelectedPiece;
 	private String pieceName; //used for the promote dialog
 	
-	public String piecePrefix = "koma_kinki_";
+	private String piecePrefix = "koma_kinki_";
 	
 	int backgroundRes = R.drawable.ban_kaya_b;
+	
+	WeakHashMap<Piece, Bitmap> pieceBitmaps = new WeakHashMap<Piece, Bitmap>();
 	
 	GameActivity gameActivity;
 	
@@ -156,11 +160,18 @@ public class BoardView extends ImageView {
 						(int)(((j+1)*heightPerPiece) + top_pad));
 				if (p != Piece.Empty)
 				{
-					String piece_res_name = 
-						piecePrefix + p.shortJapName;
-					int id = getResources().getIdentifier(piece_res_name, "drawable", "com.stelluxstudios.Shogi");
+					
+					
 					boolean isSelected = (currentUIState == UIState.Piece_Selected && i == selectedI && j == selectedJ);
-					Bitmap bitmap = BitmapFactory.decodeResource(getResources(), id);
+					Bitmap bitmap = pieceBitmaps.get(p);
+					if (bitmap == null)
+					{
+						String piece_res_name = piecePrefix + p.shortJapName;
+						int id = getResources().getIdentifier(piece_res_name, "drawable", "com.stelluxstudios.Shogi");
+						bitmap = BitmapFactory.decodeResource(getResources(), id);
+						pieceBitmaps.put(p, bitmap);
+					}
+				
 					canvas.drawBitmap(bitmap, null,bound, isSelected?selectedPaint:defaultPaint);
 				}
 				
@@ -314,6 +325,12 @@ public class BoardView extends ImageView {
 			selectedPieceInHand = null;
 			invalidate();
 		}
+	}
+	
+	public void setPiecePrefix(String prefix)
+	{
+		piecePrefix = prefix;
+		pieceBitmaps.clear();
 	}
 
 

@@ -302,7 +302,7 @@ public class GameActivity extends Activity {
 		
 		int piecePosition = prefs.getInt("pieceImagePosition", 0);
 		String piecePrefix = Preferences.pieceResName[piecePosition];
-		boardView.piecePrefix = piecePrefix;	
+		boardView.setPiecePrefix(piecePrefix);	
 		whiteHandView.piecePrefix = piecePrefix;
 		whiteHandView.setBackgroundResource(boardRes);
 		blackHandView.piecePrefix = piecePrefix;
