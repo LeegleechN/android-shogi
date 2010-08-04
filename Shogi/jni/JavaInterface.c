@@ -132,18 +132,24 @@
 	tree_t* ptree = &tree;
 	record_t* record = malloc(sizeof(record));
 	int iret = record_open( record, ptr, mode_write, "Player1", "Player2" );
+			__android_log_write(ANDROID_LOG_ERROR,"savefile","record open returned");  
 	(*env)->ReleaseByteArrayElements(env,filename,ptr,0);
+			__android_log_write(ANDROID_LOG_ERROR,"savefile","byte array elements released");  
 	if (iret < 0)
 	{
+	  		__android_log_write(ANDROID_LOG_ERROR,"savefile","record open failed");  
 	  free(record);
+	  		__android_log_write(ANDROID_LOG_ERROR,"savefile","record freed");  
 		return iret;
 	}
 	//WARNING: out_CSA_header currently has no error handling
 	out_CSA_header( ptree, record);
-	
+			__android_log_write(ANDROID_LOG_ERROR,"savefile","out_csa_header returned");  
 	iret = record_close(record);
+			__android_log_write(ANDROID_LOG_ERROR,"savefile","record closed");  
 	
 	free(record);
+			__android_log_write(ANDROID_LOG_ERROR,"savefile","record freed");  
 	return iret;
   }
   
