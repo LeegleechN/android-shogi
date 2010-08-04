@@ -1041,6 +1041,7 @@ void unmake_move_b( tree_t * restrict ptree, unsigned int move, int ply );
 void unmake_move_w( tree_t * restrict ptree, unsigned int move, int ply );
 void ini_rand( unsigned int s );
 void out_CSA( tree_t * restrict ptree, record_t *pr, unsigned int move );
+void out_CSA_header( const tree_t * restrict ptree, record_t *pr );
 void out_pv( tree_t * restrict ptree, int value, int turn, unsigned int time );
 void hash_store( const tree_t * restrict ptree, int ply, int depth, int turn,
 		 int value_type, int value, unsigned int move,

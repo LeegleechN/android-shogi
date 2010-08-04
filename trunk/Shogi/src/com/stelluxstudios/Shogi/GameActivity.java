@@ -1,5 +1,6 @@
 package com.stelluxstudios.Shogi;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -13,7 +14,10 @@ import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.graphics.BitmapFactory.Options;
 import android.os.Bundle;
+import android.os.Debug;
+import android.os.Environment;
 import android.os.Handler;
+import android.os.Debug.MemoryInfo;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.Menu;
@@ -24,6 +28,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.stelluxstudios.Shogi.Game.Piece;
 import com.stelluxstudios.Shogi.Game.Player;
@@ -47,6 +52,12 @@ public class GameActivity extends Activity {
 	Matrix upsideDownMatrix;
 	Bitmap pointingUp, pointingDown;
 	
+	final String save_file_name = "save.csa";
+	File saveFile;
+	byte[] saveFile_cstring;
+	
+	MemoryInfo meminfo = new MemoryInfo();
+	
     static {
         System.loadLibrary("bonanza");
     }
@@ -63,6 +74,13 @@ public class GameActivity extends Activity {
         
         whiteIsComp = false;
         blackIsComp = false;
+        
+        //saveFile = new File(getFilesDir(),save_file_name);
+        saveFile = new File(Environment.getExternalStorageDirectory(),save_file_name);
+    	String path = saveFile.getAbsolutePath();
+    	saveFile_cstring = new byte[path.length() + 1];
+		path.getBytes(0, path.length(), saveFile_cstring, 0);
+		saveFile_cstring[saveFile_cstring.length-1] = 0;
         
         boardView = (BoardView)findViewById(R.id.boardView);
         whiteHandView = (HandView) findViewById(R.id.whiteHand);
@@ -83,10 +101,9 @@ public class GameActivity extends Activity {
     	e.makeMove();	
     	processGameStatus();
     	
-		e.getBoardString();
 		System.gc();
 		
-		String boardString = getBoardString();
+
 		updateStateFromEngine();
 			
 			/*
@@ -107,9 +124,11 @@ public class GameActivity extends Activity {
     	 int ret = e.tryApplyMove(move.getBytes());
          Log.d("Engine", "tried applying human move, got: " + ret);
          
+     	Debug.getMemoryInfo(meminfo);
+    	Log.d("memory", "dalvik pss: " + meminfo.dalvikPss + "native pss: " + meminfo.nativePss + "other pss: " + meminfo.otherPss);
+         
          if (ret == 0)
          {
-        	 e.getBoardString();
         	 updateStateFromEngine();
         	 handler.post(new Runnable() {
 				
@@ -154,6 +173,7 @@ public class GameActivity extends Activity {
     
     private void updateStateFromEngine()
     {
+        e.getBoardString();
     	String boardString = getBoardString();
     	game = Game.fromString(boardString);
     	
@@ -204,6 +224,8 @@ public class GameActivity extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		menu.add(0, 0, 0, "New Game");
 		menu.add(0, 1, 0, "Preferences");
+		menu.add(0, 2, 0, "Save Game");
+		menu.add(0, 3, 0, "Load Game");
 		return true;
 	}
 	
@@ -218,6 +240,18 @@ public class GameActivity extends Activity {
 		case 1:
 			i.setClassName(GameActivity.this, Preferences.class.getName());
 			startActivityForResult(i, 1);
+			return true;
+		case 2:
+		
+			int saveRet = e.saveToFile(saveFile_cstring);
+			if (saveRet < 0)
+				Toast.makeText(this, "Sorry,unable to save!", 1000).show();
+			return true;
+		case 3:
+			int loadRet = e.loadFromFile(saveFile_cstring);
+			if (loadRet < 0)
+				Toast.makeText(this, "Sorry,unable to load! Have you saved before?", 2000).show();
+			updateStateFromEngine();
 			return true;
 		default:
 			throw new RuntimeException();
@@ -242,7 +276,6 @@ public class GameActivity extends Activity {
 			if (resultCode == ContentDownloader.SUCCESSFUL_SETUP)
 			{
 				 e.initialize();
-			     e.getBoardString();
 			     updateStateFromEngine();
 			     mainLoop();
 			}
@@ -283,7 +316,6 @@ public class GameActivity extends Activity {
 		if (sdcard_is_set_up)
 		{
 		 e.initialize();
-	     e.getBoardString();
 	     updateStateFromEngine();
 	     mainLoop();
 		}
@@ -295,7 +327,6 @@ public class GameActivity extends Activity {
 		this.whiteIsComp = whiteIsComp;
 		this.blackIsComp = blackIsComp;
 		e.newGame();
-		e.getBoardString();
 		updateStateFromEngine();
 		mainLoop();
 	}
