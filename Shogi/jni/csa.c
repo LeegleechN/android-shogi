@@ -7,7 +7,6 @@
 #include <time.h>
 #include "shogi.h"
 
-static void out_CSA_header( const tree_t * restrict ptree, record_t *pr );
 static int str2piece( const char *str );
 static int skip_comment( record_t *pr );
 static int read_char( record_t *pr );
@@ -575,7 +574,7 @@ read_board_rep1( const char *str_line, min_posi_t *pmin_posi )
 }
 
 
-static void
+void
 out_CSA_header( const tree_t * restrict ptree, record_t *pr )
 {
   time_t t;

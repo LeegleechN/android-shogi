@@ -82,17 +82,6 @@
     {  __android_log_write(ANDROID_LOG_ERROR,"bonanza","suspend");
       return 22;
     }
-     /*
-     int fd = open("/proc/sys/vm/drop_caches",O_WRONLY);
-        sprintf(buf,"opened fd: %d",fd);
-     __android_log_write(ANDROID_LOG_ERROR,"bonanza",buf);
-     char* str = "3";
-     int len = strlen(str);
-     int written = write(fd,str,len);
-     sprintf(buf,"wrote: %d",written);
-     __android_log_write(ANDROID_LOG_ERROR,"bonanza",buf);
-     close(fd);
-     */
      return ret;
   }
   
@@ -132,4 +121,40 @@
     FILE* f = fopen("/sdcard/Android/com.stelluxstudios.Shogi/board_out.txt","w");
     out_board(ptree, f, 0, 0);
     fclose(f);
+  }
+  
+  JNIEXPORT  jint JNICALL Java_com_stelluxstudios_Shogi_Engine_saveToFile
+  (JNIEnv * env, jobject caller, jbyteArray filename)
+  {
+	jbyte* ptr = (*env)->GetByteArrayElements(env,filename,NULL);
+	__android_log_write(ANDROID_LOG_ERROR,"savefile",(char*)ptr);  
+  
+	tree_t* ptree = &tree;
+	record_t* record = malloc(sizeof(record));
+	int iret = record_open( record, ptr, mode_write, "Player1", "Player2" );
+	(*env)->ReleaseByteArrayElements(env,filename,ptr,0);
+	if (iret < 0)
+	{
+	  free(record);
+		return iret;
+	}
+	//WARNING: out_CSA_header currently has no error handling
+	out_CSA_header( ptree, record);
+	
+	iret = record_close(record);
+	
+	free(record);
+	return iret;
+  }
+  
+  JNIEXPORT  jint JNICALL Java_com_stelluxstudios_Shogi_Engine_loadFromFile
+  (JNIEnv * env, jobject caller, jbyteArray filename)
+  {
+	jbyte* ptr = (*env)->GetByteArrayElements(env,filename,NULL);
+
+	tree_t* ptree = &tree;
+	int flag = flag_history | flag_rep | flag_detect_hang | flag_rejections;
+	int iret = read_record(ptree, ptr, INT_MAX, flag );
+	(*env)->ReleaseByteArrayElements(env,filename,ptr,0);
+	return iret;
   }

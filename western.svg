@@ -921,9 +921,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8"
-     inkscape:cx="341.37471"
-     inkscape:cy="659.37459"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="391.69712"
+     inkscape:cy="593.24113"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -942,7 +942,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -951,304 +951,337 @@
      inkscape:groupmode="layer"
      id="layer1">
     <g
-       id="g2884"
-       transform="matrix(1.25,0,0,-1.25,319.46125,425.78629)"
+       id="g3149"
        inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\fu.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757">
-      <path
-         d="M 0,0 -15.575,5.925 -32.529,0 l -4.613,-43.875 43.146,0 L 0,0 z"
-         style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="path2886" />
-    </g>
-    <text
-       xml:space="preserve"
-       style="font-size:27.71681213px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="321.94379"
-       y="432.54816"
-       id="text3769"
-       transform="scale(0.90954568,1.09945)"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\fu.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757"><tspan
-         sodipodi:role="line"
-         id="tspan3771"
+       inkscape:export-xdpi="60.0751"
+       inkscape:export-ydpi="60.0751">
+      <g
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\fu.png"
+         transform="matrix(1.25,0,0,-1.25,319.46125,425.78629)"
+         id="g2884">
+        <path
+           id="path2886"
+           style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           d="M 0,0 -15.575,5.925 -32.529,0 l -4.613,-43.875 43.146,0 L 0,0 z" />
+      </g>
+      <text
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\fu.png"
+         transform="scale(0.90954568,1.09945)"
+         id="text3769"
+         y="432.54816"
          x="321.94379"
-         y="432.54816">P</tspan></text>
-    <rect
-       style="fill:#000000"
-       id="rect3785"
-       width="2.7095857"
-       height="21.205772"
-       x="298.74695"
-       y="425.95407"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\fu.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757" />
-    <g
-       id="g2884-4"
-       transform="matrix(1.25,0,0,-1.25,436.60411,424.35772)"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kin.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757">
-      <path
-         d="M 0,0 -15.575,5.925 -32.529,0 l -4.613,-43.875 43.146,0 L 0,0 z"
-         style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="path2886-0" />
+         style="font-size:27.71681213px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+         xml:space="preserve"><tspan
+           y="432.54816"
+           x="321.94379"
+           id="tspan3771"
+           sodipodi:role="line">P</tspan></text>
+      <rect
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\fu.png"
+         y="425.95407"
+         x="298.74695"
+         height="21.205772"
+         width="2.7095857"
+         id="rect3785"
+         style="fill:#000000" />
     </g>
-    <text
-       xml:space="preserve"
-       style="font-size:27.71681213px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="447.40466"
-       y="429.64096"
-       id="text3769-9"
-       transform="scale(0.90954568,1.09945)"
+    <g
+       id="g3156"
        inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kin.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757"><tspan
-         sodipodi:role="line"
-         id="tspan3771-4"
+       inkscape:export-xdpi="60.0751"
+       inkscape:export-ydpi="60.0751">
+      <g
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kin.png"
+         transform="matrix(1.25,0,0,-1.25,436.60411,424.35772)"
+         id="g2884-4">
+        <path
+           id="path2886-0"
+           style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           d="M 0,0 -15.575,5.925 -32.529,0 l -4.613,-43.875 43.146,0 L 0,0 z" />
+      </g>
+      <text
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kin.png"
+         transform="scale(0.90954568,1.09945)"
+         id="text3769-9"
+         y="429.64096"
          x="447.40466"
-         y="429.64096">G</tspan></text>
-    <rect
-       style="fill:#000000"
-       id="rect3785-8"
-       width="2.7095857"
-       height="21.205772"
-       x="415.88983"
-       y="424.52548"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kin.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757" />
-    <rect
-       style="fill:#000000"
-       id="rect3785-8-8"
-       width="2.7095857"
-       height="21.205772"
-       x="433.8042"
-       y="-427.79587"
-       transform="matrix(0,1,-1,0,0,0)"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kin.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757" />
-    <rect
-       style="fill:#000000"
-       id="rect3785-8-8-2"
-       width="2.1089463"
-       height="11.222542"
-       x="602.6972"
-       y="16.508059"
-       transform="matrix(0.72579598,0.68791002,-0.72579598,0.68791002,0,0)"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kin.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757" />
-    <rect
-       style="fill:#000000"
-       id="rect3785-8-8-2-4"
-       width="2.1089463"
-       height="11.222542"
-       x="27.901688"
-       y="591.20984"
-       transform="matrix(-0.72579598,0.68791002,0.72579598,0.68791002,0,0)"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kin.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757" />
-    <g
-       id="g2884-4-5"
-       transform="matrix(1.25,0,0,-1.25,539.18474,424.57222)"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\gin.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757">
-      <path
-         d="M 0,0 -15.575,5.925 -32.529,0 l -4.613,-43.875 43.146,0 L 0,0 z"
-         style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="path2886-0-5" />
+         style="font-size:27.71681213px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+         xml:space="preserve"><tspan
+           y="429.64096"
+           x="447.40466"
+           id="tspan3771-4"
+           sodipodi:role="line">G</tspan></text>
+      <rect
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kin.png"
+         y="424.52548"
+         x="415.88983"
+         height="21.205772"
+         width="2.7095857"
+         id="rect3785-8"
+         style="fill:#000000" />
+      <rect
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kin.png"
+         transform="matrix(0,1,-1,0,0,0)"
+         y="-427.79587"
+         x="433.8042"
+         height="21.205772"
+         width="2.7095857"
+         id="rect3785-8-8"
+         style="fill:#000000" />
+      <rect
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kin.png"
+         transform="matrix(0.72579598,0.68791002,-0.72579598,0.68791002,0,0)"
+         y="16.508059"
+         x="602.6972"
+         height="11.222542"
+         width="2.1089463"
+         id="rect3785-8-8-2"
+         style="fill:#000000" />
+      <rect
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kin.png"
+         transform="matrix(-0.72579598,0.68791002,0.72579598,0.68791002,0,0)"
+         y="591.20984"
+         x="27.901688"
+         height="11.222542"
+         width="2.1089463"
+         id="rect3785-8-8-2-4"
+         style="fill:#000000" />
     </g>
-    <text
-       xml:space="preserve"
-       style="font-size:27.71681213px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="562.26935"
-       y="430.1806"
-       id="text3769-9-1"
-       transform="scale(0.90954568,1.09945)"
+    <g
+       id="g3166"
        inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\gin.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757"><tspan
-         sodipodi:role="line"
-         id="tspan3771-4-7"
+       inkscape:export-xdpi="60.0751"
+       inkscape:export-ydpi="60.0751">
+      <g
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\gin.png"
+         transform="matrix(1.25,0,0,-1.25,539.18474,424.57222)"
+         id="g2884-4-5">
+        <path
+           id="path2886-0-5"
+           style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           d="M 0,0 -15.575,5.925 -32.529,0 l -4.613,-43.875 43.146,0 L 0,0 z" />
+      </g>
+      <text
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\gin.png"
+         transform="scale(0.90954568,1.09945)"
+         id="text3769-9-1"
+         y="430.1806"
          x="562.26935"
-         y="430.1806">S</tspan></text>
-    <rect
-       style="fill:#000000"
-       id="rect3785-8-1"
-       width="2.7095857"
-       height="21.205772"
-       x="-61.108025"
-       y="-685.97217"
-       transform="matrix(-0.70710678,0.70710678,-0.70710678,-0.70710678,0,0)"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\gin.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757" />
-    <rect
-       style="fill:#000000"
-       id="rect3785-8-8-1"
-       width="2.7095857"
-       height="21.205772"
-       x="-676.75464"
-       y="49.098625"
-       transform="matrix(-0.70710678,-0.70710678,0.70710678,-0.70710678,0,0)"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\gin.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757" />
-    <rect
-       style="fill:#000000"
-       id="rect3785-8-8-2-7"
-       width="2.1087713"
-       height="9.8411074"
-       x="532.37415"
-       y="438.87271"
-       transform="matrix(0.99972404,-0.0234912,-0.03054996,0.99953324,0,0)"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\gin.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757" />
-    <g
-       id="g2884-4-6"
-       transform="matrix(1.25,0,0,-1.25,323.03268,525.78629)"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\to.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757">
-      <path
-         d="M 0,0 -15.575,5.925 -32.529,0 l -4.613,-43.875 43.146,0 L 0,0 z"
-         style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="path2886-0-1" />
+         style="font-size:27.71681213px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+         xml:space="preserve"><tspan
+           y="430.1806"
+           x="562.26935"
+           id="tspan3771-4-7"
+           sodipodi:role="line">S</tspan></text>
+      <rect
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\gin.png"
+         transform="matrix(-0.70710678,0.70710678,-0.70710678,-0.70710678,0,0)"
+         y="-685.97217"
+         x="-61.108025"
+         height="21.205772"
+         width="2.7095857"
+         id="rect3785-8-1"
+         style="fill:#000000" />
+      <rect
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\gin.png"
+         transform="matrix(-0.70710678,-0.70710678,0.70710678,-0.70710678,0,0)"
+         y="49.098625"
+         x="-676.75464"
+         height="21.205772"
+         width="2.7095857"
+         id="rect3785-8-8-1"
+         style="fill:#000000" />
+      <rect
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\gin.png"
+         transform="matrix(0.99972404,-0.0234912,-0.03054996,0.99953324,0,0)"
+         y="438.87271"
+         x="532.37415"
+         height="9.8411074"
+         width="2.1087713"
+         id="rect3785-8-8-2-7"
+         style="fill:#000000" />
     </g>
-    <text
-       xml:space="preserve"
-       style="font-size:27.71681213000000100px;font-style:normal;font-weight:normal;fill:#ff2a2a;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="324.10919"
-       y="521.8949"
-       id="text3769-9-4"
-       transform="scale(0.90954568,1.09945)"
+    <g
+       id="g3118"
        inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\to.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757"><tspan
-         sodipodi:role="line"
-         id="tspan3771-4-2"
+       inkscape:export-xdpi="60.0751"
+       inkscape:export-ydpi="60.0751">
+      <g
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\to.png"
+         transform="matrix(1.25,0,0,-1.25,323.03268,525.78629)"
+         id="g2884-4-6">
+        <path
+           id="path2886-0-1"
+           style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           d="M 0,0 -15.575,5.925 -32.529,0 l -4.613,-43.875 43.146,0 L 0,0 z" />
+      </g>
+      <text
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\to.png"
+         transform="scale(0.90954568,1.09945)"
+         id="text3769-9-4"
+         y="521.8949"
          x="324.10919"
-         y="521.8949">P</tspan></text>
-    <rect
-       style="fill:#ff2a2a"
-       id="rect3785-8-3"
-       width="2.7095857"
-       height="21.205772"
-       x="302.31839"
-       y="525.95404"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\to.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757" />
-    <rect
-       style="fill:#ff2a2a"
-       id="rect3785-8-8-22"
-       width="2.7095857"
-       height="21.205772"
-       x="535.23279"
-       y="-314.22443"
-       transform="matrix(0,1,-1,0,0,0)"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\to.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757" />
-    <rect
-       style="fill:#ff2a2a"
-       id="rect3785-8-8-2-1"
-       width="2.1089463"
-       height="11.222542"
-       x="598.18024"
-       y="168.46954"
-       transform="matrix(0.72579598,0.68791002,-0.72579598,0.68791002,0,0)"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\to.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757" />
-    <rect
-       style="fill:#ff2a2a"
-       id="rect3785-8-8-2-4-6"
-       width="2.1089463"
-       height="11.222542"
-       x="179.86317"
-       y="586.69287"
-       transform="matrix(-0.72579598,0.68791002,0.72579598,0.68791002,0,0)"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\to.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757" />
-    <g
-       id="g2884-4-6-8"
-       transform="matrix(1.25,0,0,-1.25,437.15932,538.21437)"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\na.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757">
-      <path
-         d="M 0,0 -15.575,5.925 -32.529,0 l -4.613,-43.875 43.146,0 L 0,0 z"
-         style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="path2886-0-1-5" />
+         style="font-size:27.71681213000000100px;font-style:normal;font-weight:normal;fill:#ff2a2a;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+         xml:space="preserve"><tspan
+           y="521.8949"
+           x="324.10919"
+           id="tspan3771-4-2"
+           sodipodi:role="line">P</tspan></text>
+      <rect
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\to.png"
+         y="525.95404"
+         x="302.31839"
+         height="21.205772"
+         width="2.7095857"
+         id="rect3785-8-3"
+         style="fill:#ff2a2a" />
+      <rect
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\to.png"
+         transform="matrix(0,1,-1,0,0,0)"
+         y="-314.22443"
+         x="535.23279"
+         height="21.205772"
+         width="2.7095857"
+         id="rect3785-8-8-22"
+         style="fill:#ff2a2a" />
+      <rect
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\to.png"
+         transform="matrix(0.72579598,0.68791002,-0.72579598,0.68791002,0,0)"
+         y="168.46954"
+         x="598.18024"
+         height="11.222542"
+         width="2.1089463"
+         id="rect3785-8-8-2-1"
+         style="fill:#ff2a2a" />
+      <rect
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\to.png"
+         transform="matrix(-0.72579598,0.68791002,0.72579598,0.68791002,0,0)"
+         y="586.69287"
+         x="179.86317"
+         height="11.222542"
+         width="2.1089463"
+         id="rect3785-8-8-2-4-6"
+         style="fill:#ff2a2a" />
     </g>
-    <text
-       xml:space="preserve"
-       style="font-size:27.71681213px;font-style:normal;font-weight:normal;fill:#ff2a2a;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="449.58572"
-       y="533.19879"
-       id="text3769-9-4-7"
-       transform="scale(0.90954568,1.09945)"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\na.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757"><tspan
-         sodipodi:role="line"
-         id="tspan3771-4-2-6"
-         x="449.58572"
-         y="533.19879">S</tspan></text>
-    <rect
-       style="fill:#ff2a2a"
-       id="rect3785-8-3-1"
-       width="2.7095857"
-       height="21.205772"
-       x="416.44504"
-       y="538.38214"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\na.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757" />
-    <rect
-       style="fill:#ff2a2a"
-       id="rect3785-8-8-22-8"
-       width="2.7095857"
-       height="21.205772"
-       x="547.66089"
-       y="-428.35107"
-       transform="matrix(0,1,-1,0,0,0)"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\na.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757" />
-    <rect
-       style="fill:#ff2a2a"
-       id="rect3785-8-8-2-1-9"
-       width="2.1089463"
-       height="11.222542"
-       x="685.83521"
-       y="98.88105"
-       transform="matrix(0.72579598,0.68791002,-0.72579598,0.68791002,0,0)"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\na.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757" />
-    <rect
-       style="fill:#ff2a2a"
-       id="rect3785-8-8-2-4-6-2"
-       width="2.1089463"
-       height="11.222542"
-       x="110.27468"
-       y="674.34784"
-       transform="matrix(-0.72579598,0.68791002,0.72579598,0.68791002,0,0)"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\na.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757" />
     <g
-       id="g4906">
+       id="g3108"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\ngin.png"
+       inkscape:export-xdpi="60.0751"
+       inkscape:export-ydpi="60.0751">
+      <g
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\na.png"
+         transform="matrix(1.25,0,0,-1.25,437.15932,538.21437)"
+         id="g2884-4-6-8">
+        <path
+           id="path2886-0-1-5"
+           style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           d="M 0,0 -15.575,5.925 -32.529,0 l -4.613,-43.875 43.146,0 L 0,0 z" />
+      </g>
+      <text
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\na.png"
+         transform="scale(0.90954568,1.09945)"
+         id="text3769-9-4-7"
+         y="533.19879"
+         x="449.58572"
+         style="font-size:27.71681213px;font-style:normal;font-weight:normal;fill:#ff2a2a;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+         xml:space="preserve"><tspan
+           y="533.19879"
+           x="449.58572"
+           id="tspan3771-4-2-6"
+           sodipodi:role="line">S</tspan></text>
+      <rect
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\na.png"
+         y="538.38214"
+         x="416.44504"
+         height="21.205772"
+         width="2.7095857"
+         id="rect3785-8-3-1"
+         style="fill:#ff2a2a" />
+      <rect
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\na.png"
+         transform="matrix(0,1,-1,0,0,0)"
+         y="-428.35107"
+         x="547.66089"
+         height="21.205772"
+         width="2.7095857"
+         id="rect3785-8-8-22-8"
+         style="fill:#ff2a2a" />
+      <rect
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\na.png"
+         transform="matrix(0.72579598,0.68791002,-0.72579598,0.68791002,0,0)"
+         y="98.88105"
+         x="685.83521"
+         height="11.222542"
+         width="2.1089463"
+         id="rect3785-8-8-2-1-9"
+         style="fill:#ff2a2a" />
+      <rect
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\na.png"
+         transform="matrix(-0.72579598,0.68791002,0.72579598,0.68791002,0,0)"
+         y="674.34784"
+         x="110.27468"
+         height="11.222542"
+         width="2.1089463"
+         id="rect3785-8-8-2-4-6-2"
+         style="fill:#ff2a2a" />
+    </g>
+    <g
+       id="g4906"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\nkyo.png"
+       inkscape:export-xdpi="60.075066"
+       inkscape:export-ydpi="60.075066">
       <g
          inkscape:export-ydpi="47.837578"
          inkscape:export-xdpi="47.837578"
@@ -1319,291 +1352,327 @@
          style="fill:#ff2a2a;" />
     </g>
     <g
-       id="g3078">
+       id="g3175"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\ou.png"
+       inkscape:export-xdpi="60.0751"
+       inkscape:export-ydpi="60.0751">
+      <g
+         id="g3078">
+        <g
+           id="g2884-2"
+           transform="matrix(1.25,0,0,-1.25,410.89537,311.43513)"
+           inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\ou.png"
+           inkscape:export-xdpi="44.157757"
+           inkscape:export-ydpi="44.157757">
+          <path
+             d="M 0,0 -15.575,5.925 -32.529,0 l -4.613,-43.875 43.146,0 L 0,0 z"
+             style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="path2886-7" />
+        </g>
+        <text
+           xml:space="preserve"
+           style="font-size:27.71681213px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+           x="421.09671"
+           y="327.56604"
+           id="text3769-7"
+           transform="scale(0.90954568,1.09945)"
+           inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\ou.png"
+           inkscape:export-xdpi="44.157757"
+           inkscape:export-ydpi="44.157757"><tspan
+             sodipodi:role="line"
+             x="421.09671"
+             y="327.56604"
+             id="tspan4166">K</tspan></text>
+        <rect
+           style="fill:#000000"
+           id="rect3785-3"
+           width="2.7095857"
+           height="21.205772"
+           x="390.18106"
+           y="311.60291"
+           inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\ou.png"
+           inkscape:export-xdpi="44.157757"
+           inkscape:export-ydpi="44.157757" />
+        <rect
+           y="380.93295"
+           x="-323.56058"
+           height="21.205772"
+           width="2.7095857"
+           id="rect4192"
+           style="fill:#000000"
+           transform="matrix(0,-1,1,0,0,0)"
+           inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\ou.png"
+           inkscape:export-xdpi="44.157757"
+           inkscape:export-ydpi="44.157757" />
+        <rect
+           transform="matrix(-0.70710678,-0.70710678,0.70710678,-0.70710678,0,0)"
+           style="fill:#000000"
+           id="rect4194"
+           width="2.7095857"
+           height="21.205772"
+           x="-506.04633"
+           y="38.420864"
+           inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\ou.png"
+           inkscape:export-xdpi="44.157757"
+           inkscape:export-ydpi="44.157757" />
+        <rect
+           y="-515.29443"
+           x="47.668957"
+           height="21.205772"
+           width="2.7095857"
+           id="rect4196"
+           style="fill:#000000"
+           transform="matrix(0.70710678,-0.70710678,-0.70710678,-0.70710678,0,0)"
+           inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\ou.png"
+           inkscape:export-xdpi="44.157757"
+           inkscape:export-ydpi="44.157757" />
+      </g>
+    </g>
+    <g
+       id="g3098"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\nkei.png"
+       inkscape:export-xdpi="60.0751"
+       inkscape:export-ydpi="60.0751">
       <g
          inkscape:export-ydpi="44.157757"
          inkscape:export-xdpi="44.157757"
-         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\ou.png"
-         transform="matrix(1.25,0,0,-1.25,410.89537,311.43513)"
-         id="g2884-2">
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kei.png"
+         transform="matrix(1.25,0,0,-1.25,567.3184,543.64343)"
+         id="g2884-4-6-8-7-3-9">
         <path
-           id="path2886-7"
+           id="path2886-0-1-5-9-4-8"
            style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none"
            d="M 0,0 -15.575,5.925 -32.529,0 l -4.613,-43.875 43.146,0 L 0,0 z" />
       </g>
       <text
          inkscape:export-ydpi="44.157757"
          inkscape:export-xdpi="44.157757"
-         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\ou.png"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kei.png"
          transform="scale(0.90954568,1.09945)"
-         id="text3769-7"
-         y="327.56604"
-         x="421.09671"
-         style="font-size:27.71681213px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-         xml:space="preserve"><tspan
-           id="tspan4166"
-           y="327.56604"
-           x="421.09671"
-           sodipodi:role="line">K</tspan></text>
-      <rect
-         inkscape:export-ydpi="44.157757"
-         inkscape:export-xdpi="44.157757"
-         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\ou.png"
-         y="311.60291"
-         x="390.18106"
-         height="21.205772"
-         width="2.7095857"
-         id="rect3785-3"
-         style="fill:#000000" />
-      <rect
-         inkscape:export-ydpi="44.157757"
-         inkscape:export-xdpi="44.157757"
-         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\ou.png"
-         transform="matrix(0,-1,1,0,0,0)"
-         style="fill:#000000"
-         id="rect4192"
-         width="2.7095857"
-         height="21.205772"
-         x="-323.56058"
-         y="380.93295" />
-      <rect
-         inkscape:export-ydpi="44.157757"
-         inkscape:export-xdpi="44.157757"
-         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\ou.png"
-         y="38.420864"
-         x="-506.04633"
-         height="21.205772"
-         width="2.7095857"
-         id="rect4194"
-         style="fill:#000000"
-         transform="matrix(-0.70710678,-0.70710678,0.70710678,-0.70710678,0,0)" />
-      <rect
-         inkscape:export-ydpi="44.157757"
-         inkscape:export-xdpi="44.157757"
-         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\ou.png"
-         transform="matrix(0.70710678,-0.70710678,-0.70710678,-0.70710678,0,0)"
-         style="fill:#000000"
-         id="rect4196"
-         width="2.7095857"
-         height="21.205772"
-         x="47.668957"
-         y="-515.29443" />
-    </g>
-    <g
-       id="g2884-4-6-8-7-3-9"
-       transform="matrix(1.25,0,0,-1.25,567.3184,543.64343)"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kei.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757">
-      <path
-         d="M 0,0 -15.575,5.925 -32.529,0 l -4.613,-43.875 43.146,0 L 0,0 z"
-         style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="path2886-0-1-5-9-4-8" />
-    </g>
-    <text
-       xml:space="preserve"
-       style="font-size:27.71681213px;font-style:normal;font-weight:normal;fill:#ff2a2a;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="592.55438"
-       y="536.94647"
-       id="text3769-9-4-7-5-1-6"
-       transform="scale(0.90954568,1.09945)"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kei.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757"><tspan
-         sodipodi:role="line"
-         id="tspan3771-4-2-6-4-1-5"
+         id="text3769-9-4-7-5-1-6"
+         y="536.94647"
          x="592.55438"
-         y="536.94647">N</tspan></text>
-    <rect
-       style="fill:#ff2a2a"
-       id="rect3785-8-3-1-3-3-0"
-       width="2.7095857"
-       height="21.205772"
-       x="546.60413"
-       y="543.81122"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kei.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757" />
-    <rect
-       style="fill:#ff2a2a"
-       id="rect3785-8-8-22-8-1-8-2"
-       width="2.7095857"
-       height="21.205772"
-       x="553.08997"
-       y="-558.51013"
-       transform="matrix(0,1,-1,0,0,0)"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kei.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757" />
-    <rect
-       style="fill:#ff2a2a"
-       id="rect3785-8-8-2-1-9-2-7-8"
-       width="2.1089463"
-       height="11.222542"
-       x="779.44769"
-       y="13.160667"
-       transform="matrix(0.72579598,0.68791002,-0.72579598,0.68791002,0,0)"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kei.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757" />
-    <rect
-       style="fill:#ff2a2a"
-       id="rect3785-8-8-2-4-6-2-3-4-6"
-       width="2.1089463"
-       height="11.222542"
-       x="24.554298"
-       y="767.96033"
-       transform="matrix(-0.72579598,0.68791002,0.72579598,0.68791002,0,0)"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kei.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757" />
-    <g
-       id="g2884-4-0"
-       transform="matrix(1.25,0,0,-1.25,226.96125,359.71486)"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kei.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757">
-      <path
-         d="M 0,0 -15.575,5.925 -32.529,0 l -4.613,-43.875 43.146,0 L 0,0 z"
-         style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="path2886-0-2" />
+         style="font-size:27.71681213px;font-style:normal;font-weight:normal;fill:#ff2a2a;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+         xml:space="preserve"><tspan
+           y="536.94647"
+           x="592.55438"
+           id="tspan3771-4-2-6-4-1-5"
+           sodipodi:role="line">N</tspan></text>
+      <rect
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kei.png"
+         y="543.81122"
+         x="546.60413"
+         height="21.205772"
+         width="2.7095857"
+         id="rect3785-8-3-1-3-3-0"
+         style="fill:#ff2a2a" />
+      <rect
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kei.png"
+         transform="matrix(0,1,-1,0,0,0)"
+         y="-558.51013"
+         x="553.08997"
+         height="21.205772"
+         width="2.7095857"
+         id="rect3785-8-8-22-8-1-8-2"
+         style="fill:#ff2a2a" />
+      <rect
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kei.png"
+         transform="matrix(0.72579598,0.68791002,-0.72579598,0.68791002,0,0)"
+         y="13.160667"
+         x="779.44769"
+         height="11.222542"
+         width="2.1089463"
+         id="rect3785-8-8-2-1-9-2-7-8"
+         style="fill:#ff2a2a" />
+      <rect
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kei.png"
+         transform="matrix(-0.72579598,0.68791002,0.72579598,0.68791002,0,0)"
+         y="767.96033"
+         x="24.554298"
+         height="11.222542"
+         width="2.1089463"
+         id="rect3785-8-8-2-4-6-2-3-4-6"
+         style="fill:#ff2a2a" />
     </g>
-    <text
-       xml:space="preserve"
-       style="font-size:27.71681213px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="218.48347"
-       y="371.17014"
-       id="text3769-9-48"
-       transform="scale(0.90954568,1.09945)"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kei.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757"><tspan
-         sodipodi:role="line"
-         id="tspan3771-4-6"
-         x="218.48347"
-         y="371.17014">N</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:21.65922165px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="213.59987"
-       y="355.54166"
-       id="text4286"
-       transform="scale(0.94021545,1.063586)"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kei.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757"><tspan
-         sodipodi:role="line"
-         id="tspan4288"
-         x="213.59987"
-         y="355.54166">V</tspan></text>
-    <path
-       id="path2886-6-0"
-       style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none;"
-       d="m 265.93847,685.19157 -19.46875,-7.40625 -21.1925,7.40625 -5.76625,54.84375 53.9325,0 -7.505,-54.84375 z" />
-    <path
-       id="path6656-6"
-       d="m 239.98204,688.21343 12.83892,12.83892"
-       style="fill:none;stroke:#000000;stroke-width:1.26900005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2.0999999;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#TriangleInM);marker-mid:none;marker-end:url(#TriangleOutM)" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1.26900005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2.0999999;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#TriangleInM);marker-mid:none;marker-end:url(#TriangleOutM)"
-       d="m 239.98204,701.05235 12.83891,-12.83891"
-       id="path9144-6" />
-    <text
-       transform="scale(0.90954568,1.09945)"
-       id="text3769-1-1"
-       y="667.1109"
-       x="262.54285"
-       style="font-size:27.71681213px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       xml:space="preserve"><tspan
-         y="667.1109"
-         x="262.54285"
-         id="tspan3771-3-8"
-         sodipodi:role="line">B</tspan></text>
-    <path
-       id="path2886-6-7"
-       style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none;"
-       d="m 108.85975,511.44533 -19.468747,-7.40625 -21.1925,7.40625 -5.76625,54.84375 53.932497,0 -7.505,-54.84375 z"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\hi.png"
-       inkscape:export-xdpi="47.837578"
-       inkscape:export-ydpi="47.837578" />
-    <path
-       id="path6656-8"
-       d="m 89.196515,511.6819 0,18.15697"
-       style="fill:none;stroke:#000000;stroke-width:1.26900005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2.0999999;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#TriangleInM);marker-mid:none;marker-end:url(#TriangleOutM)"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\hi.png"
-       inkscape:export-xdpi="47.837578"
-       inkscape:export-ydpi="47.837578" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1.26900005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2.0999999;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#TriangleInM);marker-mid:none;marker-end:url(#TriangleOutM)"
-       d="m 80.118028,520.76038 18.15696,0"
-       id="path9144-8"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\hi.png"
-       inkscape:export-xdpi="47.837578"
-       inkscape:export-ydpi="47.837578" />
-    <text
-       transform="scale(0.90954568,1.09945)"
-       id="text3769-1-2"
-       y="509.08078"
-       x="88.732048"
-       style="font-size:27.71681213px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       xml:space="preserve"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\hi.png"
-       inkscape:export-xdpi="47.837578"
-       inkscape:export-ydpi="47.837578"><tspan
-         y="509.08078"
-         x="88.732048"
-         id="tspan3771-3-9"
-         sodipodi:role="line">R</tspan></text>
     <g
-       id="g3488"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\ryu.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757">
+       id="g3141"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kei.png"
+       inkscape:export-xdpi="60.0751"
+       inkscape:export-ydpi="60.0751">
       <g
-         id="g2884-4-6-1"
-         transform="matrix(1.25,0,0,-1.25,121.60411,711.50057)">
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kei.png"
+         transform="matrix(1.25,0,0,-1.25,226.96125,359.71486)"
+         id="g2884-4-0">
         <path
-           d="M 0,0 -15.575,5.925 -32.529,0 l -4.613,-43.875 43.146,0 L 0,0 z"
-           style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none;"
-           id="path2886-0-1-3" />
+           id="path2886-0-2"
+           style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           d="M 0,0 -15.575,5.925 -32.529,0 l -4.613,-43.875 43.146,0 L 0,0 z" />
       </g>
       <text
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kei.png"
+         transform="scale(0.90954568,1.09945)"
+         id="text3769-9-48"
+         y="371.17014"
+         x="218.48347"
+         style="font-size:27.71681213px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+         xml:space="preserve"><tspan
+           y="371.17014"
+           x="218.48347"
+           id="tspan3771-4-6"
+           sodipodi:role="line">N</tspan></text>
+      <text
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kei.png"
+         transform="scale(0.94021545,1.063586)"
+         id="text4286"
+         y="355.54166"
+         x="213.59987"
+         style="font-size:21.65922165px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+         xml:space="preserve"><tspan
+           y="355.54166"
+           x="213.59987"
+           id="tspan4288"
+           sodipodi:role="line">V</tspan></text>
+    </g>
+    <g
+       id="g3079"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kaku.png"
+       inkscape:export-xdpi="60.0751"
+       inkscape:export-ydpi="60.0751">
+      <path
+         d="m 265.93847,685.19157 -19.46875,-7.40625 -21.1925,7.40625 -5.76625,54.84375 53.9325,0 -7.505,-54.84375 z"
+         style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none;"
+         id="path2886-6-0" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1.26900005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2.0999999;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#TriangleInM);marker-mid:none;marker-end:url(#TriangleOutM)"
+         d="m 239.98204,688.21343 12.83892,12.83892"
+         id="path6656-6" />
+      <path
+         id="path9144-6"
+         d="m 239.98204,701.05235 12.83891,-12.83891"
+         style="fill:none;stroke:#000000;stroke-width:1.26900005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2.0999999;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#TriangleInM);marker-mid:none;marker-end:url(#TriangleOutM)" />
+      <text
          xml:space="preserve"
-         style="font-size:27.71681213000000100px;font-style:normal;font-weight:normal;fill:#ff2a2a;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans;"
-         x="102.64854"
-         y="690.81055"
-         id="text3769-9-4-5"
+         style="font-size:27.71681213px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+         x="262.54285"
+         y="667.1109"
+         id="text3769-1-1"
          transform="scale(0.90954568,1.09945)"><tspan
            sodipodi:role="line"
-           id="tspan3771-4-2-9"
+           id="tspan3771-3-8"
+           x="262.54285"
+           y="667.1109">B</tspan></text>
+    </g>
+    <g
+       id="g3134"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\hi.png"
+       inkscape:export-xdpi="60.0751"
+       inkscape:export-ydpi="60.0751">
+      <path
+         inkscape:export-ydpi="47.837578"
+         inkscape:export-xdpi="47.837578"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\hi.png"
+         d="m 108.85975,511.44533 -19.468747,-7.40625 -21.1925,7.40625 -5.76625,54.84375 53.932497,0 -7.505,-54.84375 z"
+         style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none;"
+         id="path2886-6-7" />
+      <path
+         inkscape:export-ydpi="47.837578"
+         inkscape:export-xdpi="47.837578"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\hi.png"
+         style="fill:none;stroke:#000000;stroke-width:1.26900005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2.0999999;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#TriangleInM);marker-mid:none;marker-end:url(#TriangleOutM)"
+         d="m 89.196515,511.6819 0,18.15697"
+         id="path6656-8" />
+      <path
+         inkscape:export-ydpi="47.837578"
+         inkscape:export-xdpi="47.837578"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\hi.png"
+         id="path9144-8"
+         d="m 80.118028,520.76038 18.15696,0"
+         style="fill:none;stroke:#000000;stroke-width:1.26900005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2.0999999;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#TriangleInM);marker-mid:none;marker-end:url(#TriangleOutM)" />
+      <text
+         inkscape:export-ydpi="47.837578"
+         inkscape:export-xdpi="47.837578"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\hi.png"
+         xml:space="preserve"
+         style="font-size:27.71681213px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+         x="88.732048"
+         y="509.08078"
+         id="text3769-1-2"
+         transform="scale(0.90954568,1.09945)"><tspan
+           sodipodi:role="line"
+           id="tspan3771-3-9"
+           x="88.732048"
+           y="509.08078">R</tspan></text>
+    </g>
+    <g
+       id="g3086"
+       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\ryu.png"
+       inkscape:export-xdpi="60.0751"
+       inkscape:export-ydpi="60.0751">
+      <g
+         inkscape:export-ydpi="44.157757"
+         inkscape:export-xdpi="44.157757"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\ryu.png"
+         id="g3488">
+        <g
+           transform="matrix(1.25,0,0,-1.25,121.60411,711.50057)"
+           id="g2884-4-6-1">
+          <path
+             id="path2886-0-1-3"
+             style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none;"
+             d="M 0,0 -15.575,5.925 -32.529,0 l -4.613,-43.875 43.146,0 L 0,0 z" />
+        </g>
+        <text
+           transform="scale(0.90954568,1.09945)"
+           id="text3769-9-4-5"
+           y="690.81055"
            x="102.64854"
-           y="690.81055">R</tspan></text>
-      <path
-         style="fill:#ff2a2a;fill-opacity:1;stroke:#ff2a2a;stroke-width:0.16000000000000000;stroke-linecap:butt;stroke-miterlimit:2.09999989999999980;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;"
-         d="m 101.30544,732.35398 c -0.37774,-0.64825 -1.03359,-1.77526 -1.457451,-2.50446 l -0.770653,-1.32584 1.194514,-0.0361 1.19451,-0.0361 0,-3.40469 0,-3.40469 -3.4047,0 -3.404691,0 -0.03614,1.19498 -0.03614,1.19497 -2.399113,-1.39193 c -1.319511,-0.76556 -2.443641,-1.43589 -2.498066,-1.48964 -0.08423,-0.0833 4.658274,-2.91765 4.881652,-2.91765 0.04326,0 0.07866,0.5114 0.07866,1.13642 l 0,1.13642 3.409264,0 3.409264,0 0,-3.40926 0,-3.40926 -1.19416,0 -1.194151,0 1.399671,-2.43068 c 0.76983,-1.33688 1.43678,-2.4722 1.48212,-2.52292 0.0702,-0.0785 2.91578,4.68847 2.91578,4.88451 0,0.038 -0.51139,0.0691 -1.13642,0.0691 l -1.13642,0 0,3.40926 0,3.40926 3.40926,0 3.40927,0 0,-1.13642 c 0,-0.62504 0.0301,-1.13643 0.0668,-1.13643 0.0602,0 4.86737,2.7523 4.95916,2.83933 0.0211,0.02 -1.08691,0.69001 -2.46224,1.48892 l -2.50061,1.45259 -0.0361,-1.18579 -0.0361,-1.18577 -3.40469,0 -3.40469,0 0,3.40468 0,3.40469 1.17414,0.0361 1.17415,0.0361 -1.41212,2.43716 c -0.77667,1.34044 -1.44241,2.46746 -1.47942,2.50447 -0.037,0.037 -0.37636,-0.46309 -0.75409,-1.11134 l 0,0 z"
-         id="path9366" />
-      <path
-         style="fill:#ff2a2a;stroke:#ff2a2a;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
-         d="m 102.02541,721.03215 3.85121,3.8512"
-         id="path9556" />
-      <path
-         style="fill:#ff2a2a;stroke:#ff2a2a;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
-         d="m 97.76383,716.83371 3.8512,3.8512"
-         id="path9556-3" />
-      <path
-         id="path9580"
-         d="m 101.61503,721.03215 -3.8512,3.8512"
-         style="fill:#ff2a2a;stroke:#ff2a2a;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;" />
-      <path
-         id="path9582"
-         d="m 105.87662,716.83371 -3.8512,3.8512"
-         style="fill:#ff2a2a;stroke:#ff2a2a;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;" />
+           style="font-size:27.71681213000000100px;font-style:normal;font-weight:normal;fill:#ff2a2a;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans;"
+           xml:space="preserve"><tspan
+             y="690.81055"
+             x="102.64854"
+             id="tspan3771-4-2-9"
+             sodipodi:role="line">R</tspan></text>
+        <path
+           id="path9366"
+           d="m 101.30544,732.35398 c -0.37774,-0.64825 -1.03359,-1.77526 -1.457451,-2.50446 l -0.770653,-1.32584 1.194514,-0.0361 1.19451,-0.0361 0,-3.40469 0,-3.40469 -3.4047,0 -3.404691,0 -0.03614,1.19498 -0.03614,1.19497 -2.399113,-1.39193 c -1.319511,-0.76556 -2.443641,-1.43589 -2.498066,-1.48964 -0.08423,-0.0833 4.658274,-2.91765 4.881652,-2.91765 0.04326,0 0.07866,0.5114 0.07866,1.13642 l 0,1.13642 3.409264,0 3.409264,0 0,-3.40926 0,-3.40926 -1.19416,0 -1.194151,0 1.399671,-2.43068 c 0.76983,-1.33688 1.43678,-2.4722 1.48212,-2.52292 0.0702,-0.0785 2.91578,4.68847 2.91578,4.88451 0,0.038 -0.51139,0.0691 -1.13642,0.0691 l -1.13642,0 0,3.40926 0,3.40926 3.40926,0 3.40927,0 0,-1.13642 c 0,-0.62504 0.0301,-1.13643 0.0668,-1.13643 0.0602,0 4.86737,2.7523 4.95916,2.83933 0.0211,0.02 -1.08691,0.69001 -2.46224,1.48892 l -2.50061,1.45259 -0.0361,-1.18579 -0.0361,-1.18577 -3.40469,0 -3.40469,0 0,3.40468 0,3.40469 1.17414,0.0361 1.17415,0.0361 -1.41212,2.43716 c -0.77667,1.34044 -1.44241,2.46746 -1.47942,2.50447 -0.037,0.037 -0.37636,-0.46309 -0.75409,-1.11134 l 0,0 z"
+           style="fill:#ff2a2a;fill-opacity:1;stroke:#ff2a2a;stroke-width:0.16000000000000000;stroke-linecap:butt;stroke-miterlimit:2.09999989999999980;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;" />
+        <path
+           id="path9556"
+           d="m 102.02541,721.03215 3.85121,3.8512"
+           style="fill:#ff2a2a;stroke:#ff2a2a;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;" />
+        <path
+           id="path9556-3"
+           d="m 97.76383,716.83371 3.8512,3.8512"
+           style="fill:#ff2a2a;stroke:#ff2a2a;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;" />
+        <path
+           style="fill:#ff2a2a;stroke:#ff2a2a;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+           d="m 101.61503,721.03215 -3.8512,3.8512"
+           id="path9580" />
+        <path
+           style="fill:#ff2a2a;stroke:#ff2a2a;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+           d="m 105.87662,716.83371 -3.8512,3.8512"
+           id="path9582" />
+      </g>
     </g>
     <g
        id="g3499"
        inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\uma.png"
-       inkscape:export-xdpi="44.157757"
-       inkscape:export-ydpi="44.157757">
+       inkscape:export-xdpi="60.0751"
+       inkscape:export-ydpi="60.0751">
       <g
          id="g2884-4-6-1-7"
          transform="matrix(1.25,0,0,-1.25,401.42554,704.17915)">
@@ -1660,33 +1729,39 @@
        inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\ryu.png"
        id="g3510"
        transform="translate(443.45697,-44.446712)" />
-    <path
-       inkscape:export-ydpi="47.837578"
-       inkscape:export-xdpi="47.837578"
+    <g
+       id="g3128"
        inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kyo.png"
-       d="m 207.8547,518.5164 -19.46875,-7.40625 -21.1925,7.40625 -5.76625,54.84375 53.9325,0 -7.505,-54.84375 z"
-       style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none;"
-       id="path4668" />
-    <path
-       inkscape:export-ydpi="47.837578"
-       inkscape:export-xdpi="47.837578"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kyo.png"
-       style="fill:none;stroke:#000000;stroke-width:1.26900005000000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2.09999989999999980;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#TriangleInM);marker-mid:none;marker-end:none"
-       d="m 188.19146,518.75297 0,18.15697"
-       id="path4670" />
-    <text
-       inkscape:export-ydpi="47.837578"
-       inkscape:export-xdpi="47.837578"
-       inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kyo.png"
-       xml:space="preserve"
-       style="font-size:27.71681213px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="197.57205"
-       y="515.51227"
-       id="text4674"
-       transform="scale(0.90954568,1.09945)"><tspan
-         sodipodi:role="line"
-         id="tspan4676"
+       inkscape:export-xdpi="60.0751"
+       inkscape:export-ydpi="60.0751">
+      <path
+         id="path4668"
+         style="fill:#fff29e;fill-opacity:1;fill-rule:nonzero;stroke:none;"
+         d="m 207.8547,518.5164 -19.46875,-7.40625 -21.1925,7.40625 -5.76625,54.84375 53.9325,0 -7.505,-54.84375 z"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kyo.png"
+         inkscape:export-xdpi="47.837578"
+         inkscape:export-ydpi="47.837578" />
+      <path
+         id="path4670"
+         d="m 188.19146,518.75297 0,18.15697"
+         style="fill:none;stroke:#000000;stroke-width:1.26900005000000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2.09999989999999980;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#TriangleInM);marker-mid:none;marker-end:none"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kyo.png"
+         inkscape:export-xdpi="47.837578"
+         inkscape:export-ydpi="47.837578" />
+      <text
+         transform="scale(0.90954568,1.09945)"
+         id="text4674"
+         y="515.51227"
          x="197.57205"
-         y="515.51227">L</tspan></text>
+         style="font-size:27.71681213px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+         xml:space="preserve"
+         inkscape:export-filename="C:\Users\Nisarg\Desktop\shogi pieces\kyo.png"
+         inkscape:export-xdpi="47.837578"
+         inkscape:export-ydpi="47.837578"><tspan
+           y="515.51227"
+           x="197.57205"
+           id="tspan4676"
+           sodipodi:role="line">L</tspan></text>
+    </g>
   </g>
 </svg>

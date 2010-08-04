@@ -615,7 +615,7 @@ memory_alloc( size_t nbytes )
 {
 #if defined(_WIN32)
   void *p = VirtualAlloc( NULL, nbytes, MEM_COMMIT, PAGE_READWRITE );
-  if ( p == NULL ) { str_error = "VirturlAlloc() faild"; }
+  if ( p == NULL ) { str_error = "VirtualAlloc() faild"; }
 #else
   void *p = malloc( nbytes );
   if ( p == NULL ) { str_error = "malloc() faild"; }

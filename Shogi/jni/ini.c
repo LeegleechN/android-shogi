@@ -137,7 +137,7 @@ ini( tree_t * restrict ptree )
   sec_limit_up          = 3U;
   sec_limit_depth       = UINT_MAX;
   depth_limit           = 4;
-  log2_ntrans_table     = 20;
+  log2_ntrans_table     = 16;
   
   pf_book               = NULL;
   pf_hash               = NULL;

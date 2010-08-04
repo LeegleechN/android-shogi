@@ -43,6 +43,12 @@ JNIEXPORT jint JNICALL Java_com_stelluxstudios_Shogi_Engine_makeMove
  */
 JNIEXPORT void JNICALL Java_com_stelluxstudios_Shogi_Engine_getBoardString
   (JNIEnv *, jobject);
+  
+  JNIEXPORT  jint JNICALL Java_com_stelluxstudios_Shogi_Engine_saveToFile
+  (JNIEnv *, jobject, jbyteArray);
+  
+  JNIEXPORT  jint JNICALL Java_com_stelluxstudios_Shogi_Engine_loadFromFile
+  (JNIEnv *, jobject, jbyteArray);
 
 #ifdef __cplusplus
 }

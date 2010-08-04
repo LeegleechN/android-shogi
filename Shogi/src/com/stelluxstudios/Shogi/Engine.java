@@ -17,4 +17,7 @@ public class Engine
 	public native int getGameStatus();
 	public native int getCurrentPlayer();
 	
+	public native int saveToFile(byte[] filename);
+	public native int loadFromFile(byte[] filename);
+	
 }

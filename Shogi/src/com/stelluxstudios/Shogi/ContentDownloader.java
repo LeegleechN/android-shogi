@@ -39,11 +39,20 @@ public class ContentDownloader
 	public static final int SUCCESSFUL_SETUP = 0;
 	public static final int FAILED_SETUP = 1;
 	
-	public static File path_to_storage,fv_file,opening_book_file,hash_file;
+	public static File path_to_storage,fv_file,opening_book_file,hash_file,sdcard;
+	
+	static
+	{
+		sdcard = Environment.getExternalStorageDirectory();
+		path_to_storage = new File(sdcard,content_directory);
+		fv_file = new File(path_to_storage,fv);
+		opening_book_file = new File(path_to_storage,opening_book);
+		hash_file = new File(path_to_storage,hash);
+	}
 	//returns true if content is properly installed, false on failure
 	public static boolean verifyContentPresence(final Activity context,final Handler handler)
 	{
-		File sdcard = Environment.getExternalStorageDirectory();
+		
 		
 		if (!sdcard.canWrite())
 		{
@@ -63,10 +72,7 @@ public class ContentDownloader
 			return false;
 		}
 		
-		path_to_storage = new File(sdcard,content_directory);
-		fv_file = new File(path_to_storage,fv);
-		opening_book_file = new File(path_to_storage,opening_book);
-		hash_file = new File(path_to_storage,hash);
+		
 		
 		Log.d("pathtostorage", path_to_storage.getAbsolutePath());
 		
@@ -269,6 +275,7 @@ public class ContentDownloader
 			}
 
 			zipinputstream.close();
+			zipFile.delete();
 			return true;
 		} catch (IOException e)
 		{
