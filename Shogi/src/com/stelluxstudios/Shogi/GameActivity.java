@@ -159,8 +159,6 @@ public class GameActivity extends Activity {
 			int read = boardFile.read(buffer);
 			String boardString = new String(buffer,0,read);
 			
-			Log.d("Board", boardString);
-	
 			boardFile.close();
 			return boardString;
 			

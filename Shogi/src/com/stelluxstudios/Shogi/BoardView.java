@@ -144,10 +144,6 @@ public class BoardView extends ImageView {
 		boolean drawingHintOverlays = (showMoveHints && currentUIState == UIState.Piece_Selected);
 		legalMovesForSelectedPiece = board.getValidMovesForPiece(selectedI, selectedJ);
 		
-		Log.d("Position", "hinted positions:");
-		for (Position p: legalMovesForSelectedPiece)
-			Log.d("Position", p.i + "," + p.j);
-		
 		for (int i = 0 ; i < 9 ; i++)
 		{
 			for (int j = 0 ; j < 9 ; j++)
@@ -203,10 +199,6 @@ public class BoardView extends ImageView {
 		
 		
 		Piece touchedPiece = board.pieceAt(i, j);
-		
-		Log.d("Touch", "detected a touch on the board at position: " + i + "," + j);
-		Log.d("Touch", "touched piece: " + touchedPiece.englishName);
-		
 		
 		if (currentUIState == UIState.Clear)
 		{
