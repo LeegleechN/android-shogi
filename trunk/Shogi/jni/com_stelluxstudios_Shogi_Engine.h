@@ -45,10 +45,10 @@ JNIEXPORT void JNICALL Java_com_stelluxstudios_Shogi_Engine_getBoardString
   (JNIEnv *, jobject);
   
   JNIEXPORT  jint JNICALL Java_com_stelluxstudios_Shogi_Engine_saveToFile
-  (JNIEnv *, jobject, jbyteArray);
+  (JNIEnv *, jobject);
   
   JNIEXPORT  jint JNICALL Java_com_stelluxstudios_Shogi_Engine_loadFromFile
-  (JNIEnv *, jobject, jbyteArray);
+  (JNIEnv *, jobject);
 
 #ifdef __cplusplus
 }

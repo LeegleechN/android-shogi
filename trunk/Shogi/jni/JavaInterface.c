@@ -75,7 +75,7 @@
     {  __android_log_write(ANDROID_LOG_ERROR,"bonanza","suspend");
       return 22;
     }
-<<<<<<< .mine
+    
 	if (game_status & flag_quit)
     {
       __android_log_write(ANDROID_LOG_ERROR,"bonanza","wtf quitting");  
@@ -85,9 +85,6 @@
 	  return ret;
       //return -2;
     }
-    
-=======
->>>>>>> .r85
      return ret;
   }
   
@@ -128,77 +125,48 @@
     out_board(ptree, f, 0, 0);
     fclose(f);
   }
-<<<<<<< .mine
-  
-   JNIEXPORT  jint JNICALL Java_com_stelluxstudios_Shogi_Engine_saveToFile
-  (JNIEnv * env, jobject caller, jbyteArray filename)
-  {
-	jbyte* ptr = (*env)->GetByteArrayElements(env,filename,NULL);
-  
-	tree_t* ptree = &tree;
-	record_t record;
-	int iret = record_open( &record, ptr, mode_write, "Player1", "Player2" );
-	(*env)->ReleaseByteArrayElements(env,filename,ptr,0);
-	if (iret < 0)
-		return iret;
-	//WARNING: out_CSA_header currently has no error handling
-	out_CSA_header( ptree, &record);
-	return 0;
-  }
-  
-  JNIEXPORT  jint JNICALL Java_com_stelluxstudios_Shogi_Engine_loadFromFile
-  (JNIEnv * env, jobject caller, jbyteArray filename)
-  {
-	jbyte* ptr = (*env)->GetByteArrayElements(env,filename,NULL);
-	
-	record_t record;
-	tree_t* ptree = &tree;
-	int flag = flag_history | flag_rep | flag_detect_hang | flag_rejections;
-	int iret = read_record(ptree, ptr, INT_MAX, flag );
-	(*env)->ReleaseByteArrayElements(env,filename,ptr,0);
-	return iret;
-  }
-=======
   
   JNIEXPORT  jint JNICALL Java_com_stelluxstudios_Shogi_Engine_saveToFile
-  (JNIEnv * env, jobject caller, jbyteArray filename)
+  (JNIEnv * env, jobject caller)
   {
-	jbyte* ptr = (*env)->GetByteArrayElements(env,filename,NULL);
-	__android_log_write(ANDROID_LOG_ERROR,"savefile",(char*)ptr);  
+	//char* filename_c = (*env)->GetStringUTFChars(env,filename_java,NULL);
+	char* filename_c = "/mnt/sdcard/save.csa";
+	//__android_log_write(ANDROID_LOG_ERROR,"savefile",filename_c);  
   
 	tree_t* ptree = &tree;
-	record_t* record = malloc(sizeof(record));
-	int iret = record_open( record, ptr, mode_write, "Player1", "Player2" );
-			__android_log_write(ANDROID_LOG_ERROR,"savefile","record open returned");  
-	(*env)->ReleaseByteArrayElements(env,filename,ptr,0);
-			__android_log_write(ANDROID_LOG_ERROR,"savefile","byte array elements released");  
+	//record_t* record = malloc(sizeof(record));
+	record_t record;
+	int iret = record_open( &record, filename_c, mode_write, NULL, NULL);
+			//__android_log_write(ANDROID_LOG_ERROR,"savefile","record open returned");  
+	//(*env)->ReleaseStringUTFChars(env,filename_java,filename_c);
+	//		__android_log_write(ANDROID_LOG_ERROR,"savefile","byte array elements released");  
 	if (iret < 0)
 	{
-	  		__android_log_write(ANDROID_LOG_ERROR,"savefile","record open failed");  
-	  free(record);
-	  		__android_log_write(ANDROID_LOG_ERROR,"savefile","record freed");  
+	  		//__android_log_write(ANDROID_LOG_ERROR,"savefile","record open failed");  
+	  //free(record);
+	  		//__android_log_write(ANDROID_LOG_ERROR,"savefile","record freed");  
 		return iret;
 	}
 	//WARNING: out_CSA_header currently has no error handling
-	out_CSA_header( ptree, record);
-			__android_log_write(ANDROID_LOG_ERROR,"savefile","out_csa_header returned");  
-	iret = record_close(record);
-			__android_log_write(ANDROID_LOG_ERROR,"savefile","record closed");  
+	out_CSA_header( ptree, &record);
+			//__android_log_write(ANDROID_LOG_ERROR,"savefile","out_csa_header returned");  
+	iret = record_close(&record);
+			//__android_log_write(ANDROID_LOG_ERROR,"savefile","record closed");  
 	
-	free(record);
-			__android_log_write(ANDROID_LOG_ERROR,"savefile","record freed");  
+	//free(record);
+			//__android_log_write(ANDROID_LOG_ERROR,"savefile","record freed");  
 	return iret;
   }
   
   JNIEXPORT  jint JNICALL Java_com_stelluxstudios_Shogi_Engine_loadFromFile
-  (JNIEnv * env, jobject caller, jbyteArray filename)
+  (JNIEnv * env, jobject caller)
   {
-	jbyte* ptr = (*env)->GetByteArrayElements(env,filename,NULL);
+	//char* filename_c = (*env)->GetStringUTFChars(env,filename_java,NULL);
+	char* filename_c = "/mnt/sdcard/save.csa";
 
 	tree_t* ptree = &tree;
 	int flag = flag_history | flag_rep | flag_detect_hang | flag_rejections;
-	int iret = read_record(ptree, ptr, INT_MAX, flag );
-	(*env)->ReleaseByteArrayElements(env,filename,ptr,0);
+	int iret = read_record(ptree, filename_c, INT_MAX, flag );
+	//(*env)->ReleaseStringUTFChars(env,filename_java,filename_c);
 	return iret;
   }
->>>>>>> .r85

@@ -242,12 +242,14 @@ public class GameActivity extends Activity {
 			return true;
 		case 2:
 		
-			int saveRet = e.saveToFile(saveFile_cstring);
+			//int saveRet = e.saveToFile(saveFile.getAbsolutePath());
+			int saveRet = e.saveToFile();
 			if (saveRet < 0)
 				Toast.makeText(this, "Sorry,unable to save!", 1000).show();
 			return true;
 		case 3:
-			int loadRet = e.loadFromFile(saveFile_cstring);
+			//int loadRet = e.loadFromFile(saveFile.getAbsolutePath());
+			int loadRet = e.loadFromFile();
 			if (loadRet < 0)
 				Toast.makeText(this, "Sorry,unable to load! Have you saved before?", 2000).show();
 			updateStateFromEngine();
