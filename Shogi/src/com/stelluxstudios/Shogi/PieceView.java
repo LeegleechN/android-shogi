@@ -37,12 +37,13 @@ public class PieceView extends ImageView {
 			parent.notifyOfSelection(piece);
 			return true;
 		}
-		else
-		{
-			parent.clearHighlights();
-			parent.notifyOfSelection(null);
-			return true;
-		}
+		//else
+		//{
+		//	parent.clearHighlights();
+		//	parent.notifyOfSelection(null);
+		//	return true;
+		//}
+		return true;
 	}
 	
 	@Override
