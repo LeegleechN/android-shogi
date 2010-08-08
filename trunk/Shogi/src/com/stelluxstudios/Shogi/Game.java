@@ -185,6 +185,22 @@ public class Game {
 		return field[row][col];
 	}
 	
+	public boolean columnContainsPawn(int col, Player player)
+	{
+		Piece pawn;
+		if (player.equals(Player.White))
+			pawn = Piece.WPawn;
+		else
+			pawn = Piece.BPawn;
+		
+		for (int i = 0 ; i<9 ; i++)
+		{
+			if (field[col][i].equals(pawn))
+				return true;
+		}
+		return false;
+	}
+	
 	public void setPiece(Piece p, int row, int col)
 	{
 		field[row][col] = p;

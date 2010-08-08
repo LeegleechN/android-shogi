@@ -279,18 +279,44 @@ public class BoardView extends ImageView {
 		else if (currentUIState == UIState.WaitingToPlaceFromHand)
 		{
 			pieceName = selectedPieceInHand.japAbbr.substring(1);
-			submitMove(i, j);
+			
+			if ((selectedPieceInHand == Piece.WPawn || selectedPieceInHand == Piece.BPawn) 
+				&& board.columnContainsPawn(i, board.getCurrentPlayer()))
+			{
+				AlertDialog.Builder illegalPawnDropDialog = new AlertDialog.Builder(getContext());
+				illegalPawnDropDialog.setTitle("Illegal Move");
+				illegalPawnDropDialog.setMessage("You can't drop a pawn in a file where you already have one.");
+				illegalPawnDropDialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+					
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+					}
+				});
+				illegalPawnDropDialog.show();
+			}
+			else
+				submitMove(i, j);
 		}
 		return true;
+	}
+	
+	int getCSAColFromI(int i)
+	{
+		return 9-i;
+	}
+	
+	int getCSARowFromJ(int j)
+	{
+		return j+1;
 	}
 	
 	private void submitMove(int i, int j)
 	{
 		String move;
 		if (currentUIState == UIState.Piece_Selected)
-			move = "" + (9-selectedI) + (selectedJ+1) + (9-i) + (j+1) + pieceName; //example: 7776FU
+			move = "" + getCSAColFromI(selectedI) + getCSARowFromJ(selectedJ) + getCSAColFromI(i) + getCSARowFromJ(j) + pieceName; //example: 7776FU
 		else if (currentUIState == UIState.WaitingToPlaceFromHand)
-			move = "00" + (9-i) + (j+1) + pieceName;
+			move = "00" + getCSAColFromI(i) + getCSARowFromJ(j) + pieceName;
 		else
 			return;
 		
