@@ -55,13 +55,6 @@
      sprintf(buf,"com_turn_start: ret %d",ret);
      __android_log_write(ANDROID_LOG_ERROR,"bonanza",buf);
      
-      if (game_status & flag_quit)
-    {
-      __android_log_write(ANDROID_LOG_ERROR,"bonanza","wtf quitting");  
-      __android_log_write(ANDROID_LOG_ERROR,"bonanza",str_error==NULL?"null":str_error);  
-      return -2;
-    }
-    
     if (game_status & flag_mated)
     {
       __android_log_write(ANDROID_LOG_ERROR,"bonanza","mated");  
@@ -82,6 +75,19 @@
     {  __android_log_write(ANDROID_LOG_ERROR,"bonanza","suspend");
       return 22;
     }
+<<<<<<< .mine
+	if (game_status & flag_quit)
+    {
+      __android_log_write(ANDROID_LOG_ERROR,"bonanza","wtf quitting");  
+      __android_log_write(ANDROID_LOG_ERROR,"bonanza",str_error==NULL?"no error string":str_error);  
+	  //try just cancelling the quit
+	  game_status &= ~flag_quit;
+	  return ret;
+      //return -2;
+    }
+    
+=======
+>>>>>>> .r85
      return ret;
   }
   
@@ -122,6 +128,37 @@
     out_board(ptree, f, 0, 0);
     fclose(f);
   }
+<<<<<<< .mine
+  
+   JNIEXPORT  jint JNICALL Java_com_stelluxstudios_Shogi_Engine_saveToFile
+  (JNIEnv * env, jobject caller, jbyteArray filename)
+  {
+	jbyte* ptr = (*env)->GetByteArrayElements(env,filename,NULL);
+  
+	tree_t* ptree = &tree;
+	record_t record;
+	int iret = record_open( &record, ptr, mode_write, "Player1", "Player2" );
+	(*env)->ReleaseByteArrayElements(env,filename,ptr,0);
+	if (iret < 0)
+		return iret;
+	//WARNING: out_CSA_header currently has no error handling
+	out_CSA_header( ptree, &record);
+	return 0;
+  }
+  
+  JNIEXPORT  jint JNICALL Java_com_stelluxstudios_Shogi_Engine_loadFromFile
+  (JNIEnv * env, jobject caller, jbyteArray filename)
+  {
+	jbyte* ptr = (*env)->GetByteArrayElements(env,filename,NULL);
+	
+	record_t record;
+	tree_t* ptree = &tree;
+	int flag = flag_history | flag_rep | flag_detect_hang | flag_rejections;
+	int iret = read_record(ptree, ptr, INT_MAX, flag );
+	(*env)->ReleaseByteArrayElements(env,filename,ptr,0);
+	return iret;
+  }
+=======
   
   JNIEXPORT  jint JNICALL Java_com_stelluxstudios_Shogi_Engine_saveToFile
   (JNIEnv * env, jobject caller, jbyteArray filename)
@@ -164,3 +201,4 @@
 	(*env)->ReleaseByteArrayElements(env,filename,ptr,0);
 	return iret;
   }
+>>>>>>> .r85
