@@ -14,8 +14,12 @@ import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.graphics.BitmapFactory.Options;
 import android.os.Bundle;
+<<<<<<< .mine
+import android.os.Environment;
+=======
 import android.os.Debug;
 import android.os.Environment;
+>>>>>>> .r85
 import android.os.Handler;
 import android.os.Debug.MemoryInfo;
 import android.util.Log;
@@ -52,12 +56,18 @@ public class GameActivity extends Activity {
 	Matrix upsideDownMatrix;
 	Bitmap pointingUp, pointingDown;
 	
+<<<<<<< .mine
+	final String save_file_name = "save.csa";
+	File saveFile;
+	
+=======
 	final String save_file_name = "save.csa";
 	File saveFile;
 	byte[] saveFile_cstring;
 	
 	MemoryInfo meminfo = new MemoryInfo();
 	
+>>>>>>> .r85
     static {
         System.loadLibrary("bonanza");
     }
@@ -75,6 +85,10 @@ public class GameActivity extends Activity {
         whiteIsComp = false;
         blackIsComp = false;
         
+<<<<<<< .mine
+        saveFile = new File(Environment.getDataDirectory(),save_file_name);
+        
+=======
         //saveFile = new File(getFilesDir(),save_file_name);
         saveFile = new File(Environment.getExternalStorageDirectory(),save_file_name);
     	String path = saveFile.getAbsolutePath();
@@ -82,6 +96,7 @@ public class GameActivity extends Activity {
 		path.getBytes(0, path.length(), saveFile_cstring, 0);
 		saveFile_cstring[saveFile_cstring.length-1] = 0;
         
+>>>>>>> .r85
         boardView = (BoardView)findViewById(R.id.boardView);
         whiteHandView = (HandView) findViewById(R.id.whiteHand);
         blackHandView = (HandView) findViewById(R.id.blackHand);
@@ -239,6 +254,19 @@ public class GameActivity extends Activity {
 			i.setClassName(GameActivity.this, Preferences.class.getName());
 			startActivityForResult(i, 1);
 			return true;
+<<<<<<< .mine
+		case 2:
+			
+			int saveRet = e.saveToFile(saveFile.getAbsolutePath().getBytes());
+			if (saveRet < 0)
+				Toast.makeText(this, "Sorry,unable to save!", 1000).show();
+			return true;
+		case 3:
+			int loadRet = e.loadFromFile(saveFile.getAbsolutePath().getBytes());
+			if (loadRet < 0)
+				Toast.makeText(this, "Sorry,unable to load! Have you saved before?", 2000).show();
+			return true;
+=======
 		case 2:
 		
 			int saveRet = e.saveToFile(saveFile_cstring);
@@ -251,6 +279,7 @@ public class GameActivity extends Activity {
 				Toast.makeText(this, "Sorry,unable to load! Have you saved before?", 2000).show();
 			updateStateFromEngine();
 			return true;
+>>>>>>> .r85
 		default:
 			throw new RuntimeException();
 		}
