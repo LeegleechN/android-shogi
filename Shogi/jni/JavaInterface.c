@@ -14,10 +14,24 @@
   }
   
   JNIEXPORT void JNICALL Java_com_stelluxstudios_Shogi_Engine_newGame
-  (JNIEnv * env, jobject caller)
+  (JNIEnv * env, jobject caller, jbyteArray handicap)
   {
+    int iret;
      tree_t* ptree = &tree;
-     int ret = ini_game(ptree,&min_posi_no_handicap,flag_time,"Player1","Player2");
+      min_posi_t min_posi;
+      memset( &min_posi.asquare, empty, nsquare );
+      min_posi.hand_black = min_posi.hand_white = 0;
+      min_posi.turn_to_move = black;
+      
+      jbyte* ptr = (*env)->GetByteArrayElements(env,handicap,NULL);
+      iret = read_board_rep1( ptr, &min_posi );
+      (*env)->ReleaseByteArrayElements(env,handicap,ptr,0);
+      if ( iret < 0 )
+      {
+           __android_log_write(ANDROID_LOG_ERROR,"bonanza","FAILED TO INIT GAME!");
+        return;
+       }
+      iret = ini_game(ptree,&min_posi,flag_time,"Player1","Player2");
      return;
   }
   
@@ -130,7 +144,7 @@
   (JNIEnv * env, jobject caller)
   {
 	//char* filename_c = (*env)->GetStringUTFChars(env,filename_java,NULL);
-	char* filename_c = "/mnt/sdcard/save.csa";
+	char* filename_c = "/sdcard/Android/com.stelluxstudios.Shogi/save.csa";
 	//__android_log_write(ANDROID_LOG_ERROR,"savefile",filename_c);  
   
 	tree_t* ptree = &tree;
@@ -162,7 +176,7 @@
   (JNIEnv * env, jobject caller)
   {
 	//char* filename_c = (*env)->GetStringUTFChars(env,filename_java,NULL);
-	char* filename_c = "/mnt/sdcard/save.csa";
+	char* filename_c = "/sdcard/Android/com.stelluxstudios.Shogi/save.csa";
 
 	tree_t* ptree = &tree;
 	int flag = flag_history | flag_rep | flag_detect_hang | flag_rejections;

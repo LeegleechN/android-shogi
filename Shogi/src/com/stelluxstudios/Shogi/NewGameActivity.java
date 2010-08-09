@@ -48,7 +48,8 @@ public class NewGameActivity extends Activity {
 				Intent i = getIntent();
 				i.putExtra("whiteIsComp",whitePlayerSpinner.getSelectedItemPosition() == 1);
 				i.putExtra("blackIsComp",blackPlayerSpinner.getSelectedItemPosition() == 1);
-				i.putExtra("handicap", handicapSpinner.getSelectedItemPosition());
+				String[] bonanzaStr = getResources().getStringArray(R.array.handicaps_bonanza_str);
+				i.putExtra("handicap_bonanza_str", bonanzaStr[handicapSpinner.getSelectedItemPosition()]);
 				setResult(NEW_GAME_RESULT, i);
 				finish();
 			}
