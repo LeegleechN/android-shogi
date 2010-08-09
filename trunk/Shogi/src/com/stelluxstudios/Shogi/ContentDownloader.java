@@ -30,7 +30,7 @@ import android.widget.TextView;
 
 public class ContentDownloader
 {
-	public final static String content_directory = "/Android/com.stelluxstudios.Shogi/";
+	public final static String content_directory = "/Android/data/com.stelluxstudios.Shogi/";
 	final static String fv = "fv.bin";
 	final static String opening_book = "book.bin";
 	final static String hash = "hash.bin";
