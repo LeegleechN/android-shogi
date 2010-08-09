@@ -135,7 +135,7 @@
   (JNIEnv * env, jobject caller)
   {
      tree_t* ptree = &tree;
-    FILE* f = fopen("/sdcard/Android/data/com.stelluxstudios.Shogi/board_out.txt","w");
+    FILE* f = fopen("/sdcard/Android/data/com.stelluxstudios.Shogi/files/board_out.txt","w");
     out_board(ptree, f, 0, 0);
     fclose(f);
   }
@@ -144,7 +144,7 @@
   (JNIEnv * env, jobject caller)
   {
 	//char* filename_c = (*env)->GetStringUTFChars(env,filename_java,NULL);
-	char* filename_c = "/sdcard/Android/data/com.stelluxstudios.Shogi/save.csa";
+	char* filename_c = "/sdcard/Android/data/com.stelluxstudios.Shogi/files/save.csa";
 	//__android_log_write(ANDROID_LOG_ERROR,"savefile",filename_c);  
   
 	tree_t* ptree = &tree;
@@ -176,7 +176,7 @@
   (JNIEnv * env, jobject caller)
   {
 	//char* filename_c = (*env)->GetStringUTFChars(env,filename_java,NULL);
-	char* filename_c = "/sdcard/Android/data/com.stelluxstudios.Shogi/save.csa";
+	char* filename_c = "/sdcard/Android/data/com.stelluxstudios.Shogi/files/save.csa";
 
 	tree_t* ptree = &tree;
 	int flag = flag_history | flag_rep | flag_detect_hang | flag_rejections;
