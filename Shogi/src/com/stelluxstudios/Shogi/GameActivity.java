@@ -162,7 +162,7 @@ public class GameActivity extends Activity {
     {
     	try 
 		{
-			FileReader boardFile = new FileReader("/sdcard/Android/com.stelluxstudios.Shogi/board_out.txt");
+			FileReader boardFile = new FileReader("/sdcard/Android/data/com.stelluxstudios.Shogi/board_out.txt");
 			char[] buffer = new char[2048];
 			int read = boardFile.read(buffer);
 			String boardString = new String(buffer,0,read);
