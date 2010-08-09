@@ -89,6 +89,7 @@ public class HandView extends LinearLayout
 	public boolean onTouchEvent(MotionEvent event)
 	{
 		clearHighlights();
+		((GameActivity)getContext()).notifyPieceInHand(null);
 		return true;
 	}
 	
