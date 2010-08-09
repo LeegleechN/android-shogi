@@ -30,7 +30,7 @@ public class BoardView extends ImageView {
 	private Game board;
 	private Bitmap background, lines, hintOverlay;
 	private float 
-	left_pad = 12f,
+	left_pad = 9f,
 	top_pad = 10f,
 	widthPerPiece,
 	heightPerPiece;
