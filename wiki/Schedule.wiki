@@ -38,14 +38,14 @@
 
 Continue polishing the UI layer. In particular, properly implement the Android application lifecycle, which details how the application may potentially be interrupted or shut down if the user navigates away or the system is low on memory. This requires being able to save the full state of the application and cleanly exit the Shogi library at potentially any time. Add a game setup option to set ~~players~~ and handicaps. Write the help file. Create a set of 'western' style pieces that are more comprehensible to people who don't know kanji. Detect if the support files are installed on the sdcard, and download them if they aren't.
 
- * Deliverable (dropped): A robust game of Shogi that will be released onto the Android Market to begin receiving feedback.
+ * _Deliverable:A robust game of Shogi that will be released onto the Android Market to begin receiving feedback._
  * Deliverable: Tutorial focused on handling the Android application lifecycle, in particular when interacting with code that was not designed for it.
 
 6. July 26 - August 6
 
 Optimize the Shogi engine for the memory and processor constraints of a smartphone. Targeted devices will be the HTC G1 and the Motorola Droid. The G1 is representative of the older generation of android smartphone, with a 528 MHz in-order processor and 192MB of RAM. The Droid is representative of the most recent generation, with a more sophisticated 550mhz out-of-order processor and 256MB of RAM. I will attempt to provide a gradient of difficulty levels that balances response time with move quality. I will make sure there are sufficient options on both difficulty extremes, to cover the needs of both new players and particularly patient players or those with faster devices.
 
-(Work in italics dropped due to time constraints)
+
 _To evaluate the speed and quality of the engine using various settings, I will create an automated benchmark with a set of easy and moderately difficult mating problems. For each collection of settings, I will evaluate the time spent against the number of problems that were solved correctly, and select a set of favorable trade-offs along this curve to be the difficulty settings._
 
 
