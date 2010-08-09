@@ -60,6 +60,8 @@ public class GameActivity extends Activity {
 	MemoryInfo meminfo = new MemoryInfo();
 	
 	String handicap = "PI";
+	
+	boolean game_finished = false;
 
     static {
         System.loadLibrary("bonanza");
@@ -79,7 +81,7 @@ public class GameActivity extends Activity {
         blackIsComp = false;
         
         //saveFile = new File(getFilesDir(),save_file_name);
-        saveFile = new File(Environment.getExternalStorageDirectory(),save_file_name);
+        saveFile = new File(ContentDownloader.path_to_storage,save_file_name);
     	String path = saveFile.getAbsolutePath();
     	saveFile_cstring = new byte[path.length() + 1];
 		path.getBytes(0, path.length(), saveFile_cstring, 0);
@@ -149,7 +151,10 @@ public class GameActivity extends Activity {
 
     @Override
     protected void onPause() {
-    	//Debug.stopMethodTracing();
+    	if (game_finished)
+    		saveFile.delete();
+    	else
+    		e.saveToFile();
     	super.onPause();
     }
     
@@ -225,8 +230,8 @@ public class GameActivity extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		menu.add(0, 0, 0, "New Game");
 		menu.add(0, 1, 0, "Preferences");
-		menu.add(0, 2, 0, "Save Game");
-		menu.add(0, 3, 0, "Load Game");
+		//menu.add(0, 2, 0, "Save Game");
+		//menu.add(0, 3, 0, "Load Game");
 		return true;
 	}
 	
@@ -267,6 +272,7 @@ public class GameActivity extends Activity {
 		case 0:
 			if (resultCode == NewGameActivity.NEW_GAME_RESULT)
 			{
+				saveFile.delete();
 				whiteIsComp = data.getBooleanExtra("whiteIsComp", false);
 				blackIsComp = data.getBooleanExtra("blackIsComp", false);
 				handicap = data.getStringExtra("handicap_bonanza_str");
@@ -291,6 +297,7 @@ public class GameActivity extends Activity {
 		}
 	}
 	
+	
 	@Override
 	protected void onResume() {
 		super.onResume();
@@ -313,18 +320,29 @@ public class GameActivity extends Activity {
 		blackHandView.setBackgroundResource(boardRes);
 		
 		boardView.setGame(Game.makeNew());
-		boolean sdcard_is_set_up = ContentDownloader.verifyContentPresence(this,handler);
-		
+		boolean sdcard_is_set_up = ContentDownloader.verifyContentPresence(this, handler);
+
 		if (sdcard_is_set_up)
 		{
-		 e.initialize();
-		 boolean whiteIsComp = this.whiteIsComp;
-		 boolean blackIsComp = this.blackIsComp;
-		 String handicap = this.handicap;
-		 this.whiteIsComp = false;
-		 this.blackIsComp = false;
-		 this.handicap = "PI";
-	     startGame(handicap,whiteIsComp,blackIsComp);
+			e.initialize();
+			
+			if (e.loadFromFile() == 1)
+			{
+				//successful resume
+				updateStateFromEngine();
+				mainLoop();
+			}
+			else
+			{
+				//new game
+				boolean whiteIsComp = this.whiteIsComp;
+				boolean blackIsComp = this.blackIsComp;
+				String handicap = this.handicap;
+				this.whiteIsComp = false;
+				this.blackIsComp = false;
+				this.handicap = "PI";
+				startGame(handicap, whiteIsComp, blackIsComp);
+			}
 		}
 	}
 	
@@ -393,6 +411,7 @@ public class GameActivity extends Activity {
 				
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
+					game_finished = true;
 					GameActivity.this.finish();
 					
 				}
