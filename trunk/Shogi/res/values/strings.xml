@@ -3,14 +3,25 @@
     <string name="app_name">Shogi</string>
     <string-array name="handicaps">
     	<item>None</item>
-    	<item>Left lance</item>
+    	<item>Left Lance</item>
     	<item>Bishop</item>
     	<item>Rook</item>
-    	<item>Rook and left lance</item>
-    	<item>Two piece</item>
+    	<item>Rook and Left Lance</item>
+    	<item>Rook and Bishop</item>
     	<item>Four piece</item>
-    	<item>Four piece</item>
+    	<item>Five piece</item>
     	<item>Six piece</item> 
+    </string-array>
+    <string-array name="handicaps_bonanza_str">
+    	<item>PI</item>
+    	<item>PI11KY</item>
+    	<item>PI22KA</item>
+    	<item>PI82HI</item>
+    	<item>PI82HI11KY</item>
+    	<item>PI82HI22KA</item>
+    	<item>PI82HI22KA11KY91KY</item>
+    	<item>PI82HI22KA11KY91KY81KE</item>
+    	<item>PI82HI22KA11KY91KY81KE21KE</item> 
     </string-array>
     <string-array name="human_or_comp">
     	<item>Human</item>

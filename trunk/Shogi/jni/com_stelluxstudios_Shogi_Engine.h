@@ -15,7 +15,7 @@ JNIEXPORT void JNICALL Java_com_stelluxstudios_Shogi_Engine_initialize
  * Method:    newGame
  */
 JNIEXPORT void JNICALL Java_com_stelluxstudios_Shogi_Engine_newGame
-  (JNIEnv *, jobject);
+  (JNIEnv *, jobject, jbyteArray);
 
 /*
  * Class:     com_stelluxstudios_Shogi_Engine

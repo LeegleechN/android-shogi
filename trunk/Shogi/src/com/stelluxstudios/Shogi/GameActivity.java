@@ -58,6 +58,8 @@ public class GameActivity extends Activity {
 	byte[] saveFile_cstring;
 	
 	MemoryInfo meminfo = new MemoryInfo();
+	
+	String handicap = "PI";
 
     static {
         System.loadLibrary("bonanza");
@@ -97,26 +99,26 @@ public class GameActivity extends Activity {
         e = new Engine();
     }
     
+    void onCompFinishedMove()
+    {
+    	processGameStatus();
+		System.gc();
+		updateStateFromEngine();
+    }
+    
     private void makeComputerMove()
     {
-    	e.makeMove();	
-    	processGameStatus();
-    	
-		System.gc();
-		
-
-		updateStateFromEngine();
+    	Thread thinkThread = new Thread(new Runnable()
+		{
 			
-			/*
-			moveButton.post(new Runnable() {
-				
-				@Override
-				public void run() {
-					makeMove();
-					
-				}
-			});
-		*/
+			@Override
+			public void run()
+			{
+				e.makeMove();	
+				onCompFinishedMove();
+			}
+		});
+    	thinkThread.run();
     }
     
     //returns true if the move worked, false if it was illegal
@@ -265,10 +267,11 @@ public class GameActivity extends Activity {
 		case 0:
 			if (resultCode == NewGameActivity.NEW_GAME_RESULT)
 			{
-				boolean whiteIsComp = data.getBooleanExtra("whiteIsComp", true);
-				boolean blackIsComp = data.getBooleanExtra("blackIsComp", true);
-				int handicapPosition = data.getIntExtra("handicap", 0);
-				startGame(Game.initialConfig, whiteIsComp, blackIsComp);
+				whiteIsComp = data.getBooleanExtra("whiteIsComp", false);
+				blackIsComp = data.getBooleanExtra("blackIsComp", false);
+				handicap = data.getStringExtra("handicap_bonanza_str");
+				if (handicap == null)
+					handicap = "PI";
 			}
 			break;
 		case 1:
@@ -276,9 +279,7 @@ public class GameActivity extends Activity {
 		case 2:
 			if (resultCode == ContentDownloader.SUCCESSFUL_SETUP)
 			{
-				 e.initialize();
-			     updateStateFromEngine();
-			     mainLoop();
+				//continue to onResume, which should succeed now
 			}
 			else
 			{
@@ -317,17 +318,24 @@ public class GameActivity extends Activity {
 		if (sdcard_is_set_up)
 		{
 		 e.initialize();
-	     updateStateFromEngine();
-	     mainLoop();
+		 boolean whiteIsComp = this.whiteIsComp;
+		 boolean blackIsComp = this.blackIsComp;
+		 String handicap = this.handicap;
+		 this.whiteIsComp = false;
+		 this.blackIsComp = false;
+		 this.handicap = "PI";
+	     startGame(handicap,whiteIsComp,blackIsComp);
 		}
 	}
 	
-	//TODO implement boardPosition (i.e. loading save games)
-	void startGame(String boardPosition,boolean whiteIsComp, boolean blackIsComp)
+	void startGame(String bonanza_handicap_str,boolean whiteIsComp, boolean blackIsComp)
 	{
 		this.whiteIsComp = whiteIsComp;
 		this.blackIsComp = blackIsComp;
-		e.newGame();
+		byte[] out = new byte[bonanza_handicap_str.length() + 1];
+		bonanza_handicap_str.getBytes(0, bonanza_handicap_str.length(), out, 0);
+		out[out.length-1] = 0;
+		e.newGame(out);
 		updateStateFromEngine();
 		mainLoop();
 	}
