@@ -33,7 +33,6 @@ public class DownloadActivity extends Activity
 				if (zipFile != null)
 				{
 					finished_setup = ContentDownloader.extractContent(DownloadActivity.this,zipFile,status);
-					status.setText("finished!");
 					setResult(ContentDownloader.SUCCESSFUL_SETUP);
 					finish();
 				}
