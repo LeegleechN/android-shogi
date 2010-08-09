@@ -246,10 +246,10 @@ const char *str_fmt_line     = "Line %u: %s";
 const char *str_on           = "on";
 const char *str_off          = "off";
 #ifdef ANDROID
-const char *str_game_csa     = "/sdcard/Android/data/com.stelluxstudios.Shogi/game.csa";
-const char *str_fv           = "/sdcard/Android/data/com.stelluxstudios.Shogi/fv.bin";
-const char *str_book         = "/sdcard/Android/data/com.stelluxstudios.Shogi/book.bin";
-const char *str_hash         = "/sdcard/Android/data/com.stelluxstudios.Shogi/hash.bin";
+const char *str_game_csa     = "/sdcard/Android/data/com.stelluxstudios.Shogi/files/game.csa";
+const char *str_fv           = "/sdcard/Android/data/com.stelluxstudios.Shogi/files/fv.bin";
+const char *str_book         = "/sdcard/Android/data/com.stelluxstudios.Shogi/files/book.bin";
+const char *str_hash         = "/sdcard/Android/data/com.stelluxstudios.Shogi/files/hash.bin";
 #else
 const char *str_game_csa     = "game.csa";
 const char *str_fv           = "fv.bin";
