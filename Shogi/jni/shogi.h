@@ -1070,6 +1070,7 @@ int all_hash_learn_store( void );
 int gen_legal_moves( tree_t * restrict ptree, unsigned int *p0 );
 int rejections_probe( tree_t * restrict ptree, int turn, int ply );
 int ini( tree_t * restrict ptree );
+int ini_depth( tree_t * restrict ptree, int depth_max);
 int fin( void );
 int ponder( tree_t * restrict ptree );
 int hash_learn( const tree_t * restrict ptree, unsigned int move, int value,

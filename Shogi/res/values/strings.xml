@@ -30,4 +30,12 @@
     <string name="white_player">White Player</string>
     <string name="black_player">Black Player</string>
     <string name="handicap">Handicap</string>
+    <string name="difficultyPrompt">Computer Difficulty</string>
+    
+    <string-array name="difficulty_names">
+    <item>Very Easy</item>
+    <item>Easy</item>
+    <item>Normal</item>
+    <item>Hard</item>
+    </string-array>
 </resources>

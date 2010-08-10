@@ -4,6 +4,7 @@ import java.util.List;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.LinearLayout;
 
@@ -76,6 +77,7 @@ public class HandView extends LinearLayout
 		for (int i = 0 ; i< numChildren ; i++)
 		{
 			PieceView pieceView = (PieceView)getChildAt(i);
+			Log.d("handview","unhighlighting: " + pieceView);
 			pieceView.isHighlighted = false;
 		}
 	}
@@ -88,9 +90,21 @@ public class HandView extends LinearLayout
 	@Override
 	public boolean onTouchEvent(MotionEvent event)
 	{
+		if (event.getAction() != MotionEvent.ACTION_DOWN)
+			return true;
 		clearHighlights();
 		((GameActivity)getContext()).notifyPieceInHand(null);
+		invalidate();
 		return true;
+	}
+
+	public void highlight(PieceView pieceView)
+	{
+		clearHighlights();
+		Log.d("handview", "highlighting: " + pieceView);
+		pieceView.isHighlighted = true;
+		notifyOfSelection(pieceView.piece);
+		invalidate();
 	}
 	
 

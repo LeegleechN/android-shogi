@@ -326,7 +326,8 @@ public class GameActivity extends Activity {
 
 		if (sdcard_is_set_up)
 		{
-			e.initialize();
+			//difficulty corresponds to maximum depth
+			e.initialize(prefs.getInt("difficulty", 3));
 			
 			if (e.loadFromFile() == 1)
 			{
@@ -367,6 +368,9 @@ public class GameActivity extends Activity {
 
 		if (compTakesMove)
 		{
+			//save before the computer's move due to potential crashing
+			e.saveToFile();
+			
 			makeComputerMove();
 			if (!processGameStatus())
 			{

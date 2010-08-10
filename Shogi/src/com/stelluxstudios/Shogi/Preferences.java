@@ -4,13 +4,16 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.Gallery;
+import android.widget.Spinner;
 
 public class Preferences extends Activity {
 	
 	Gallery boardGallery, pieceGallery;
 	CheckBox hintCheckbox;
+	Spinner difficultySpinner;
 	
 	SharedPreferences prefs;
 	static final String PREFS = "ShogiPrefs";
@@ -44,9 +47,20 @@ public class Preferences extends Activity {
 		
 		prefs = getSharedPreferences(PREFS, MODE_PRIVATE);
 		
+		String[] options = getResources().getStringArray(R.array.difficulty_names);
+		ArrayAdapter<String> difficultyAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,android.R.id.text1, options);
+		difficultyAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		difficultySpinner = (Spinner) findViewById(R.id.difficultySpinner);
+		difficultySpinner.setAdapter(difficultyAdapter);
+		
 		boardGallery.setSelection(prefs.getInt("boardImagePosition", 0));
 		pieceGallery.setSelection(prefs.getInt("pieceImagePosition", 0));
 		hintCheckbox.setChecked(prefs.getBoolean("showingHints", true));
+		int difficulty = prefs.getInt("difficulty", 4);
+		difficultySpinner.setSelection(difficulty - 1); //difficulty corresponds to maximum depth, with very easy being a depth of 1
+		
+		
+		
 	}
 	
 	@Override
@@ -56,6 +70,8 @@ public class Preferences extends Activity {
 		edit.putInt("boardImagePosition", boardGallery.getSelectedItemPosition());
 		edit.putInt("pieceImagePosition", pieceGallery.getSelectedItemPosition());
 		edit.putBoolean("showingHints", hintCheckbox.isChecked());
+		int difficulty = difficultySpinner.getSelectedItemPosition() + 1;
+		edit.putInt("difficulty", difficulty);
 		edit.commit();
 		super.onPause();
 	}
