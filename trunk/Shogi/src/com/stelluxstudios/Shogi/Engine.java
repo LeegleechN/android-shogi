@@ -6,7 +6,7 @@ public class Engine
 	{
 		
 	}
-	public native void initialize();
+	public native void initialize(int depth_max);
 	public native void newGame(byte[] handicap);
 	
 	public native int tryApplyMove(byte[] move);

@@ -8,46 +8,46 @@
 extern "C" {
 #endif
 
-JNIEXPORT void JNICALL Java_com_stelluxstudios_Shogi_Engine_initialize
-  (JNIEnv *, jobject);
+void Java_com_stelluxstudios_Shogi_Engine_initialize
+  (JNIEnv *, jobject, jint);
 /*
  * Class:     com_stelluxstudios_Shogi_Engine
  * Method:    newGame
  */
-JNIEXPORT void JNICALL Java_com_stelluxstudios_Shogi_Engine_newGame
+void Java_com_stelluxstudios_Shogi_Engine_newGame
   (JNIEnv *, jobject, jbyteArray);
 
 /*
  * Class:     com_stelluxstudios_Shogi_Engine
  * Method:    tryApplyMove
  */
-JNIEXPORT  jint JNICALL Java_com_stelluxstudios_Shogi_Engine_tryApplyMove
+  jint Java_com_stelluxstudios_Shogi_Engine_tryApplyMove
   (JNIEnv *, jobject, jbyteArray);
 
 /*
  * Class:     com_stelluxstudios_Shogi_Engine
  * Method:    makeMove
  */
-JNIEXPORT jint JNICALL Java_com_stelluxstudios_Shogi_Engine_makeMove
+ jint Java_com_stelluxstudios_Shogi_Engine_makeMove
   (JNIEnv *, jobject);
   
-  JNIEXPORT jint JNICALL Java_com_stelluxstudios_Shogi_Engine_getGameStatus
+   jint Java_com_stelluxstudios_Shogi_Engine_getGameStatus
   (JNIEnv *, jobject);
   
-  JNIEXPORT jint JNICALL Java_com_stelluxstudios_Shogi_Engine_getCurrentPlayer
+   jint Java_com_stelluxstudios_Shogi_Engine_getCurrentPlayer
   (JNIEnv *, jobject);
 
 /*
  * Class:     com_stelluxstudios_Shogi_Engine
  * Method:    getBoardString
  */
-JNIEXPORT void JNICALL Java_com_stelluxstudios_Shogi_Engine_getBoardString
+void Java_com_stelluxstudios_Shogi_Engine_getBoardString
   (JNIEnv *, jobject);
   
-  JNIEXPORT  jint JNICALL Java_com_stelluxstudios_Shogi_Engine_saveToFile
+    jint Java_com_stelluxstudios_Shogi_Engine_saveToFile
   (JNIEnv *, jobject);
   
-  JNIEXPORT  jint JNICALL Java_com_stelluxstudios_Shogi_Engine_loadFromFile
+    jint Java_com_stelluxstudios_Shogi_Engine_loadFromFile
   (JNIEnv *, jobject);
 
 #ifdef __cplusplus

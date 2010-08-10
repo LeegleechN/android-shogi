@@ -101,7 +101,13 @@ ini_fv( void )
 */
 
 int
-ini( tree_t * restrict ptree )
+ini( tree_t * restrict ptree)
+{
+	return ini_depth(ptree,4);
+}
+
+int
+ini_depth( tree_t * restrict ptree, int depth_max)
 {
   int i;
 
@@ -136,7 +142,7 @@ ini( tree_t * restrict ptree )
   sec_limit             = 0;
   sec_limit_up          = 3U;
   sec_limit_depth       = UINT_MAX;
-  depth_limit           = 4;
+  depth_limit           = depth_max;
   log2_ntrans_table     = 16;
   
   pf_book               = NULL;

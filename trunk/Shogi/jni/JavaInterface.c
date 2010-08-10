@@ -5,15 +5,15 @@
 #include <sys/stat.h>
 #include <fcntl.h>
   
-   JNIEXPORT void JNICALL Java_com_stelluxstudios_Shogi_Engine_initialize
-  (JNIEnv * env, jobject caller)
+   void Java_com_stelluxstudios_Shogi_Engine_initialize
+  (JNIEnv * env, jobject caller, jint depth_max)
   {
      tree_t* ptree = &tree;
-     int ret = ini(ptree);
+     int ret = ini_depth(ptree, depth_max);
      return;
   }
   
-  JNIEXPORT void JNICALL Java_com_stelluxstudios_Shogi_Engine_newGame
+  void Java_com_stelluxstudios_Shogi_Engine_newGame
   (JNIEnv * env, jobject caller, jbyteArray handicap)
   {
     int iret;
@@ -37,7 +37,7 @@
   
   
   
-  JNIEXPORT jint JNICALL Java_com_stelluxstudios_Shogi_Engine_tryApplyMove
+  jint Java_com_stelluxstudios_Shogi_Engine_tryApplyMove
   (JNIEnv * env, jobject caller, jbyteArray str)
   {
 	jbyte* ptr = (*env)->GetByteArrayElements(env,str,NULL);
@@ -60,7 +60,7 @@
   }
   
   
-  JNIEXPORT jint JNICALL Java_com_stelluxstudios_Shogi_Engine_makeMove
+  jint Java_com_stelluxstudios_Shogi_Engine_makeMove
   (JNIEnv * env, jobject caller)
   {  
     tree_t* ptree = &tree;
@@ -102,7 +102,7 @@
      return ret;
   }
   
-   JNIEXPORT jint JNICALL Java_com_stelluxstudios_Shogi_Engine_getGameStatus
+   jint Java_com_stelluxstudios_Shogi_Engine_getGameStatus
   (JNIEnv * env, jobject caller)
   {
 	if (game_status & flag_quit)
@@ -124,14 +124,14 @@
       return 22;
   }
   
-    JNIEXPORT jint JNICALL Java_com_stelluxstudios_Shogi_Engine_getCurrentPlayer
+    jint Java_com_stelluxstudios_Shogi_Engine_getCurrentPlayer
   (JNIEnv * env, jobject caller)
   {
 	//0 indicates black, 1 indicates white
 	return root_turn;
   }
   
-  JNIEXPORT void JNICALL Java_com_stelluxstudios_Shogi_Engine_getBoardString
+  void Java_com_stelluxstudios_Shogi_Engine_getBoardString
   (JNIEnv * env, jobject caller)
   {
      tree_t* ptree = &tree;
@@ -140,7 +140,7 @@
     fclose(f);
   }
   
-  JNIEXPORT  jint JNICALL Java_com_stelluxstudios_Shogi_Engine_saveToFile
+   jint Java_com_stelluxstudios_Shogi_Engine_saveToFile
   (JNIEnv * env, jobject caller)
   {
 	//char* filename_c = (*env)->GetStringUTFChars(env,filename_java,NULL);
@@ -172,7 +172,7 @@
 	return iret;
   }
   
-  JNIEXPORT  jint JNICALL Java_com_stelluxstudios_Shogi_Engine_loadFromFile
+   jint Java_com_stelluxstudios_Shogi_Engine_loadFromFile
   (JNIEnv * env, jobject caller)
   {
 	//char* filename_c = (*env)->GetStringUTFChars(env,filename_java,NULL);
