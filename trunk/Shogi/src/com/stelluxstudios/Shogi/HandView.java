@@ -77,7 +77,6 @@ public class HandView extends LinearLayout
 		for (int i = 0 ; i< numChildren ; i++)
 		{
 			PieceView pieceView = (PieceView)getChildAt(i);
-			Log.d("handview","unhighlighting: " + pieceView);
 			pieceView.isHighlighted = false;
 		}
 	}
@@ -101,7 +100,6 @@ public class HandView extends LinearLayout
 	public void highlight(PieceView pieceView)
 	{
 		clearHighlights();
-		Log.d("handview", "highlighting: " + pieceView);
 		pieceView.isHighlighted = true;
 		notifyOfSelection(pieceView.piece);
 		invalidate();
