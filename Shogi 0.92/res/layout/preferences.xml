@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+	<TextView
+	android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Board Style"
+    />
+    <Gallery
+    android:layout_width="fill_parent"
+    android:layout_height="100dip"
+    android:id="@+id/boardGallery"
+    />
+    <TextView
+	android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Piece Style"
+    />
+    <Gallery
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/pieceGallery"
+    />
+    <CheckBox
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text = "Show movement hints"
+    android:id = "@+id/hintCheckbox"
+    />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:text="Computer Difficulty:"
+    />
+    <Spinner 
+      android:id = "@+id/difficultySpinner"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:prompt="@string/difficultyPrompt"
+    />
+</LinearLayout>
