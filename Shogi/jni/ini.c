@@ -244,7 +244,8 @@ ini_depth( tree_t * restrict ptree, int depth_max)
   ini_rand( time_turn_start );
   Out( "rand seed = %x\n", time_turn_start );
 
-  resign_threshold = RESIGN_THRESHOLD;
+  //resign_threshold = RESIGN_THRESHOLD;
+  resign_threshold = INT_MAX;
 
 #if defined(MPV)
   mpv_num   = 1;
