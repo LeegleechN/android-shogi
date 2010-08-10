@@ -19,7 +19,7 @@ public class Preferences extends Activity {
 	static final String PREFS = "ShogiPrefs";
 	
 	static int[] boardOptions = new int[]{R.drawable.ban_gohan,R.drawable.ban_kaya_a,R.drawable.ban_kaya_b,R.drawable.ban_kaya_c,
-			R.drawable.ban_kaya_d,R.drawable.ban_muji,R.drawable.ban_oritatami,R.drawable.ban_stripe};
+			R.drawable.ban_kaya_d,R.drawable.ban_muji,R.drawable.ban_stripe};
 	static int[] pieceOptions = new int[]{R.drawable.koma_western_skei,R.drawable.koma_dirty_skei,R.drawable.koma_kinki_skei,R.drawable.koma_ryoko_skei};
 	static String[] pieceResName = new String[]{"koma_western_","koma_dirty_", "koma_kinki_", "koma_ryoko_"};
 	                                   
@@ -56,7 +56,7 @@ public class Preferences extends Activity {
 		boardGallery.setSelection(prefs.getInt("boardImagePosition", 0));
 		pieceGallery.setSelection(prefs.getInt("pieceImagePosition", 0));
 		hintCheckbox.setChecked(prefs.getBoolean("showingHints", true));
-		int difficulty = prefs.getInt("difficulty", 4);
+		int difficulty = prefs.getInt("difficulty", 3);
 		difficultySpinner.setSelection(difficulty - 1); //difficulty corresponds to maximum depth, with very easy being a depth of 1
 		
 		

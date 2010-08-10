@@ -11,7 +11,7 @@
     />
     <Gallery
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="100dip"
     android:id="@+id/boardGallery"
     />
     <TextView
@@ -29,6 +29,12 @@
     android:layout_height="wrap_content"
     android:text = "Show movement hints"
     android:id = "@+id/hintCheckbox"
+    />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:text="Computer Difficulty:"
     />
     <Spinner 
       android:id = "@+id/difficultySpinner"

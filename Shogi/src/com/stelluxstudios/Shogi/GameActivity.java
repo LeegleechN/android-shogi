@@ -277,6 +277,10 @@ public class GameActivity extends Activity {
 				saveFile.delete();
 				whiteIsComp = data.getBooleanExtra("whiteIsComp", false);
 				blackIsComp = data.getBooleanExtra("blackIsComp", false);
+				prefs.edit()
+					.putBoolean("whiteIsComp", whiteIsComp)
+					.putBoolean("blackIsComp", blackIsComp)
+				.commit();
 				handicap = data.getStringExtra("handicap_bonanza_str");
 				if (handicap == null)
 					handicap = "PI";
@@ -332,18 +336,14 @@ public class GameActivity extends Activity {
 			if (e.loadFromFile() == 1)
 			{
 				//successful resume
+				whiteIsComp = prefs.getBoolean("whiteIsComp", false);
+				blackIsComp = prefs.getBoolean("blackIsComp", false);
 				updateStateFromEngine();
 				mainLoop();
 			}
 			else
 			{
 				//new game
-				boolean whiteIsComp = this.whiteIsComp;
-				boolean blackIsComp = this.blackIsComp;
-				String handicap = this.handicap;
-				this.whiteIsComp = false;
-				this.blackIsComp = false;
-				this.handicap = "PI";
 				startGame(handicap, whiteIsComp, blackIsComp);
 			}
 		}
@@ -363,13 +363,14 @@ public class GameActivity extends Activity {
 
 	void mainLoop()
 	{
+		//save before each move due to the potential for crashing
+		e.saveToFile();
+		
 		Player currentPlayer = game.getCurrentPlayer();
 		boolean compTakesMove = (currentPlayer == Player.White && whiteIsComp || currentPlayer == Player.Black && blackIsComp);
 
 		if (compTakesMove)
 		{
-			//save before the computer's move due to potential crashing
-			e.saveToFile();
 			
 			makeComputerMove();
 			if (!processGameStatus())
