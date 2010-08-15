@@ -440,6 +440,10 @@ make_move_root( tree_t * restrict ptree, unsigned int move, int flag )
 
       out_CSA( ptree, &record_game, move );
     }
+    
+   #ifdef ANDROID
+   last_applied_move = move;
+   #endif
 
   /* add rejections */
   if ( flag & flag_rejections ) { add_rejections_root( ptree, move ); }

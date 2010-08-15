@@ -201,6 +201,8 @@ public class GameActivity extends Activity {
     
     private void updateStateFromEngine()
     {
+    	String lastMove = e.getLastMove();
+    	Log.d("lastMove", "LastMove: " + e.getLastMove());
         e.getBoardString();
     	String boardString = getBoardString();
     	if (boardString == null)
@@ -215,6 +217,7 @@ public class GameActivity extends Activity {
     	
     	
 		boardView.setGame(game);
+		boardView.highlightMove(lastMove);
 		boardView.invalidate();
 		
 		whiteHandView.updateFromPieceList(game.getWhiteHand());

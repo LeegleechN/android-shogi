@@ -20,4 +20,6 @@ public class Engine
 	public native int saveToFile();
 	public native int loadFromFile();
 	
+	public native String getLastMove();
+	
 }

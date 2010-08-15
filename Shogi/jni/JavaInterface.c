@@ -5,6 +5,8 @@
 #include <sys/stat.h>
 #include <fcntl.h>
   
+  int last_applied_move = 0;
+  
    void Java_com_stelluxstudios_Shogi_Engine_initialize
   (JNIEnv * env, jobject caller, jint depth_max)
   {
@@ -19,6 +21,9 @@
     int iret;
      tree_t* ptree = &tree;
       min_posi_t min_posi;
+      
+      last_applied_move = 0;
+      
       memset( &min_posi.asquare, empty, nsquare );
       min_posi.hand_black = min_posi.hand_white = 0;
       min_posi.turn_to_move = black;
@@ -184,3 +189,11 @@
 	//(*env)->ReleaseStringUTFChars(env,filename_java,filename_c);
 	return iret;
   }
+  
+    jstring Java_com_stelluxstudios_Shogi_Engine_getLastMove
+  (JNIEnv * env, jobject caller)
+  {
+    const char* lastMove = str_CSA_move(last_applied_move);
+    return (*env)->NewStringUTF(env, lastMove);
+  }
+

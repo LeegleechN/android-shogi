@@ -815,6 +815,10 @@ struct tree {
 #endif
 };
 
+#ifdef ANDROID
+//used to figure out what piece moved for Android display
+extern int last_applied_move;
+#endif
 
 extern SHARE unsigned int game_status;
 extern history_book_learn_t history_book_learn[ HASH_REG_HIST_LEN ];
