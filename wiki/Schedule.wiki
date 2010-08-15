@@ -57,5 +57,5 @@ _To evaluate the speed and quality of the engine using various settings, I will 
 
 Address any remaining complaints from users commenting on the Android market. Release the optimized and feature-complete version of the application.
 
- *~~ Deliverable: Complete version of application available on Android market~~
+ *~~Deliverable: Complete version of application available on Android market~~
  * Deliverable: Final entry in tutorial series
