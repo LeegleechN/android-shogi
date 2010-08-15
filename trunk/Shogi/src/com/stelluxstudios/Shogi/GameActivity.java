@@ -17,6 +17,7 @@ import android.os.Bundle;
 import android.os.Debug;
 import android.os.Environment;
 import android.os.Handler;
+import android.os.Process;
 import android.os.Debug.MemoryInfo;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -103,9 +104,21 @@ public class GameActivity extends Activity {
     
     void onCompFinishedMove()
     {
-    	processGameStatus();
+    	boolean gameOver = processGameStatus();
 		System.gc();
 		updateStateFromEngine();
+		if (!gameOver)
+		{
+			handler.postDelayed(new Runnable()
+			{
+				
+				@Override
+				public void run()
+				{
+					mainLoop();
+				}
+			}, 200);
+		}
     }
     
     private void makeComputerMove()
@@ -116,11 +129,20 @@ public class GameActivity extends Activity {
 			@Override
 			public void run()
 			{
+				Process.setThreadPriority(5);
 				e.makeMove();	
-				onCompFinishedMove();
+				handler.post(new Runnable()
+				{
+					
+					@Override
+					public void run()
+					{
+						onCompFinishedMove();	
+					}
+				});
 			}
 		});
-    	thinkThread.run();
+    	thinkThread.start();
     }
     
     //returns true if the move worked, false if it was illegal
@@ -215,6 +237,9 @@ public class GameActivity extends Activity {
 			blackHandView.highlightsEnabled = false;
 			whiteHandView.highlightsEnabled = true;
 		}
+		
+		boardView.selectionsEnabled = !compTakesNextMove();
+		
     }
     
     public void notifyPieceInHand(Piece p)
@@ -360,31 +385,22 @@ public class GameActivity extends Activity {
 		updateStateFromEngine();
 		mainLoop();
 	}
+	
+	boolean compTakesNextMove()
+	{
+		Player currentPlayer = game.getCurrentPlayer();
+		return (currentPlayer == Player.White && whiteIsComp || currentPlayer == Player.Black && blackIsComp);
+	}
 
 	void mainLoop()
 	{
 		//save before each move due to the potential for crashing
 		e.saveToFile();
-		
-		Player currentPlayer = game.getCurrentPlayer();
-		boolean compTakesMove = (currentPlayer == Player.White && whiteIsComp || currentPlayer == Player.Black && blackIsComp);
 
-		if (compTakesMove)
+		if (compTakesNextMove())
 		{
-			
 			makeComputerMove();
-			if (!processGameStatus())
-			{
-				handler.postDelayed(new Runnable()
-				{
-					@Override
-					public void run()
-					{
-						mainLoop();
-					}
-				},200);
-				return;
-			}
+			return;
 		} 
 		else
 		{

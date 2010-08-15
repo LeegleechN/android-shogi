@@ -57,6 +57,7 @@ public class BoardView extends ImageView {
 	WeakHashMap<Piece, Bitmap> pieceBitmaps = new WeakHashMap<Piece, Bitmap>();
 	
 	GameActivity gameActivity;
+	public boolean selectionsEnabled = true;
 	
 	public BoardView(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -186,7 +187,7 @@ public class BoardView extends ImageView {
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
 		
-		if (event.getAction() != MotionEvent.ACTION_DOWN)
+		if (selectionsEnabled == false || event.getAction() != MotionEvent.ACTION_DOWN)
 			return true;
 		
 		//figure out the coordinates of the touch event on the board
