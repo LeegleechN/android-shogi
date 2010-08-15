@@ -226,19 +226,28 @@ public class GameActivity extends Activity {
 		blackHandView.invalidate();
 		
 		
-		if (game.getCurrentPlayer() == Player.Black)
+		if (game_finished)
 		{
-			turnReminderImage.setImageBitmap(pointingUp);
-			turnReminder.setText("Black's Turn");
 			whiteHandView.highlightsEnabled = false;
-			blackHandView.highlightsEnabled = true;
+			blackHandView.highlightsEnabled = false;
+			boardView.selectionsEnabled = false;
 		}
 		else
 		{
-			turnReminderImage.setImageBitmap(pointingDown);
-			turnReminder.setText("White's Turn");
-			blackHandView.highlightsEnabled = false;
-			whiteHandView.highlightsEnabled = true;
+			if (game.getCurrentPlayer() == Player.Black)
+			{
+				turnReminderImage.setImageBitmap(pointingUp);
+				turnReminder.setText("Black's Turn");
+				whiteHandView.highlightsEnabled = false;
+				blackHandView.highlightsEnabled = true;
+			}
+			else
+			{
+				turnReminderImage.setImageBitmap(pointingDown);
+				turnReminder.setText("White's Turn");
+				blackHandView.highlightsEnabled = false;
+				whiteHandView.highlightsEnabled = true;
+			}
 		}
 		
 		boardView.selectionsEnabled = !compTakesNextMove();
@@ -433,13 +442,12 @@ public class GameActivity extends Activity {
     		AlertDialog.Builder b = new AlertDialog.Builder(GameActivity.this);
     		b.setTitle("Game Over");
     		b.setMessage(cause);
-    		b.setPositiveButton("Quit", new DialogInterface.OnClickListener() {
+    		b.setPositiveButton("OK", new DialogInterface.OnClickListener() {
 				
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					game_finished = true;
-					GameActivity.this.finish();
-					
+					updateStateFromEngine();
 				}
 			});
     		b.create().show();
