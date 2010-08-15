@@ -49,6 +49,9 @@ void Java_com_stelluxstudios_Shogi_Engine_getBoardString
   
     jint Java_com_stelluxstudios_Shogi_Engine_loadFromFile
   (JNIEnv *, jobject);
+  
+  jstring Java_com_stelluxstudios_Shogi_Engine_getLastMove
+  (JNIEnv *, jobject);
 
 #ifdef __cplusplus
 }

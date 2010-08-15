@@ -28,7 +28,7 @@ import com.stelluxstudios.Shogi.MovementCalculator.Position;
 public class BoardView extends ImageView {
 
 	private Game board;
-	private Bitmap background, lines, hintOverlay;
+	private Bitmap background, lines, hintOverlay, sourceOverlay, destOverlay, dropOverlay;
 	private float 
 	left_pad = 9f,
 	top_pad = 10f,
@@ -54,6 +54,11 @@ public class BoardView extends ImageView {
 	
 	int backgroundRes = R.drawable.ban_kaya_b;
 	
+	//a value of -1 indicates not to highlight anything
+	int moveHighlightSourceI = -1, moveHighlightSourceJ = -1;
+	int moveHighlightDestI = -1, moveHighlightDestJ = -1;
+	boolean moveHighlightIsDrop;
+	
 	WeakHashMap<Piece, Bitmap> pieceBitmaps = new WeakHashMap<Piece, Bitmap>();
 	
 	GameActivity gameActivity;
@@ -76,6 +81,9 @@ public class BoardView extends ImageView {
 		setBackgroundRes(backgroundRes);
 		lines = BitmapFactory.decodeResource(getResources(), R.drawable.masu_dot);
 		hintOverlay = BitmapFactory.decodeResource(getResources(), R.drawable.hint_overlay);
+		sourceOverlay = BitmapFactory.decodeResource(getResources(), R.drawable.focus_source);
+		destOverlay = BitmapFactory.decodeResource(getResources(), R.drawable.focus_trpt_g);
+		dropOverlay = BitmapFactory.decodeResource(getResources(), R.drawable.focus_trpt_r);
 		
 		defaultPaint = new Paint();
 		
@@ -159,6 +167,15 @@ public class BoardView extends ImageView {
 						(int)((j*heightPerPiece) + top_pad),
 						(int)(((i+1)*widthPerPiece)+ left_pad),
 						(int)(((j+1)*heightPerPiece) + top_pad));
+				if (i == moveHighlightDestI && j == moveHighlightDestJ)
+				{
+					if (moveHighlightIsDrop)
+						canvas.drawBitmap(dropOverlay, null, bound, defaultPaint);
+					else
+						canvas.drawBitmap(destOverlay, null, bound, defaultPaint);
+				}
+				if (i == moveHighlightSourceI && j == moveHighlightSourceJ)
+					canvas.drawBitmap(sourceOverlay, null, bound, defaultPaint);
 				if (p != Piece.Empty)
 				{
 					
@@ -180,6 +197,7 @@ public class BoardView extends ImageView {
 				{
 					canvas.drawBitmap(hintOverlay, null, bound, defaultPaint);
 				}
+				
 			}
 		}
 	}
@@ -311,6 +329,16 @@ public class BoardView extends ImageView {
 		return j+1;
 	}
 	
+	int getIFromCSACol(int csa_col)
+	{
+		return 9-csa_col;
+	}
+	
+	int getJFromCSARow(int csa_row)
+	{
+		return csa_row - 1;
+	}
+	
 	private void submitMove(int i, int j)
 	{
 		String move;
@@ -358,6 +386,36 @@ public class BoardView extends ImageView {
 	{
 		piecePrefix = prefix;
 		pieceBitmaps.clear();
+	}
+
+
+	public void highlightMove(String lastMove)
+	{
+		clearMoveHighlights();
+		//this is the move reported after e.g. a new game is started
+		if (lastMove.equals("9191* "))
+			return;
+		if (lastMove.substring(0, 2).equals("00"))
+		{
+			//drop
+			moveHighlightDestI = getIFromCSACol(Integer.parseInt(lastMove.substring(2, 3)));
+			moveHighlightDestJ = getJFromCSARow(Integer.parseInt(lastMove.substring(3,4)));
+			moveHighlightIsDrop = true;
+		}
+		else
+		{
+			//regular move
+			moveHighlightSourceI = getIFromCSACol(Integer.parseInt(lastMove.substring(0, 1)));
+			moveHighlightSourceJ = getJFromCSARow(Integer.parseInt(lastMove.substring(1, 2)));
+			moveHighlightDestI = getIFromCSACol(Integer.parseInt(lastMove.substring(2, 3)));
+			moveHighlightDestJ = getJFromCSARow(Integer.parseInt(lastMove.substring(3,4)));
+			moveHighlightIsDrop = false;
+		}
+	}
+	
+	public void clearMoveHighlights()
+	{
+		moveHighlightSourceI = moveHighlightSourceJ = moveHighlightDestI = moveHighlightDestJ = -1;
 	}
 
 
